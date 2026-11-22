@@ -6,6 +6,7 @@ using Ironoak.Gameplay;
 using Ironoak.Powers;
 using Ironoak.Sound;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 namespace Ironoak.Puzzles
 {
@@ -26,7 +27,8 @@ namespace Ironoak.Puzzles
         public bool startRaised;
 
         Rigidbody2D _column;
-        SpriteRenderer _knotSr, _segmentSr, _capSr, _promptSr;
+        SpriteRenderer _knotSr, _segmentSr, _capSr, _promptSr, _glowSr;
+        Light2D _light;
         float _height, _target, _pulse;
         bool _highlighted, _settled = true;
         Sprite _promptKey, _promptPad;
@@ -75,6 +77,36 @@ namespace Ironoak.Puzzles
             _capSr = cap.AddComponent<SpriteRenderer>();
             _capSr.sprite = SpriteLibrary.Get("root_cap");
             _capSr.sortingOrder = -1;
+            if (SpriteLibrary.IsPainted(_capSr.sprite))
+            {
+                // The painted crown is taller than a tile: seat its mossy top on the column's top.
+                float h = _capSr.sprite.bounds.size.y;
+                cap.transform.localPosition = new Vector3(0f, maxHeight - h * 0.82f, 0f);
+                _segmentSr.size = new Vector2(1f, maxHeight - h * 0.5f);
+            }
+
+            // Painted knots get a soft amber halo and a 2D light while the Torc is awake.
+            var glowSprite = SpriteLibrary.GetPaintedOrNull("Props", "sap_knot_glow");
+            if (glowSprite != null && SpriteLibrary.IsPainted(_knotSr.sprite))
+            {
+                var glow = new GameObject("Glow");
+                glow.transform.SetParent(transform, false);
+                glow.transform.localPosition = new Vector3(0f, 0.38f, 0f);
+                _glowSr = glow.AddComponent<SpriteRenderer>();
+                _glowSr.sprite = glowSprite;
+                _glowSr.sortingOrder = 1;
+                _glowSr.enabled = false;
+                if (SceneLighting.Active)
+                {
+                    _light = glow.AddComponent<Light2D>();
+                    _light.lightType = Light2D.LightType.Point;
+                    _light.color = new Color(1f, 0.72f, 0.32f);
+                    _light.pointLightInnerRadius = 0.2f;
+                    _light.pointLightOuterRadius = 2.6f;
+                    _light.falloffIntensity = 0.6f;
+                    _light.intensity = 0f;
+                }
+            }
 
             var prompt = new GameObject("Prompt");
             prompt.transform.SetParent(transform, false);
@@ -151,7 +183,19 @@ namespace Ironoak.Puzzles
             bool awake = PlayerPowers.Local != null && PlayerPowers.Local.Has(Power.Rootgrow);
             _pulse += Time.deltaTime * (_highlighted ? 6f : 2.5f);
             float glow = awake ? 0.75f + 0.25f * Mathf.Sin(_pulse) : 0.45f;
-            _knotSr.color = awake ? new Color(glow + 0.25f, glow + 0.2f, glow * 0.6f) : new Color(glow, glow, glow);
+            if (_glowSr != null) // painted knot: already coloured, so only a gentle warm tint (no blow-out)
+                _knotSr.color = awake ? new Color(1f, 0.9f + 0.06f * glow, 0.72f + 0.1f * glow) : new Color(0.62f, 0.62f, 0.6f);
+            else
+                _knotSr.color = awake ? new Color(glow + 0.25f, glow + 0.2f, glow * 0.6f) : new Color(glow, glow, glow);
+            if (_glowSr != null)
+            {
+                _glowSr.enabled = awake;
+                float a = (_highlighted ? 0.95f : 0.7f) * (0.75f + 0.25f * Mathf.Sin(_pulse));
+                _glowSr.color = new Color(1f, 1f, 1f, a);
+                float sc = _highlighted ? 1.15f : 1f;
+                _glowSr.transform.localScale = new Vector3(sc, sc, 1f);
+                if (_light != null) _light.intensity = awake ? (_highlighted ? 1.4f : 0.9f) * (0.8f + 0.2f * Mathf.Sin(_pulse)) : 0f;
+            }
 
             _promptSr.enabled = _highlighted;
             if (_highlighted)

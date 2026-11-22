@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Ironoak.Core;
 using UnityEngine;
 
 namespace Ironoak.Art
@@ -12,11 +13,33 @@ namespace Ironoak.Art
     {
         static readonly Dictionary<string, Sprite> Cache = new Dictionary<string, Sprite>();
 
+        /// <summary>
+        /// Gameplay sprite names that have a painted (hi-res) replacement. In the Native display
+        /// mode, a painted file that exists wins over the pixel sprite of the same gameplay name.
+        /// </summary>
+        static readonly Dictionary<string, string> PaintedAliases = new Dictionary<string, string>
+        {
+            { "crate", "Props/crate" },
+            { "sap_knot", "Props/sap_knot" },
+            { "root_segment", "Props/root_segment" },
+            { "root_cap", "Props/root_crown" },
+            { "coin_0", "Props/coin_gold" },
+            { "heart_full", "UI/ui_heart_full" },
+            { "heart_empty", "UI/ui_heart_empty" },
+            { "ui_coin", "UI/ui_coin" },
+        };
+
+        /// <summary>True when painted art should be preferred (Native display mode).</summary>
+        public static bool PreferPainted => !IronoakConfig.PixelPerfect;
+
         public static Sprite Get(string name)
         {
             if (Cache.TryGetValue(name, out var cached) && cached != null) return cached;
 
-            var sprite = Resources.Load<Sprite>("Art/" + name);
+            Sprite sprite = null;
+            if (PreferPainted && PaintedAliases.TryGetValue(name, out var painted))
+                sprite = Resources.Load<Sprite>("Art/Painted/" + painted);
+            if (sprite == null) sprite = Resources.Load<Sprite>("Art/" + name);
             if (sprite == null) sprite = ProceduralArt.Create(name);
             Cache[name] = sprite;
             return sprite;
@@ -35,6 +58,19 @@ namespace Ironoak.Art
             Cache[key] = sprite;
             return sprite;
         }
+
+        /// <summary>The painted sprite Resources/Art/Painted/&lt;folder&gt;/&lt;name&gt;.png, or null if it isn't there.</summary>
+        public static Sprite GetPaintedOrNull(string folder, string name)
+        {
+            string key = "painted?/" + folder + "/" + name;
+            if (Cache.TryGetValue(key, out var cached)) return cached;
+            var sprite = Resources.Load<Sprite>($"Art/Painted/{folder}/{name}");
+            Cache[key] = sprite;
+            return sprite;
+        }
+
+        /// <summary>True if the sprite is hi-res painted art rather than 16 px pixel art.</summary>
+        public static bool IsPainted(Sprite s) => s != null && s.pixelsPerUnit > 32f;
 
         public static Sprite[] GetFrames(params string[] names)
         {

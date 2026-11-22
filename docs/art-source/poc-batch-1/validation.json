@@ -1,0 +1,305 @@
+{
+  "date": "2026-11-23",
+  "assetCount": 23,
+  "checks": [
+    {
+      "name": "terrain_earth_fill",
+      "size": [
+        512,
+        512
+      ],
+      "alpha": [
+        255,
+        255
+      ],
+      "repeatAxes": "xy",
+      "result": "pass"
+    },
+    {
+      "name": "terrain_earth_top",
+      "size": [
+        512,
+        192
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "repeatAxes": "x",
+      "result": "pass"
+    },
+    {
+      "name": "terrain_earth_side",
+      "size": [
+        192,
+        512
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "repeatAxes": "y",
+      "result": "pass"
+    },
+    {
+      "name": "terrain_earth_bottom",
+      "size": [
+        512,
+        128
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "repeatAxes": "x",
+      "result": "pass"
+    },
+    {
+      "name": "terrain_earth_corner_tl",
+      "size": [
+        192,
+        192
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "repeatAxes": "",
+      "result": "pass"
+    },
+    {
+      "name": "terrain_earth_corner_tr",
+      "size": [
+        192,
+        192
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "repeatAxes": "",
+      "result": "pass"
+    },
+    {
+      "name": "bg_sky",
+      "size": [
+        2560,
+        1440
+      ],
+      "alpha": [
+        255,
+        255
+      ],
+      "repeatAxes": "",
+      "result": "pass"
+    },
+    {
+      "name": "bg_far_hills",
+      "size": [
+        3840,
+        900
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "repeatAxes": "x",
+      "result": "pass"
+    },
+    {
+      "name": "bg_far_forest",
+      "size": [
+        3840,
+        1000
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "repeatAxes": "x",
+      "result": "pass"
+    },
+    {
+      "name": "bg_mid_forest",
+      "size": [
+        3840,
+        1300
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "repeatAxes": "x",
+      "result": "pass"
+    },
+    {
+      "name": "bg_near_trunks",
+      "size": [
+        3840,
+        1600
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "repeatAxes": "x",
+      "result": "pass"
+    },
+    {
+      "name": "fg_leaves_top",
+      "size": [
+        3840,
+        600
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "repeatAxes": "x",
+      "result": "pass"
+    },
+    {
+      "name": "fg_bushes_bottom",
+      "size": [
+        3840,
+        500
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "repeatAxes": "x",
+      "result": "pass"
+    },
+    {
+      "name": "fx_light_shafts",
+      "size": [
+        2048,
+        2048
+      ],
+      "alpha": [
+        255,
+        255
+      ],
+      "repeatAxes": "",
+      "result": "pass"
+    },
+    {
+      "name": "sap_knot",
+      "size": [
+        192,
+        96
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "repeatAxes": "",
+      "result": "pass"
+    },
+    {
+      "name": "sap_knot_glow",
+      "size": [
+        256,
+        256
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "repeatAxes": "",
+      "result": "pass"
+    },
+    {
+      "name": "root_segment",
+      "size": [
+        128,
+        256
+      ],
+      "alpha": [
+        255,
+        255
+      ],
+      "repeatAxes": "y",
+      "result": "pass"
+    },
+    {
+      "name": "root_crown",
+      "size": [
+        160,
+        160
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "repeatAxes": "",
+      "result": "pass"
+    },
+    {
+      "name": "crate",
+      "size": [
+        128,
+        128
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "repeatAxes": "",
+      "result": "pass"
+    },
+    {
+      "name": "coin_gold",
+      "size": [
+        96,
+        96
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "repeatAxes": "",
+      "result": "pass"
+    },
+    {
+      "name": "ui_heart_full",
+      "size": [
+        96,
+        96
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "repeatAxes": "",
+      "result": "pass"
+    },
+    {
+      "name": "ui_heart_empty",
+      "size": [
+        96,
+        96
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "repeatAxes": "",
+      "result": "pass"
+    },
+    {
+      "name": "ui_coin",
+      "size": [
+        96,
+        96
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "repeatAxes": "",
+      "result": "pass"
+    }
+  ]
+}

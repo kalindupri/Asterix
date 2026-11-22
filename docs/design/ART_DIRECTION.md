@@ -106,7 +106,7 @@ Each phase ends with a **gate**: you approve before the next phase spends effort
 ### Phase A — Look development (Codex, parallel with B)
 
 **Review pack:** [Phase A concepts, palettes and lighting keys](../art-direction/phase-a/README.md)
-— generated 22 November 2026; **Gate A approval pending**.
+— generated 22 November 2026; **Gate A approved by the user, 22 November 2026**.
 
 1. **Style frame 1:** the Oak Road forest at 1920×1080: foreground, playfield, three
    background layers, Brenna standing on a path, a glowing sap knot.
@@ -118,15 +118,39 @@ Each phase ends with a **gate**: you approve before the next phase spends effort
 **Gate A:** you pick and lock the look. Everything after this follows the locked frames.
 
 ### Phase B — Tech spike (me, parallel with A)
-1. Add URP with the 2D Renderer; convert materials; 2D global, point and spot lights; post-processing volume.
-2. Replace the pixel display with a native-resolution display mode, plus camera zoom zones.
-3. Art layer over collision: Sprite Shape ground on one section of Level 1 over the hidden tilemap.
-4. Placeholder rigged character: a simple layered PSB with bones and run/jump/aim driven
-   by PlayerController, proving the animation hookup.
-5. TextMeshPro UI with an OFL font; painted button prompts.
-6. Automated playtest still 33/33 and frame time within budget.
 
-**Gate B:** the playable section in the new pipeline (with placeholder art) runs at 60 fps.
+**Status (23 Nov 2026): done except item 5.** It was built with Codex's Batch 1 art, not
+placeholders. Screenshots and the playtest report are in `docs/screenshots-phase-b/`.
+
+1. ✅ **URP 17.3 with the 2D Renderer**, created and activated by `Editor/RenderSetup.cs`
+   (Ironoak → Apply Render Pipeline). All sprites use the lit sprite material. `SceneLighting`
+   builds a global ambient light, a sun-shaft cookie light (`fx_light_shafts`) and a
+   post-processing volume (bloom, vignette, colour grading). Sap knots carry a point light
+   while the Torc is awake.
+2. ✅ **Native display and camera zoom.** The default view is 11 units tall
+   (`IronoakConfig.viewHeight`). Each `CameraZone` has a `viewHeight`: 0 zooms out to fit the
+   zone (the Druid's Trial does this), -1 keeps the default, up to `maxZoneViewHeight` (17).
+3. ✅ **Art layer over collision.** `PaintedTerrain` paints every collision Tilemap at load time
+   with the terrain set: a world-space fill, grassy tops, mirrored cliff faces with faded inner
+   edges, root undersides and cropped corners. The Tilemap renderer is hidden; physics and
+   level design are unchanged. We used a generated mesh instead of Sprite Shape: the levels
+   are tile-based, and this needs no hand-drawn splines and covers the whole level, not one
+   section.
+4. ✅ **Rigged character.** Replaced by the cut-out puppet (`PuppetRig` + `PuppetAnimator`)
+   after the no-artist decision. It is driven by PlayerController and shows run, jump, aim,
+   throw and cast.
+5. ⏳ **TextMeshPro UI with an OFL font.** Not started; it needs an OFL font file (see
+   POC_ASSET_REQUESTS Batch 5). The UI still uses the pixel font.
+6. ✅ **Playtest 33/33**, now with a frame-time line: 60 fps locked at 1080p
+   (p95 16.7 ms, GTX 1660 SUPER).
+
+Also delivered:
+- A data-driven parallax (`ParallaxSet`): any number of layers, foreground layers in front of
+  the player, a per-layer tint, scale and vertical follow, and `keepTopAboveView` for art with
+  a cut-off top. Each level picks its set and lighting through `LevelRoot.look`.
+- Painted props (knot, root, crate, coin) and HUD icons, swapped in by name.
+
+**Gate B:** the playable section in the new pipeline runs at 60 fps. **Met, pending your review.**
 
 ### Phase C — Character production
 Brenna parts → rig → full animation list. Then the legionary, then the boars.

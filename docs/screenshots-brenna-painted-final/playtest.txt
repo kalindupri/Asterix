@@ -1,0 +1,34 @@
+[PLAYTEST] PASS Level loads 
+[PLAYTEST] PASS P1-01 bell opens gate 
+[PLAYTEST] PASS P1-02 rope drops bridge 
+[PLAYTEST] PASS P1-02 bridge is walkable pos=(39.36, 3.01, 0.00)
+[PLAYTEST] PASS Secret 1A wall breaks 
+[PLAYTEST] PASS Secret 1A found secrets=1
+[PLAYTEST] PASS Heartwood Torc unlocks Rootgrow 
+[PLAYTEST] PASS P1-03 knot raises 
+[PLAYTEST] PASS P1-03 ledge reachable pos=(79.04, 8.01, 0.00) apex=9.48
+[PLAYTEST] PASS Secret 1B knot raises 
+[PLAYTEST] PASS Secret 1B canopy reachable pos=(87.73, 15.84, 0.00)
+[PLAYTEST] PASS P1-04 crate pushed onto knot crate=(93.50, 3.02, 0.00)
+[PLAYTEST] PASS P1-04 root lifts crate crate=(93.50, 5.99, 0.00)
+[PLAYTEST] PASS P1-04 wall top reachable pos=(96.88, 10.01, 0.00) apex=10.45
+[PLAYTEST] PASS P1-05 dam drains pool 
+[PLAYTEST] PASS Secret 1C found 
+[PLAYTEST] PASS P1-05 tunnel passable pos=(120.43, 3.01, 0.00)
+[PLAYTEST] PASS P1-06 root lifts crate to ledge height crate=(122.50, 6.17, 0.00)
+[PLAYTEST] PASS P1-06 crate on plate opens gate crate=(126.19, 6.01, 0.00)
+[PLAYTEST] PASS P1-T entrance knot raises 
+[PLAYTEST] PASS P1-T room discovered 
+[PLAYTEST] PASS P1-T crate onto knot 1 crate=(139.50, 9.02, 0.00)
+[PLAYTEST] PASS P1-T knot 1 raises crate crate=(139.50, 11.01, 0.00)
+[PLAYTEST] PASS P1-T crate drops onto knot 2 crate=(142.51, 9.02, 0.00)
+[PLAYTEST] PASS P1-T knot 2 raises crate crate=(142.51, 13.72, 0.00)
+[PLAYTEST] PASS P1-T crate reaches plate A crate=(144.51, 13.02, 0.00)
+[PLAYTEST] PASS P1-T both plates open reward gate 
+[PLAYTEST] PASS P1-T Druid's Mark collected 
+[PLAYTEST] PASS P1-07 stampede starts 
+[PLAYTEST] PASS P1-07 caught costs a heart and restarts hp=2 pos=(160.50, 3.01, 0.00)
+[PLAYTEST] PASS P1-07 wall 2 climbable with root pos=(186.37, 9.01, 0.00)
+[PLAYTEST] PASS P1-07 stampede ends at the fallen oak 
+[PLAYTEST] PASS Goal completes level 
+[PLAYTEST] RESULT 33/33 passed

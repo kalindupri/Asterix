@@ -9,6 +9,7 @@ namespace Ironoak.Gameplay
     public class Coin : MonoBehaviour
     {
         Sprite[] _frames;
+        bool _painted;
         SpriteRenderer _sr;
         Vector3 _base;
         float _t;
@@ -34,6 +35,8 @@ namespace Ironoak.Gameplay
         void Start()
         {
             _frames = SpriteLibrary.GetFrames("coin_0", "coin_1", "coin_2", "coin_3");
+            _painted = SpriteLibrary.IsPainted(_frames[0]);
+            if (_painted) _sr.sprite = _frames[0];
             _base = transform.position;
             _t = _base.x * 0.37f; // de-sync neighbouring coins
         }
@@ -41,8 +44,21 @@ namespace Ironoak.Gameplay
         void Update()
         {
             _t += Time.deltaTime;
-            _sr.sprite = _frames[(int)(_t * 8f) % 4];
-            float bob = Mathf.Round(Mathf.Sin(_t * 3f) * 1.5f) / PixelArt.PPU;
+            float bob;
+            if (_painted)
+            {
+                // One painted coin, spun by squashing; the back face is a little darker.
+                float c = Mathf.Cos(_t * 4f);
+                transform.localScale = new Vector3(Mathf.Max(0.08f, Mathf.Abs(c)), 1f, 1f); // y stays 1 so the trigger radius is unchanged
+                float shade = c >= 0f ? 1f : 0.78f;
+                _sr.color = new Color(shade, shade, shade);
+                bob = Mathf.Sin(_t * 3f) * 0.09f;
+            }
+            else
+            {
+                _sr.sprite = _frames[(int)(_t * 8f) % 4];
+                bob = Mathf.Round(Mathf.Sin(_t * 3f) * 1.5f) / PixelArt.PPU;
+            }
             transform.position = _base + new Vector3(0f, bob, 0f);
         }
 

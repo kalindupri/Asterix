@@ -33,9 +33,9 @@ MonoBehaviour:
   - name: head
     parent: torso
     sprite: brenna_head
-    offset: {x: 0.02, y: 0.36}
+    offset: {x: 0.02, y: 0.29}
     pivot: {x: 0.42, y: 0.06}
-    height: 0.52
+    height: 0.58
     order: 12
     tint: {r: 1, g: 1, b: 1, a: 1}
   - name: braid1

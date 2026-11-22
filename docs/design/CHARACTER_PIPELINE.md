@@ -4,9 +4,11 @@
 joined into a skeleton and **animated procedurally in code**. Codex paints the parts, you tidy
 them in a free editor, and the game does the rest. No keyframing, no paid tools, no artist.
 
-**Status:** the rig and animation system are built and running in the game with code-painted
-placeholder parts (screenshots in `docs/screenshots-rig/`). Next step: replace the placeholders
-with Codex parts made from the Phase A Brenna concept.
+**Status:** the eight Brenna placeholders have been replaced with painted parts generated from
+the approved Phase A concept. The head attachment and size were tuned in `Brenna.asset`.
+Sources, prompts and export details are in [the painted-part handoff](../art-source/brenna-cutout-v1/README.md).
+Final-fit pose captures are in `docs/screenshots-brenna-painted-final/`; the earlier placeholder
+captures remain in `docs/screenshots-rig/`.
 
 ---
 

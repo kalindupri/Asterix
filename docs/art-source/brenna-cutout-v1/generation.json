@@ -1,0 +1,266 @@
+{
+  "tool": "Built-in image_gen",
+  "date": "2026-11-22",
+  "pipeline": "docs/design/CHARACTER_PIPELINE.md",
+  "parts": [
+    {
+      "id": "brenna_head",
+      "name": "head",
+      "size": [
+        288,
+        320
+      ],
+      "pivot": [
+        0.42,
+        0.06
+      ],
+      "prompt": "Production game asset for a 2D cut-out puppet. Character: Brenna, from reference image 1 (our original concept sheet); match her colours, materials and painting style exactly. Hand-painted storybook cartoon, soft painterly brush texture, thin dark warm outline, light from the top-left. Side view facing right. Draw ONLY the single body part described, isolated, centred, on a fully transparent background. No shadow on the ground, no text, no other body parts, no frame. Reference image 2 is a technical silhouette/canvas guide ONLY: use its orientation, proportions and marked joint location; do NOT reproduce its checkerboard, magenta cross, placeholder colors or low-detail drawing. The joint end must be rounded and overlap about 10 percent beyond the joint. Keep fine Celtic trim away from moving seam ends. This image will be rotated in a puppet, so no perspective foreshortening. Brenna's head in strict RIGHT SIDE PROFILE: one visible eye, freckles, determined friendly expression, ear, loose wavy red hair; NO braid, NO collar, NO torso. Short rounded neck stub at the bottom tucked under the head, joint at normalized bottom-left (0.42,0.06). Hair #C8452C with warm copper highlights. Match the side-profile face in the concept. Portrait canvas 288x320; head almost fills width and height; neck stub reaches near bottom.",
+      "template": "docs/character-templates/brenna_head_template.png",
+      "reference": "docs/art-direction/phase-a/brenna-concepts-v1.png",
+      "date": "2026-11-22",
+      "source": "docs/art-source/brenna-cutout-v1/brenna_head-source.png",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Brenna/brenna_head.png",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-4aab500f-ac57-4e74-a495-c6272e5dc8cb.png",
+      "exportBounds": [
+        12,
+        24,
+        244,
+        320
+      ],
+      "exportOperation": "Trim generated alpha fringe; resample into the 4x template occupied bounds; preserve alpha. Source preserved.",
+      "sha256": "231fefbfc5ad5496379c84f355de1e0bc5e27bc4748b7cb5191c46a2d8b19645",
+      "sourceSha256": "732ea56d2ea3203da65f7945c88782e7585ccc61f7410764a301a7013ed69666"
+    },
+    {
+      "id": "brenna_torso",
+      "name": "torso",
+      "size": [
+        224,
+        240
+      ],
+      "pivot": [
+        0.5,
+        0.06
+      ],
+      "prompt": "Production game asset for a 2D cut-out puppet. Character: Brenna, from reference image 1 (our original concept sheet); match her colours, materials and painting style exactly. Hand-painted storybook cartoon, soft painterly brush texture, thin dark warm outline, light from the top-left. Side view facing right. Draw ONLY the single body part described, isolated, centred, on a fully transparent background. No shadow on the ground, no text, no other body parts, no frame. Reference image 2 is a technical silhouette/canvas guide ONLY: use its orientation, proportions and marked joint location; do NOT reproduce its checkerboard, magenta cross, placeholder colors or low-detail drawing. The joint end must be rounded and overlap about 10 percent beyond the joint. Keep fine Celtic trim away from moving seam ends. This image will be rotated in a puppet, so no perspective foreshortening. Brenna's torso ONLY in side view facing right: green wool tunic chest from collar to just below belt, knotwork collar trim, brown leather belt with round gold knot buckle, diagonal shoulder strap and small leather stone pouch at hip. No arms, head, skirt, or legs. Rounded shoulders. Upper shoulder cap and collar are smoothly closed standalone shapes. Tunic #4E7A3A. Joint waist at (0.50,0.06) bottom-left normalized; canvas 224x240.",
+      "template": "docs/character-templates/brenna_torso_template.png",
+      "reference": "docs/art-direction/phase-a/brenna-concepts-v1.png",
+      "date": "2026-11-22",
+      "source": "docs/art-source/brenna-cutout-v1/brenna_torso-source.png",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Brenna/brenna_torso.png",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-cd262172-d7ae-46e0-9d8f-86ea448808f9.png",
+      "selectedSource": "docs/art-source/brenna-cutout-v1/brenna_torso-v2-source.png",
+      "exportBounds": [
+        40,
+        0,
+        184,
+        240
+      ],
+      "exportOperation": "Trim generated alpha fringe; resample into the 4x template occupied bounds; preserve alpha. Source preserved.",
+      "sha256": "d36d201f02ff91205a857c8bb1939ccbd4d174ae1b2fe33fc50df6df09b0d844",
+      "sourceSha256": "5db67675f8e3ec4227f3233be35ec6472727291c79ae5c772e3d9e9d8904f48d"
+    },
+    {
+      "id": "brenna_pelvis",
+      "name": "pelvis",
+      "size": [
+        240,
+        144
+      ],
+      "pivot": [
+        0.5,
+        0.88
+      ],
+      "prompt": "Production game asset for a 2D cut-out puppet. Character: Brenna, from reference image 1 (our original concept sheet); match her colours, materials and painting style exactly. Hand-painted storybook cartoon, soft painterly brush texture, thin dark warm outline, light from the top-left. Side view facing right. Draw ONLY the single body part described, isolated, centred, on a fully transparent background. No shadow on the ground, no text, no other body parts, no frame. Reference image 2 is a technical silhouette/canvas guide ONLY: use its orientation, proportions and marked joint location; do NOT reproduce its checkerboard, magenta cross, placeholder colors or low-detail drawing. The joint end must be rounded and overlap about 10 percent beyond the joint. Keep fine Celtic trim away from moving seam ends. This image will be rotated in a puppet, so no perspective foreshortening. Brenna's tunic skirt ONLY: green wool tunic below belt to golden Celtic knotwork hem, strict side view facing right, slightly flared, soft rounded top extending above hip joint (0.50,0.88). No belt, buckle, pouch, torso, legs or body visible. Tunic #4E7A3A. Broad short canvas240x144, top smoothly closed so it overlaps under torso.",
+      "template": "docs/character-templates/brenna_pelvis_template.png",
+      "reference": "docs/art-direction/phase-a/brenna-concepts-v1.png",
+      "date": "2026-11-22",
+      "source": "docs/art-source/brenna-cutout-v1/brenna_pelvis-source.png",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Brenna/brenna_pelvis.png",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-a9e7f5c0-8aba-4cfb-9846-f93403e4e54a.png",
+      "exportBounds": [
+        36,
+        8,
+        204,
+        128
+      ],
+      "exportOperation": "Trim generated alpha fringe; resample into the 4x template occupied bounds; preserve alpha. Source preserved.",
+      "sha256": "5f89736b4f758e574e0decd12174209179e7cbebd2572283e7ddf913ea9e3ce3",
+      "sourceSha256": "56cbb1f8a010a9389e0f69aee62e94e6f680f8974ec044ab3b336fb3bd2d2a60"
+    },
+    {
+      "id": "brenna_arm_upper",
+      "name": "arm_upper",
+      "size": [
+        88,
+        152
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "prompt": "Production game asset for a 2D cut-out puppet. Character: Brenna, from reference image 1 (our original concept sheet); match her colours, materials and painting style exactly. Hand-painted storybook cartoon, soft painterly brush texture, thin dark warm outline, light from the top-left. Side view facing right. Draw ONLY the single body part described, isolated, centred, on a fully transparent background. No shadow on the ground, no text, no other body parts, no frame. Reference image 2 is a technical silhouette/canvas guide ONLY: use its orientation, proportions and marked joint location; do NOT reproduce its checkerboard, magenta cross, placeholder colors or low-detail drawing. The joint end must be rounded and overlap about 10 percent beyond the joint. Keep fine Celtic trim away from moving seam ends. This image will be rotated in a puppet, so no perspective foreshortening. Brenna's upper arm ONLY: single green wool sleeve from shoulder to elbow, subtle knotwork cuff near bottom, hanging perfectly vertically straight down. No torso, hand, forearm or other body part. Round ball-joint shoulder cap, centered joint (0.50,0.90), overlaps cap10% above joint; lower end also rounded to overlap elbow. Tunic #4E7A3A. Narrow canvas88x152, simple continuous capsule silhouette.",
+      "template": "docs/character-templates/brenna_arm_upper_template.png",
+      "reference": "docs/art-direction/phase-a/brenna-concepts-v1.png",
+      "date": "2026-11-22",
+      "source": "docs/art-source/brenna-cutout-v1/brenna_arm_upper-source.png",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Brenna/brenna_arm_upper.png",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-d58bcce1-cdeb-463b-9f32-3b0df2c3ada0.png",
+      "exportBounds": [
+        8,
+        0,
+        80,
+        144
+      ],
+      "exportOperation": "Trim generated alpha fringe; resample into the 4x template occupied bounds; preserve alpha. Source preserved.",
+      "sha256": "91aca55c8362e52f4337b3cf4f3b74078041e214fbe14c445df0fa02ce0a0572",
+      "sourceSha256": "3dc2f70db17c87a7f7e04fbee2a5a4b4aecec03c25f7afc4e28487490b54cc38"
+    },
+    {
+      "id": "brenna_arm_lower",
+      "name": "arm_lower",
+      "size": [
+        88,
+        160
+      ],
+      "pivot": [
+        0.5,
+        0.92
+      ],
+      "prompt": "Production game asset for a 2D cut-out puppet. Character: Brenna, from reference image 1 (our original concept sheet); match her colours, materials and painting style exactly. Hand-painted storybook cartoon, soft painterly brush texture, thin dark warm outline, light from the top-left. Side view facing right. Draw ONLY the single body part described, isolated, centred, on a fully transparent background. No shadow on the ground, no text, no other body parts, no frame. Reference image 2 is a technical silhouette/canvas guide ONLY: use its orientation, proportions and marked joint location; do NOT reproduce its checkerboard, magenta cross, placeholder colors or low-detail drawing. The joint end must be rounded and overlap about 10 percent beyond the joint. Keep fine Celtic trim away from moving seam ends. This image will be rotated in a puppet, so no perspective foreshortening. Brenna's forearm ONLY: single bare forearm with brown leather bracer and CLOSED FIST at bottom, perfectly vertical straight down, viewed from right side with thumb toward right. No upper arm, sleeve, torso, weapon or fingers spread. Round elbow cap at top with joint (0.50,0.92), cap extends above it. Same peach skin as concept, leather #6B4226. Narrow canvas88x160.",
+      "template": "docs/character-templates/brenna_arm_lower_template.png",
+      "reference": "docs/art-direction/phase-a/brenna-concepts-v1.png",
+      "date": "2026-11-22",
+      "source": "docs/art-source/brenna-cutout-v1/brenna_arm_lower-source.png",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Brenna/brenna_arm_lower.png",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-de6b8be1-77c2-4f1c-9e01-38190c4fd4a3.png",
+      "exportBounds": [
+        16,
+        0,
+        76,
+        156
+      ],
+      "exportOperation": "Trim generated alpha fringe; resample into the 4x template occupied bounds; preserve alpha. Source preserved.",
+      "sha256": "3a16607343ee69c1b7cc75e77b8072e5616c3e16df7f29a2b53328c0eeed7a11",
+      "sourceSha256": "13c6ca5ecef1dfd646e7412b5598e970d69c8155d6d2a87e9e2b2c5e627cbd75"
+    },
+    {
+      "id": "brenna_leg_upper",
+      "name": "leg_upper",
+      "size": [
+        104,
+        176
+      ],
+      "pivot": [
+        0.5,
+        0.92
+      ],
+      "prompt": "Production game asset for a 2D cut-out puppet. Character: Brenna, from reference image 1 (our original concept sheet); match her colours, materials and painting style exactly. Hand-painted storybook cartoon, soft painterly brush texture, thin dark warm outline, light from the top-left. Side view facing right. Draw ONLY the single body part described, isolated, centred, on a fully transparent background. No shadow on the ground, no text, no other body parts, no frame. Reference image 2 is a technical silhouette/canvas guide ONLY: use its orientation, proportions and marked joint location; do NOT reproduce its checkerboard, magenta cross, placeholder colors or low-detail drawing. The joint end must be rounded and overlap about 10 percent beyond the joint. Keep fine Celtic trim away from moving seam ends. This image will be rotated in a puppet, so no perspective foreshortening. Brenna's thigh ONLY: one baggy brown checked plaid trouser section from hip to knee, hanging perfectly vertically straight down. No pelvis, tunic, boot, lower leg or other body part. Rounded ball-joint hip cap at top (0.50,0.92), rounded knee end below, simple capsule silhouette. Brown plaid #7A4E30, cloth highlights, checks align vertically and horizontally. Narrow canvas104x176.",
+      "template": "docs/character-templates/brenna_leg_upper_template.png",
+      "reference": "docs/art-direction/phase-a/brenna-concepts-v1.png",
+      "date": "2026-11-22",
+      "source": "docs/art-source/brenna-cutout-v1/brenna_leg_upper-source.png",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Brenna/brenna_leg_upper.png",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-d5ce0cc1-8f46-4623-a014-c0a0ce04f7d1.png",
+      "exportBounds": [
+        12,
+        0,
+        92,
+        176
+      ],
+      "exportOperation": "Trim generated alpha fringe; resample into the 4x template occupied bounds; preserve alpha. Source preserved.",
+      "sha256": "872b14b829228f0718b433eb39a9f4808892688adf5405865c281c78c863d44a",
+      "sourceSha256": "fa521b951b94bbe72b05533fb9a79535adb9152cf9ed954b2a2f480bf0e66121"
+    },
+    {
+      "id": "brenna_leg_lower",
+      "name": "leg_lower",
+      "size": [
+        136,
+        200
+      ],
+      "pivot": [
+        0.4,
+        0.94
+      ],
+      "prompt": "Production game asset for a 2D cut-out puppet. Character: Brenna, from reference image 1 (our original concept sheet); match her colours, materials and painting style exactly. Hand-painted storybook cartoon, soft painterly brush texture, thin dark warm outline, light from the top-left. Side view facing right. Draw ONLY the single body part described, isolated, centred, on a fully transparent background. No shadow on the ground, no text, no other body parts, no frame. Reference image 2 is a technical silhouette/canvas guide ONLY: use its orientation, proportions and marked joint location; do NOT reproduce its checkerboard, magenta cross, placeholder colors or low-detail drawing. The joint end must be rounded and overlap about 10 percent beyond the joint. Keep fine Celtic trim away from moving seam ends. This image will be rotated in a puppet, so no perspective foreshortening. Brenna's lower leg ONLY: brown checked trouser knee to ankle, then small wrapped brown leather boot with TOE POINTING RIGHT, perfectly vertical shin, flat sole near canvas bottom edge. No thigh, skirt, other leg or ground. Knee joint top (0.40,0.94), rounded cap extends above knee. Brown plaid #7A4E30, boot #6B4226. Canvas136x200, top of shin aligned left of boot's wider right-pointing toe.",
+      "template": "docs/character-templates/brenna_leg_lower_template.png",
+      "reference": "docs/art-direction/phase-a/brenna-concepts-v1.png",
+      "date": "2026-11-22",
+      "source": "docs/art-source/brenna-cutout-v1/brenna_leg_lower-source.png",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Brenna/brenna_leg_lower.png",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-1e89f4a4-791e-41ef-b5fa-5d6f3d2d3617.png",
+      "exportBounds": [
+        8,
+        0,
+        128,
+        196
+      ],
+      "exportOperation": "Trim generated alpha fringe; resample into the 4x template occupied bounds; preserve alpha. Source preserved.",
+      "sha256": "ff305c5fbaf932d2abed4960a8d10eb76cab33732607099c3f3fbb4475088147",
+      "sourceSha256": "e1c58fe866e0a79cbdc8dff6324c4c31dc902e3701c2e64b05b58a8055f8283e"
+    },
+    {
+      "id": "brenna_braid",
+      "name": "braid",
+      "size": [
+        80,
+        112
+      ],
+      "pivot": [
+        0.5,
+        0.92
+      ],
+      "prompt": "Production game asset for a 2D cut-out puppet. Character: Brenna, from reference image 1 (our original concept sheet); match her colours, materials and painting style exactly. Hand-painted storybook cartoon, soft painterly brush texture, thin dark warm outline, light from the top-left. Side view facing right. Draw ONLY the single body part described, isolated, centred, on a fully transparent background. No shadow on the ground, no text, no other body parts, no frame. Reference image 2 is a technical silhouette/canvas guide ONLY: use its orientation, proportions and marked joint location; do NOT reproduce its checkerboard, magenta cross, placeholder colors or low-detail drawing. The joint end must be rounded and overlap about 10 percent beyond the joint. Keep fine Celtic trim away from moving seam ends. This image will be rotated in a puppet, so no perspective foreshortening. ONE short repeatable SECTION of Brenna's thick red plaited braid, hanging perfectly vertically straight down. No head, neck, hair mass, long whole braid, bow or loose hair tail. Exactly a compact woven section of interlocking copper red locks, rounded overlap cap top at (0.50,0.92), slightly tapered rounded lower end. Hair #C8452C with copper highlights. No leather band so repeating it three times reads as one continuous braid. Narrow canvas80x112.",
+      "template": "docs/character-templates/brenna_braid_template.png",
+      "reference": "docs/art-direction/phase-a/brenna-concepts-v1.png",
+      "date": "2026-11-22",
+      "source": "docs/art-source/brenna-cutout-v1/brenna_braid-source.png",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Brenna/brenna_braid.png",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-8084d841-ed4a-44f7-a414-7f79f89146a9.png",
+      "exportBounds": [
+        12,
+        0,
+        68,
+        108
+      ],
+      "exportOperation": "Trim generated alpha fringe; resample into the 4x template occupied bounds; preserve alpha. Source preserved.",
+      "sha256": "a46f59f1479bff80a2d7c79c5e9f1b000582b91a39bdfe6befce90a2d5472b21",
+      "sourceSha256": "9c87ece9e633451b80a2a993ca493e3aadda74ea6ee9a380ebc9e5a804647c90"
+    }
+  ],
+  "iterations": [
+    {
+      "id": "brenna_torso-v2",
+      "name": "torso",
+      "size": [
+        224,
+        240
+      ],
+      "pivot": [
+        0.5,
+        0.06
+      ],
+      "date": "2026-11-22",
+      "reference": "docs/art-direction/phase-a/brenna-concepts-v1.png",
+      "template": "docs/character-templates/brenna_torso_template.png",
+      "prompt": "Use case: precise-object-edit. Reference image 1 is our generated Brenna torso EDIT TARGET. Reference image 2 is our own approved Brenna design. Reference image 3 is the technical torso template. Change the torso's proportions and waist boundary to fit the template. Preserve olive-green woven wool, gold knot collar, brown strap and round gold knot buckle. Make a compact broad chest from rounded shoulder cap at top to BELT AT THE VERY BOTTOM, with only a tiny rounded 5% overlap below the belt. REMOVE the long tunic section below the belt completely. Move the small stone pouch UP so it sits entirely over the lower chest and belt at the left hip, not hanging beneath the waist. The belt center must be at normalized image height 0.10 from the bottom; waist joint at (0.50,0.06). Broad portrait224x240 silhouette (almost as wide as tall), facing right. No arms, head, skirt, legs, checkerboard, magenta marker, frame, ground shadow or text. Fully transparent background. Smoothly rounded top shoulders and softly rounded waist overlap suitable for a cut-out puppet.",
+      "source": "docs/art-source/brenna-cutout-v1/brenna_torso-v2-source.png",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-70b26c95-5415-4711-963b-cd5cb1a53829.png"
+    }
+  ],
+  "rigFit": {
+    "file": "Assets/_Ironoak/Resources/Characters/Brenna.asset",
+    "headOffsetY": 0.29,
+    "headHeight": 0.58,
+    "reason": "Overlap the neck stub under the collar and increase face prominence after assembled pose review."
+  },
+  "validation": {
+    "build": "succeeded",
+    "playtest": "33/33 passed",
+    "report": "docs/screenshots-brenna-painted-final/playtest.txt",
+    "poseCaptures": 7,
+    "checked": "sizes, alpha transparency, joint coverage, assembled run/jump/aim captures",
+    "date": "2026-11-22"
+  }
+}

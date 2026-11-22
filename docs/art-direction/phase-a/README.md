@@ -1,7 +1,7 @@
 # Phase A — Hand-painted look development
 
-Generated 22 November 2026 with the built-in image_gen tool. **Ready for Gate A review;
-the look is not locked.** This pack covers the two style frames, three character sheets,
+Generated 22 November 2026 with the built-in image_gen tool. **Gate A approved by the user
+on 22 November 2026; this direction is locked for the next art pass.** This pack covers the two style frames, three character sheets,
 and six level palette/lighting keys requested in `docs/design/ART_DIRECTION.md`.
 
 ## Recommended style frames

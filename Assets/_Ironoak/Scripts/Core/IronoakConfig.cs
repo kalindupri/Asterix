@@ -20,6 +20,10 @@ namespace Ironoak.Core
         public DisplayMode displayMode = DisplayMode.Native;
         [Tooltip("Use the painted cut-out puppet for Brenna instead of the pixel sprite frames.")]
         public bool cutoutPlayer = true;
+        [Tooltip("Native mode: default view height in world units (tiles). Camera zones can zoom out from this.")]
+        [Range(7f, 17f)] public float viewHeight = 11f;
+        [Tooltip("Native mode: the widest a camera zone may zoom out to (view height in units).")]
+        [Range(10f, 24f)] public float maxZoneViewHeight = 17f;
 
         static IronoakConfig _current;
 
@@ -40,5 +44,8 @@ namespace Ironoak.Core
         }
 
         public static bool PixelPerfect => Current.displayMode == DisplayMode.PixelPerfect;
+
+        /// <summary>Default orthographic half-height for the current display mode.</summary>
+        public static float DefaultHalfHeight => PixelPerfect ? 270f / 2f / 16f : Current.viewHeight * 0.5f;
     }
 }

@@ -21,6 +21,8 @@ namespace Ironoak.Core
         readonly StringBuilder _report = new StringBuilder();
         IronoakGame _game;
         PlayerController _p;
+        readonly System.Collections.Generic.List<float> _frameMs = new System.Collections.Generic.List<float>(20000);
+        int _skipFrames;
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         static void Init()
@@ -54,8 +56,16 @@ namespace Ironoak.Core
 
         IEnumerator Wait(float s) { yield return new WaitForSeconds(s); }
 
+        /// <summary>Samples frame times during play (screenshot frames excluded) for the PERF line.</summary>
+        void Update()
+        {
+            if (_skipFrames > 0) { _skipFrames--; return; }
+            if (_game != null && _game.State == GameState.Playing) _frameMs.Add(Time.unscaledDeltaTime * 1000f);
+        }
+
         IEnumerator Shot(string name)
         {
+            _skipFrames = 4;
             yield return new WaitForEndOfFrame();
             ScreenCapture.CaptureScreenshot(Path.Combine(_dir, name + ".png"));
             yield return null;
@@ -367,6 +377,19 @@ namespace Ironoak.Core
 
         void Finish()
         {
+            if (_frameMs.Count > 0)
+            {
+                var sorted = new System.Collections.Generic.List<float>(_frameMs);
+                sorted.Sort();
+                float avg = 0f;
+                foreach (var f in sorted) avg += f;
+                avg /= sorted.Count;
+                float p95 = sorted[(int)(sorted.Count * 0.95f)], p99 = sorted[(int)(sorted.Count * 0.99f)];
+                string perf = $"[PLAYTEST] PERF frames={sorted.Count} avg={avg:F2}ms ({1000f / avg:F0} fps) p95={p95:F2}ms p99={p99:F2}ms worst={sorted[sorted.Count - 1]:F1}ms " +
+                              $"res={Screen.width}x{Screen.height} gpu={SystemInfo.graphicsDeviceName}";
+                _report.AppendLine(perf);
+                Debug.Log(perf);
+            }
             string summary = $"[PLAYTEST] RESULT {_pass}/{_pass + _fail} passed";
             _report.AppendLine(summary);
             Debug.Log(summary);

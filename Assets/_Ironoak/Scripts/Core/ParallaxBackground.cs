@@ -5,23 +5,29 @@ using UnityEngine;
 namespace Ironoak.Core
 {
     /// <summary>
-    /// Endless multi-layer parallax. Each layer is a 480 px wide seamless strip,
-    /// laid out three times side by side and rearranged as the camera moves.
+    /// Endless multi-layer parallax driven by a <see cref="ParallaxSet"/>. Each seamless strip is
+    /// laid out three times side by side and rearranged as the camera moves. Supports any number
+    /// of layers, including foreground layers drawn in front of the player.
     /// </summary>
     [DefaultExecutionOrder(100)]
     public class ParallaxBackground : MonoBehaviour
     {
         class Layer
         {
+            public ParallaxLayerDef Def;
             public Transform[] Copies;
-            public float Factor;   // 0 = moves with world, 1 = fixed to camera
-            public float Width;
-            public float YOffset;  // world units above the bottom of the view
+            public float Width, Height;
+            public Vector2 PivotOffset; // from the sprite's bottom-left corner to its pivot, in world units
+            public float SpriteW, SpriteH;
         }
 
+        public static ParallaxBackground Instance { get; private set; }
+
         Camera _cam;
-        Transform _sky;
+        Rect _bounds = new Rect(0f, 0f, 100f, 20f);
+        string _setName;
         readonly List<Layer> _layers = new List<Layer>();
+        readonly Dictionary<string, ParallaxSet> _cache = new Dictionary<string, ParallaxSet>();
 
         public static ParallaxBackground Create(Transform parent, Camera cam)
         {
@@ -29,42 +35,64 @@ namespace Ironoak.Core
             go.transform.SetParent(parent, false);
             var p = go.AddComponent<ParallaxBackground>();
             p._cam = cam;
-            p.Build();
+            Instance = p;
+            p.Use("Forest");
             return p;
         }
 
-        void Build()
-        {
-            var skyGo = new GameObject("bg_sky");
-            skyGo.transform.SetParent(transform, false);
-            var skySr = skyGo.AddComponent<SpriteRenderer>();
-            skySr.sprite = SpriteLibrary.Get("bg_sky");
-            skySr.sortingOrder = -100;
-            _sky = skyGo.transform;
+        /// <summary>The level area; the vertical parallax is measured from its bottom.</summary>
+        public void SetBounds(Rect bounds) => _bounds = bounds;
 
-            AddLayer("bg_clouds", 0.92f, 10.2f, -90);
-            AddLayer("bg_mountains", 0.85f, 1.0f, -80);
-            AddLayer("bg_hills", 0.7f, 0.8f, -70);
-            AddLayer("bg_forest", 0.45f, 0f, -60);
+        /// <summary>Switches to another parallax set (no-op if it's already shown).</summary>
+        public void Use(string setName)
+        {
+            if (string.IsNullOrEmpty(setName)) setName = "Forest";
+            if (setName == _setName && _layers.Count > 0) return;
+            _setName = setName;
+            if (!_cache.TryGetValue(setName, out var set) || set == null) _cache[setName] = set = ParallaxSet.Load(setName);
+            Build(set);
         }
 
-        void AddLayer(string spriteName, float factor, float yOffset, int order)
+        void Build(ParallaxSet set)
         {
-            var sprite = SpriteLibrary.Get(spriteName);
+            for (int i = transform.childCount - 1; i >= 0; i--) Destroy(transform.GetChild(i).gameObject);
+            _layers.Clear();
+            if (_cam != null) _cam.backgroundColor = set.clearColor;
+            foreach (var def in set.layers) AddLayer(def);
+        }
+
+        static Sprite LoadSprite(string path)
+        {
+            if (string.IsNullOrEmpty(path)) return null;
+            if (path.StartsWith("Painted/")) return Resources.Load<Sprite>("Art/" + path);
+            return SpriteLibrary.Get(path);
+        }
+
+        void AddLayer(ParallaxLayerDef def)
+        {
+            var sprite = LoadSprite(def.sprite);
+            if (sprite == null) return;
+            float scale = def.scale <= 0f ? 1f : def.scale;
+            var b = sprite.bounds;
             var layer = new Layer
             {
-                Copies = new Transform[3],
-                Factor = factor,
-                Width = sprite.bounds.size.x,
-                YOffset = yOffset
+                Def = def,
+                SpriteW = b.size.x,
+                SpriteH = b.size.y,
+                Width = b.size.x * scale,
+                Height = b.size.y * scale,
+                PivotOffset = new Vector2(-b.min.x, -b.min.y) * scale,
+                Copies = new Transform[def.anchor == ParallaxAnchor.Cover ? 1 : 3]
             };
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < layer.Copies.Length; i++)
             {
-                var go = new GameObject($"{spriteName}_{i}");
+                var go = new GameObject($"{def.name}_{i}");
                 go.transform.SetParent(transform, false);
+                go.transform.localScale = new Vector3(scale, scale, 1f);
                 var sr = go.AddComponent<SpriteRenderer>();
                 sr.sprite = sprite;
-                sr.sortingOrder = order;
+                sr.sortingOrder = def.sortingOrder;
+                sr.color = def.tint;
                 layer.Copies[i] = go.transform;
             }
             _layers.Add(layer);
@@ -76,23 +104,51 @@ namespace Ironoak.Core
         {
             if (_cam == null) return;
             Vector3 cp = _cam.transform.position;
-            float bottom = cp.y - _cam.orthographicSize;
-            _sky.position = new Vector3(cp.x, cp.y, 0f);
-            // Cover the whole view on any aspect ratio (the sky art is exactly 16:9).
-            float viewH = _cam.orthographicSize * 2f, viewW = viewH * _cam.aspect;
-            float cover = Mathf.Max(viewW / 30f, viewH / 16.875f);
-            _sky.localScale = new Vector3(cover, cover, 1f);
+            float halfH = _cam.orthographicSize, halfW = halfH * _cam.aspect;
+            float bottom = cp.y - halfH, top = cp.y + halfH;
+            // How far the camera has climbed above its lowest possible position in this level.
+            float rise = Mathf.Max(0f, cp.y - (_bounds.yMin + halfH));
 
             foreach (var layer in _layers)
             {
-                float baseX = cp.x * layer.Factor;
-                float k = Mathf.Floor((cp.x - baseX) / layer.Width);
+                var def = layer.Def;
+                if (def.anchor == ParallaxAnchor.Cover)
+                {
+                    float cover = Mathf.Max(halfW * 2f / layer.SpriteW, halfH * 2f / layer.SpriteH) * 1.02f;
+                    var t = layer.Copies[0];
+                    t.localScale = new Vector3(cover, cover, 1f);
+                    // Centre the sprite on the camera whatever its pivot.
+                    var sb = t.GetComponent<SpriteRenderer>().sprite.bounds;
+                    t.position = new Vector3(cp.x - sb.center.x * cover, cp.y - sb.center.y * cover, 0f);
+                    continue;
+                }
+
+                // Layers whose top edge is cut off grow so they always span the view height.
+                float scale = def.scale <= 0f ? 1f : def.scale;
+                if (def.keepTopAboveView) scale = Mathf.Max(scale, (halfH * 2f + 0.3f) / layer.SpriteH);
+                float width = layer.SpriteW * scale, height = layer.SpriteH * scale;
+                Vector2 pivot = layer.PivotOffset / (def.scale <= 0f ? 1f : def.scale) * scale;
+
+                float y0 = def.anchor == ParallaxAnchor.ViewTop
+                    ? top + def.yOffset - height
+                    : bottom + def.yOffset - rise * (1f - def.verticalFactor);
+                if (def.keepTopAboveView) y0 = Mathf.Clamp(y0, top + 0.05f - height, bottom - 0.1f);
+
+                float baseX = cp.x * def.factor;
+                float k = Mathf.Floor((cp.x - halfW - baseX) / width);
                 for (int i = 0; i < 3; i++)
                 {
-                    float x = baseX + (k + i - 1) * layer.Width;
-                    layer.Copies[i].position = new Vector3(Snap(x), Snap(bottom + layer.YOffset), 0f);
+                    float x0 = baseX + (k + i) * width;
+                    var t = layer.Copies[i];
+                    t.localScale = new Vector3(scale, scale, 1f);
+                    t.position = new Vector3(Snap(x0 + pivot.x), Snap(y0 + pivot.y), 0f);
                 }
             }
+        }
+
+        void OnDestroy()
+        {
+            if (Instance == this) Instance = null;
         }
     }
 }

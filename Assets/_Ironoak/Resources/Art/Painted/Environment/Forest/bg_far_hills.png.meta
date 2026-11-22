@@ -1,0 +1,1293 @@
+fileFormatVersion: 2
+guid: 0180ea7b355727f4aab2949831576627
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5519514007785084173
+    second: bg_far_hills_0
+  - first:
+      213: 8446111867815745954
+    second: bg_far_hills_1
+  - first:
+      213: 7298457899168190187
+    second: bg_far_hills_2
+  - first:
+      213: -4700083518134405574
+    second: bg_far_hills_3
+  - first:
+      213: 4025936256205751714
+    second: bg_far_hills_4
+  - first:
+      213: 1042012486931423959
+    second: bg_far_hills_5
+  - first:
+      213: 8965695949243765335
+    second: bg_far_hills_6
+  - first:
+      213: -2091895565194109213
+    second: bg_far_hills_7
+  - first:
+      213: -2688324547303574667
+    second: bg_far_hills_8
+  - first:
+      213: 5067830089525633231
+    second: bg_far_hills_9
+  - first:
+      213: 1929786029615051467
+    second: bg_far_hills_10
+  - first:
+      213: 807776980572049729
+    second: bg_far_hills_11
+  - first:
+      213: -4971044196899699672
+    second: bg_far_hills_12
+  - first:
+      213: 2654914154407053209
+    second: bg_far_hills_13
+  - first:
+      213: -2760284396440279590
+    second: bg_far_hills_14
+  - first:
+      213: 7574873218352541628
+    second: bg_far_hills_15
+  - first:
+      213: -2674954717307671864
+    second: bg_far_hills_16
+  - first:
+      213: -2078242958684127
+    second: bg_far_hills_17
+  - first:
+      213: -4186715671203320773
+    second: bg_far_hills_18
+  - first:
+      213: 6422917585229575533
+    second: bg_far_hills_19
+  - first:
+      213: -2609515772999952535
+    second: bg_far_hills_20
+  - first:
+      213: -6732977288016164559
+    second: bg_far_hills_21
+  - first:
+      213: 8751590303448411601
+    second: bg_far_hills_22
+  - first:
+      213: -7354142605850516918
+    second: bg_far_hills_23
+  - first:
+      213: -5793092528197010049
+    second: bg_far_hills_24
+  - first:
+      213: -1657621192520580227
+    second: bg_far_hills_25
+  - first:
+      213: 7552311564671915079
+    second: bg_far_hills_26
+  - first:
+      213: 1444563028354101361
+    second: bg_far_hills_27
+  - first:
+      213: 8240406577438255620
+    second: bg_far_hills_28
+  - first:
+      213: 8074713594348991215
+    second: bg_far_hills_29
+  - first:
+      213: 7886423770213252035
+    second: bg_far_hills_30
+  - first:
+      213: -6003052930268626337
+    second: bg_far_hills_31
+  - first:
+      213: -735258276673885248
+    second: bg_far_hills_32
+  - first:
+      213: 1778710252216292341
+    second: bg_far_hills_33
+  - first:
+      213: 8901623278835304981
+    second: bg_far_hills_34
+  - first:
+      213: -8436088817231573407
+    second: bg_far_hills_35
+  - first:
+      213: 2727563978069692319
+    second: bg_far_hills_36
+  - first:
+      213: -1342997038560454266
+    second: bg_far_hills_37
+  - first:
+      213: -8876026856053619551
+    second: bg_far_hills_38
+  - first:
+      213: -2154984495026024644
+    second: bg_far_hills_39
+  - first:
+      213: 4739719639867383653
+    second: bg_far_hills_40
+  - first:
+      213: 5010536920649467843
+    second: bg_far_hills_41
+  - first:
+      213: -3367504558036591607
+    second: bg_far_hills_42
+  - first:
+      213: 8702827279206161721
+    second: bg_far_hills_43
+  - first:
+      213: 5365805912385299225
+    second: bg_far_hills_44
+  - first:
+      213: 6932831097327780174
+    second: bg_far_hills_45
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 1
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 2
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 9
+  spritePivot: {x: 0, y: 0}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bg_far_hills_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 3840
+        height: 875
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fa6d29e04fb663b0800000000000000
+      internalID: -5519514007785084173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_1
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 679
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a95e5e8efd963570800000000000000
+      internalID: 8446111867815745954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_2
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 679
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bee40185ac4594560800000000000000
+      internalID: 7298457899168190187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_3
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 684
+        width: 53
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a363eee31f2f5ceb0800000000000000
+      internalID: -4700083518134405574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_4
+      rect:
+        serializedVersion: 2
+        x: 1661
+        y: 688
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a58287d1bffed730800000000000000
+      internalID: 4025936256205751714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_5
+      rect:
+        serializedVersion: 2
+        x: 2462
+        y: 689
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d2a11706d8f57e00800000000000000
+      internalID: 1042012486931423959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_6
+      rect:
+        serializedVersion: 2
+        x: 2649
+        y: 684
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75255daa6fc8c6c70800000000000000
+      internalID: 8965695949243765335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_7
+      rect:
+        serializedVersion: 2
+        x: 2656
+        y: 684
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3eed369111818f2e0800000000000000
+      internalID: -2091895565194109213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_8
+      rect:
+        serializedVersion: 2
+        x: 3289
+        y: 686
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 573f10d411721bad0800000000000000
+      internalID: -2688324547303574667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_9
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 674
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc0263cad9c845640800000000000000
+      internalID: 5067830089525633231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_10
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 669
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc277b36b2af7ca10800000000000000
+      internalID: 1929786029615051467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_11
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 674
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1411cb052ecc53b00800000000000000
+      internalID: 807776980572049729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_12
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 665
+        width: 23
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 824c60104ad430bb0800000000000000
+      internalID: -4971044196899699672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_13
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 669
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 997c69a6b5628d420800000000000000
+      internalID: 2654914154407053209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_14
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 662
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad5af1f47ff71b9d0800000000000000
+      internalID: -2760284396440279590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_15
+      rect:
+        serializedVersion: 2
+        x: 1717
+        y: 669
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbfe5860f0b5f1960800000000000000
+      internalID: 7574873218352541628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_16
+      rect:
+        serializedVersion: 2
+        x: 2034
+        y: 667
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8caee9c6bd6a0ead0800000000000000
+      internalID: -2674954717307671864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_17
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 669
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 120d0ba59dd98fff0800000000000000
+      internalID: -2078242958684127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_18
+      rect:
+        serializedVersion: 2
+        x: 2076
+        y: 669
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3c6d5a774cc5e5c0800000000000000
+      internalID: -4186715671203320773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_19
+      rect:
+        serializedVersion: 2
+        x: 2082
+        y: 672
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d65f7318389c22950800000000000000
+      internalID: 6422917585229575533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_20
+      rect:
+        serializedVersion: 2
+        x: 2117
+        y: 666
+        width: 25
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9671f82fa3329cbd0800000000000000
+      internalID: -2609515772999952535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_21
+      rect:
+        serializedVersion: 2
+        x: 2142
+        y: 659
+        width: 67
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 139060354d8af82a0800000000000000
+      internalID: -6732977288016164559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_22
+      rect:
+        serializedVersion: 2
+        x: 2849
+        y: 674
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ddabc85305e37970800000000000000
+      internalID: 8751590303448411601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_23
+      rect:
+        serializedVersion: 2
+        x: 3036
+        y: 652
+        width: 66
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a42e6be8346d0f990800000000000000
+      internalID: -7354142605850516918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_24
+      rect:
+        serializedVersion: 2
+        x: 3328
+        y: 669
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7df8d9e90dca9fa0800000000000000
+      internalID: -5793092528197010049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_25
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 666
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d73c6afce42fef8e0800000000000000
+      internalID: -1657621192520580227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_26
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 664
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 744185daa533fc860800000000000000
+      internalID: 7552311564671915079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_27
+      rect:
+        serializedVersion: 2
+        x: 1594
+        y: 662
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17075b0bb6e1c0410800000000000000
+      internalID: 1444563028354101361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_28
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 654
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40aeff46f1ecb5270800000000000000
+      internalID: 8240406577438255620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_29
+      rect:
+        serializedVersion: 2
+        x: 2196
+        y: 656
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe2703e7b352f0070800000000000000
+      internalID: 8074713594348991215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_30
+      rect:
+        serializedVersion: 2
+        x: 3123
+        y: 656
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cbf1cb82a4327d60800000000000000
+      internalID: 7886423770213252035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_31
+      rect:
+        serializedVersion: 2
+        x: 3126
+        y: 649
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f52887b5a2fd0bca0800000000000000
+      internalID: -6003052930268626337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_32
+      rect:
+        serializedVersion: 2
+        x: 3133
+        y: 650
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cbefa03e76dbc5f0800000000000000
+      internalID: -735258276673885248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_33
+      rect:
+        serializedVersion: 2
+        x: 3141
+        y: 647
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f392b5ec8f3fa810800000000000000
+      internalID: 1778710252216292341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_34
+      rect:
+        serializedVersion: 2
+        x: 3148
+        y: 648
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51a8353953be88b70800000000000000
+      internalID: 8901623278835304981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_35
+      rect:
+        serializedVersion: 2
+        x: 2205
+        y: 642
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16e4443caedfcea80800000000000000
+      internalID: -8436088817231573407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_36
+      rect:
+        serializedVersion: 2
+        x: 2276
+        y: 639
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9fcefe9cf04ad520800000000000000
+      internalID: 2727563978069692319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_37
+      rect:
+        serializedVersion: 2
+        x: 2290
+        y: 642
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 689d3361f47bc5de0800000000000000
+      internalID: -1342997038560454266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_38
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 622
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a4c8140a9402d480800000000000000
+      internalID: -8876026856053619551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_39
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 629
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3fcf75f405f712e0800000000000000
+      internalID: -2154984495026024644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_40
+      rect:
+        serializedVersion: 2
+        x: 1778
+        y: 608
+        width: 25
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56fdc3d76edd6c140800000000000000
+      internalID: 4739719639867383653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_41
+      rect:
+        serializedVersion: 2
+        x: 2635
+        y: 602
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c78a4948c0098540800000000000000
+      internalID: 5010536920649467843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_42
+      rect:
+        serializedVersion: 2
+        x: 3385
+        y: 604
+        width: 23
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90c58be32783441d0800000000000000
+      internalID: -3367504558036591607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_43
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 592
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93d99a60d47a6c870800000000000000
+      internalID: 8702827279206161721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_44
+      rect:
+        serializedVersion: 2
+        x: 2090
+        y: 561
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 913aa6d4c0c277a40800000000000000
+      internalID: 5365805912385299225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_far_hills_45
+      rect:
+        serializedVersion: 2
+        x: 2099
+        y: 563
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e41010cb62d563060800000000000000
+      internalID: 6932831097327780174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

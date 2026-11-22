@@ -3,10 +3,16 @@ using UnityEngine;
 
 namespace Ironoak.Gameplay
 {
-    /// <summary>While Brenna is inside, the camera is confined to this box (frames a puzzle room).</summary>
+    /// <summary>
+    /// While Brenna is inside, the camera is confined to this box (frames a puzzle room) and, in
+    /// the Native display mode, zooms to frame it.
+    /// </summary>
     [RequireComponent(typeof(BoxCollider2D))]
     public class CameraZone : MonoBehaviour
     {
+        [Tooltip("View height while inside, in tiles. 0 = zoom out just enough to show the whole zone; -1 = keep the default zoom.")]
+        public float viewHeight;
+
         BoxCollider2D _box;
 
         Rect Zone
@@ -28,7 +34,7 @@ namespace Ironoak.Gameplay
 
         void OnTriggerEnter2D(Collider2D other)
         {
-            if (IsPlayer(other)) CameraRig.Instance?.SetZone(Zone);
+            if (IsPlayer(other)) CameraRig.Instance?.SetZone(Zone, viewHeight);
         }
 
         void OnTriggerExit2D(Collider2D other)

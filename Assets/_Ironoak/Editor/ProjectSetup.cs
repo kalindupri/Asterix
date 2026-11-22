@@ -84,6 +84,7 @@ namespace Ironoak.EditorTools
             PlayerSettings.resizableWindow = true;
             PlayerSettings.runInBackground = true;
             EditorSettings.defaultBehaviorMode = EditorBehaviorMode.Mode2D;
+            RenderSetup.Apply();
         }
 
         [MenuItem("Ironoak/Reset Best Score", priority = 40)]

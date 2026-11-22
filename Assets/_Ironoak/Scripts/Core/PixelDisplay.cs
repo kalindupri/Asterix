@@ -10,7 +10,8 @@ namespace Ironoak.Core
     ///   screen by a whole-number factor with point filtering.
     /// - Native: the camera renders straight to the screen (for hand-painted art). The UI keeps a
     ///   480x270 reference layout scaled to the screen height.
-    /// The world view is the same size in both modes (16.875 units tall).
+    /// PixelPerfect shows 16.875 units of height; Native defaults to IronoakConfig.viewHeight and the
+    /// CameraRig zooms per camera zone.
     /// </summary>
     public class PixelDisplay : MonoBehaviour
     {
@@ -55,7 +56,7 @@ namespace Ironoak.Core
             camGo.transform.position = new Vector3(0f, 0f, -10f);
             WorldCamera = camGo.AddComponent<Camera>();
             WorldCamera.orthographic = true;
-            WorldCamera.orthographicSize = Height / 2f / PixelArt.PPU;
+            WorldCamera.orthographicSize = IronoakConfig.DefaultHalfHeight;
             WorldCamera.clearFlags = CameraClearFlags.SolidColor;
             WorldCamera.backgroundColor = new Color32(0x4a, 0x90, 0xc8, 0xff);
             WorldCamera.nearClipPlane = 0.1f;

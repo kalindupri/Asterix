@@ -14,27 +14,55 @@ namespace Ironoak.EditorTools
         const string ArtFolder = "/_Ironoak/Resources/Art/";
         const string PaintedFolder = "/_Ironoak/Resources/Art/Painted/";
 
+        // Bump when the rules change: Unity then reimports every texture this processor handles.
+        public override uint GetVersion() => 3;
+
         /// <summary>
-        /// Painted (hi-res) art: smooth filtering, centre pivot. The cut-out rig scales each part to
-        /// its configured on-screen height and positions it by its joint, so the source resolution
-        /// and pivot don't matter.
+        /// Painted (hi-res) art at 128 px per world unit, smooth filtering and mipmaps.
+        /// Brenna's parts keep a centre pivot (the cut-out rig positions them by their joint).
+        /// Props stand on their bottom-centre; terrain textures repeat (they are mapped in world
+        /// space by PaintedTerrain); wide background layers get a 4K size limit.
         /// </summary>
-        static void ImportPainted(TextureImporter ti)
+        static void ImportPainted(TextureImporter ti, string path)
         {
+            string file = Path.GetFileNameWithoutExtension(path);
+            bool ui = path.Contains("/Painted/UI/");
+            bool env = path.Contains("/Painted/Environment/");
+
             ti.textureType = TextureImporterType.Sprite;
             ti.spriteImportMode = SpriteImportMode.Single;
             ti.spritePixelsPerUnit = 128;
-            ti.filterMode = FilterMode.Bilinear;
+            ti.filterMode = FilterMode.Trilinear;
             ti.textureCompression = TextureImporterCompression.CompressedHQ;
-            ti.mipmapEnabled = false;
+            ti.mipmapEnabled = !ui;
+            ti.mipmapFilter = TextureImporterMipFilter.KaiserFilter;
             ti.alphaIsTransparency = true;
-            ti.wrapMode = TextureWrapMode.Clamp;
-            ti.maxTextureSize = 2048;
+            ti.maxTextureSize = env ? 4096 : 2048;
+            ti.wrapModeU = file.StartsWith("terrain_") && (file.Contains("_fill") || file.Contains("_top") || file.Contains("_bottom")) || file.StartsWith("bg_") || file.StartsWith("fg_")
+                ? TextureWrapMode.Repeat : TextureWrapMode.Clamp;
+            ti.wrapModeV = file.StartsWith("terrain_") && (file.Contains("_fill") || file.Contains("_side")) || file == "root_segment"
+                ? TextureWrapMode.Repeat : TextureWrapMode.Clamp;
+
             var settings = new TextureImporterSettings();
             ti.ReadTextureSettings(settings);
-            settings.spriteAlignment = (int)SpriteAlignment.Center;
+            settings.spriteAlignment = (int)SpriteAlignment.Custom;
+            settings.spritePivot = PaintedPivotFor(file, path);
             settings.spriteMeshType = SpriteMeshType.FullRect;
             ti.SetTextureSettings(settings);
+        }
+
+        public static Vector2 PaintedPivotFor(string file, string path)
+        {
+            if (path.Contains("/Painted/Props/"))
+            {
+                if (file == "sap_knot") return new Vector2(0.5f, 0.12f);   // the base sinks into the ground a little
+                if (file.StartsWith("coin_") || file.Contains("glow") || file.StartsWith("item_") || file.StartsWith("fx_") ||
+                    file.StartsWith("debris_") || file == "bell")
+                    return file == "bell" ? new Vector2(0.5f, 1f) : new Vector2(0.5f, 0.5f);
+                return new Vector2(0.5f, 0f);
+            }
+            if ((file.StartsWith("bg_") || file.StartsWith("fg_")) && file != "bg_sky") return Vector2.zero;
+            return new Vector2(0.5f, 0.5f);
         }
 
         void OnPreprocessTexture()
@@ -42,7 +70,7 @@ namespace Ironoak.EditorTools
             string path = assetPath.Replace('\\', '/');
             if (path.Contains(PaintedFolder))
             {
-                ImportPainted((TextureImporter)assetImporter);
+                ImportPainted((TextureImporter)assetImporter, path);
                 return;
             }
             if (!path.Contains(ArtFolder)) return;

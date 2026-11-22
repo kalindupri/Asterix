@@ -1,6 +1,6 @@
 {
   "phase": "A",
-  "status": "ready-for-gate-a-review",
+  "status": "approved",
   "date": "2026-11-22",
   "referencePolicy": "Only original Ironoak art was supplied; no external image references, artist names, studios or game titles were used in prompts.",
   "assets": [
@@ -314,5 +314,7 @@
       "date": "2026-11-22",
       "sha256": "2ed9a9902b3843a4296a93d9aee8b35a5ada6def3fa10186751153f74ad220bb"
     }
-  ]
+  ],
+  "approvedBy": "user",
+  "approvedDate": "2026-11-22"
 }

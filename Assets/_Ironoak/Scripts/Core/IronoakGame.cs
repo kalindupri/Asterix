@@ -1,4 +1,5 @@
 using System.Collections;
+using Ironoak.Art;
 using Ironoak.Controls;
 using Ironoak.Gameplay;
 using Ironoak.Powers;
@@ -62,6 +63,7 @@ namespace Ironoak.Core
             _display = PixelDisplay.Create(transform);
             _rig = _display.WorldCamera.gameObject.AddComponent<CameraRig>();
             ParallaxBackground.Create(transform, _display.WorldCamera);
+            SceneLighting.Create(transform, _display.WorldCamera);
 
             var ui = _display.UICanvas.transform;
             _hud = Hud.Create(ui);
@@ -187,6 +189,14 @@ namespace Ironoak.Core
             {
                 _level = go.GetComponentInChildren<LevelRoot>();
                 if (_level != null) break;
+            }
+            if (_level != null)
+            {
+                var look = _level.look ?? LevelLook.Default;
+                foreach (var go in _levelScene.GetRootGameObjects()) PaintedTerrain.ApplyAll(go);
+                ParallaxBackground.Instance?.SetBounds(_level.bounds);
+                ParallaxBackground.Instance?.Use(look.parallaxSet);
+                SceneLighting.Instance?.Apply(look);
             }
         }
 

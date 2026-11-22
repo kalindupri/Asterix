@@ -32,10 +32,18 @@ namespace Ironoak.Screens
             _full = SpriteLibrary.Get("heart_full");
             _empty = SpriteLibrary.Get("heart_empty");
             _hearts = new Image[MaxHearts];
+            bool painted = SpriteLibrary.IsPainted(_full);
             for (int i = 0; i < MaxHearts; i++)
-                _hearts[i] = UIFactory.Sprite(root, _full, new Vector2(8f + i * 11f, -8f), topLeft);
+            {
+                _hearts[i] = UIFactory.Sprite(root, _full, new Vector2((painted ? 5f : 8f) + i * (painted ? 14f : 11f), painted ? -5f : -8f), topLeft);
+                if (painted) _hearts[i].rectTransform.sizeDelta = new Vector2(14f, 14f);
+            }
 
-            UIFactory.Sprite(root, SpriteLibrary.Get("coin_0"), new Vector2(5f, -19f), topLeft);
+            var coinIcon = SpriteLibrary.Get("ui_coin");
+            if (SpriteLibrary.IsPainted(coinIcon))
+                UIFactory.Sprite(root, coinIcon, new Vector2(6f, -20f), topLeft).rectTransform.sizeDelta = new Vector2(11f, 11f);
+            else
+                UIFactory.Sprite(root, SpriteLibrary.Get("coin_0"), new Vector2(5f, -19f), topLeft);
             _coins = UIFactory.Text(root, "X 0", new Vector2(21f, -23f), topLeft, UITheme.Cream);
             _time = UIFactory.Text(root, "TIME 0:00", new Vector2(-8f, -8f), new Vector2(1f, 1f), UITheme.Cream);
             _banner = UIFactory.Text(root, "", new Vector2(0f, 50f), UIFactory.Middle, UITheme.GoldTop, UITheme.GoldBottom, 2);

@@ -1,0 +1,830 @@
+{
+  "batch": "POC Batch 1 \u00e2\u20ac\u201d Phase B tech spike",
+  "tool": "Built-in image_gen",
+  "date": "2026-11-22",
+  "status": "ready-for-integration",
+  "request": "docs/art-requests/POC_ASSET_REQUESTS.md",
+  "assets": [
+    {
+      "name": "terrain_earth_fill",
+      "size": [
+        512,
+        512
+      ],
+      "folder": "Environment/Forest",
+      "tile": "xy",
+      "transparent": false,
+      "prompt": "Use case: stylized-concept. Production PNG asset for original Ironoak 2D platformer, Gaul circa 50 BC. Reference image is ONLY our own approved Oak Road style and lighting. Hand-painted storybook cartoon, soft visible brush grain, smooth silhouettes, warm natural materials, gentle top-left light, subdued cool aerial distance. Match the reference's original Celtic oak/bronze visual language. No pixel art, no photorealism, no 3D render, no text, watermarks, panels, labels or UI. No characters unless explicitly requested. Deliver ONE asset only, no presentation sheet, no cast ground shadows. A flat square rich brown earth FILL TEXTURE, edge-to-edge completely opaque. Small scattered stones, thin root threads, a FEW buried spiral pebbles, low contrast everywhere. Not a floating block, no grass top, no bevel, no border, no outline, no directional brightness gradient. Seamlessly tile in BOTH x and y: opposite edges match exactly in color, details and lighting, no framing.",
+      "source": "docs/art-source/poc-batch-1/terrain_earth_fill-source.png",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Environment/Forest/terrain_earth_fill.png",
+      "references": [
+        "docs/art-direction/phase-a/oak-road-style-v2.png"
+      ],
+      "date": "2026-11-22",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-2c241c19-faf4-42b0-913b-ce0d21c32664.png",
+      "nativeSize": [
+        1254,
+        1254
+      ],
+      "exportMode": "canvas",
+      "sourceSurfaceY": 0,
+      "exportOperation": "Bicubic resampling to requested canvas; alpha preserved; prop margin trimmed; narrow premultiplied opposing-edge reconciliation on declared repeat axes.",
+      "sha256": "a574a39a06363dd85028ac97bdd0bd5c4319bef14bd011f54804e2c2589a5379",
+      "sourceSha256": "999e14f4e79246b5f71626731da137329ceceee39eb1df3aed7c2f560eee27b7",
+      "exportDate": "2026-11-23",
+      "alphaRange": [
+        255,
+        255
+      ],
+      "edgeContinuity": "Exact RGBA boundary equality on declared repeat axes after narrow edge reconciliation"
+    },
+    {
+      "name": "terrain_earth_top",
+      "size": [
+        512,
+        192
+      ],
+      "folder": "Environment/Forest",
+      "tile": "x",
+      "transparent": true,
+      "prompt": "Use case: stylized-concept. Production PNG asset for original Ironoak 2D platformer, Gaul circa 50 BC. Reference image is ONLY our own approved Oak Road style and lighting. Hand-painted storybook cartoon, soft visible brush grain, smooth silhouettes, warm natural materials, gentle top-left light, subdued cool aerial distance. Match the reference's original Celtic oak/bronze visual language. No pixel art, no photorealism, no 3D render, no text, watermarks, panels, labels or UI. No characters unless explicitly requested. Deliver ONE asset only, no presentation sheet, no cast ground shadows. Horizontal grassy earth TOP EDGE strip, exactly 512x192 aspect8:3. The continuous flat WALKABLE SURFACE baseline is EXACTLY ONE THIRD of image height (64 of192px) from the top, extending from left edge to right edge. Soft grass tufts and a few small white flowers rise in the top64px; soil lip and hanging root hairs extend in the bottom128px. Transparent wherever no terrain, no back scene. No hump or slope. Seamlessly tiles LEFT-RIGHT; baseline and soil values identical at both ends. The strip fills width edge-to-edge. Genuine RGBA transparent background; never paint a checkerboard.",
+      "source": "docs/art-source/poc-batch-1/terrain_earth_top-source.png",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Environment/Forest/terrain_earth_top.png",
+      "references": [
+        "docs/art-direction/phase-a/oak-road-style-v2.png"
+      ],
+      "date": "2026-11-22",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-fb395568-ddbc-44b2-87da-05d37b3e2894.png",
+      "selectedSource": "docs/art-source/poc-batch-1/terrain_earth_top-v2-source.png",
+      "nativeSize": [
+        2048,
+        768
+      ],
+      "exportMode": "canvas",
+      "sourceSurfaceY": 334,
+      "exportOperation": "Bicubic resampling to requested canvas; alpha preserved; prop margin trimmed; narrow premultiplied opposing-edge reconciliation on declared repeat axes.",
+      "sha256": "47d8cb22abc6c11dd9fc744b777f9a3c5208f20f7c8b8f6aa65c2a320dd75ca8",
+      "sourceSha256": "ed16d406273232cff822ecd84f10d3a09e7c57b3697f62ebb63ee33330eede60",
+      "exportDate": "2026-11-23",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "edgeContinuity": "Exact RGBA boundary equality on declared repeat axes after narrow edge reconciliation",
+      "surfaceLineFromTop": 64
+    },
+    {
+      "name": "terrain_earth_side",
+      "size": [
+        192,
+        512
+      ],
+      "folder": "Environment/Forest",
+      "tile": "y",
+      "transparent": true,
+      "prompt": "Use case: stylized-concept. Production PNG asset for original Ironoak 2D platformer, Gaul circa 50 BC. Reference image is ONLY our own approved Oak Road style and lighting. Hand-painted storybook cartoon, soft visible brush grain, smooth silhouettes, warm natural materials, gentle top-left light, subdued cool aerial distance. Match the reference's original Celtic oak/bronze visual language. No pixel art, no photorealism, no 3D render, no text, watermarks, panels, labels or UI. No characters unless explicitly requested. Deliver ONE asset only, no presentation sheet, no cast ground shadows. Vertical earth/cliff SIDE texture strip, portrait192x512. Outer cliff face lies on LEFT canvas edge; solid brown layered soil fills toward RIGHT edge. Thin roots and embedded stones, muted depth and moss flecks, no grass cap, no bottom cap, no sky or scenery. Vertical layering is irregular but tileable TOP-BOTTOM with exactly matching edges. Do not draw a horizontal platform. No outline. Genuine RGBA transparent background; never paint a checkerboard.",
+      "source": "docs/art-source/poc-batch-1/terrain_earth_side-source.png",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Environment/Forest/terrain_earth_side.png",
+      "references": [
+        "docs/art-direction/phase-a/oak-road-style-v2.png"
+      ],
+      "date": "2026-11-22",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-0e656b1b-3ef8-48f7-83ff-6e7d38c3d51f.png",
+      "selectedSource": "docs/art-source/poc-batch-1/terrain_earth_side-v2-source.png",
+      "nativeSize": [
+        768,
+        2048
+      ],
+      "exportMode": "canvas",
+      "sourceSurfaceY": 0,
+      "exportOperation": "Bicubic resampling to requested canvas; alpha preserved; prop margin trimmed; narrow premultiplied opposing-edge reconciliation on declared repeat axes.",
+      "sha256": "189a023c9df3578bbb968b3b45e0f6417ebf8000ad6ac68fbe3b4b24f7566f29",
+      "sourceSha256": "e0f3a7048033a20874c0d4104d97ecf8891700792b1d7c5cb67b3fc0c6bb617b",
+      "exportDate": "2026-11-23",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "edgeContinuity": "Exact RGBA boundary equality on declared repeat axes after narrow edge reconciliation"
+    },
+    {
+      "name": "terrain_earth_bottom",
+      "size": [
+        512,
+        128
+      ],
+      "folder": "Environment/Forest",
+      "tile": "x",
+      "transparent": true,
+      "prompt": "Use case: stylized-concept. Production PNG asset for original Ironoak 2D platformer, Gaul circa 50 BC. Reference image is ONLY our own approved Oak Road style and lighting. Hand-painted storybook cartoon, soft visible brush grain, smooth silhouettes, warm natural materials, gentle top-left light, subdued cool aerial distance. Match the reference's original Celtic oak/bronze visual language. No pixel art, no photorealism, no 3D render, no text, watermarks, panels, labels or UI. No characters unless explicitly requested. Deliver ONE asset only, no presentation sheet, no cast ground shadows. Wide horizontal UNDERSIDE of an earth overhang,512x128. Dark brown irregular soil attached continuously to TOP canvas edge; fine dangling roots hang downward into transparency. No grass, flowers, ground plane, tree or background. Seamless LEFT-RIGHT, soil mass reaches both horizontal edges with matching values and contours. No outline. Genuine RGBA transparent background; never paint a checkerboard.",
+      "source": "docs/art-source/poc-batch-1/terrain_earth_bottom-source.png",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Environment/Forest/terrain_earth_bottom.png",
+      "references": [
+        "docs/art-direction/phase-a/oak-road-style-v2.png"
+      ],
+      "date": "2026-11-22",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-4abd84d5-1b17-49eb-a6d0-eea52dcba058.png",
+      "nativeSize": [
+        2172,
+        724
+      ],
+      "exportMode": "canvas",
+      "sourceSurfaceY": 0,
+      "exportOperation": "Bicubic resampling to requested canvas; alpha preserved; prop margin trimmed; narrow premultiplied opposing-edge reconciliation on declared repeat axes.",
+      "sha256": "95282bea6175df166187571a36cb3e176792c7115fa83d4e78238695dff55128",
+      "sourceSha256": "e8953a729e3ff4f6b9c8ad1903f10f41bc2c704b7ccfcdb839ecc3f5e473e6ea",
+      "exportDate": "2026-11-23",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "edgeContinuity": "Exact RGBA boundary equality on declared repeat axes after narrow edge reconciliation"
+    },
+    {
+      "name": "terrain_earth_corner_tl",
+      "size": [
+        192,
+        192
+      ],
+      "folder": "Environment/Forest",
+      "tile": "",
+      "transparent": true,
+      "prompt": "Use case: stylized-concept. Production PNG asset for original Ironoak 2D platformer, Gaul circa 50 BC. Reference image is ONLY our own approved Oak Road style and lighting. Hand-painted storybook cartoon, soft visible brush grain, smooth silhouettes, warm natural materials, gentle top-left light, subdued cool aerial distance. Match the reference's original Celtic oak/bronze visual language. No pixel art, no photorealism, no 3D render, no text, watermarks, panels, labels or UI. No characters unless explicitly requested. Deliver ONE asset only, no presentation sheet, no cast ground shadows. Rounded TOP LEFT convex grassy terrain corner,192x192. Matches warm earth and grassy top edge from reference. Horizontal top walking surface begins at y64px and runs right; outer left cliff face curves smoothly down the left edge. Soil continues to right and bottom canvas boundaries, transparent above grass and outside corner. Root hairs and moss, no outline or separate floating rock. Intended to join matching terrain strips. Genuine RGBA transparent background; never paint a checkerboard.",
+      "source": "docs/art-source/poc-batch-1/terrain_earth_corner_tl-source.png",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Environment/Forest/terrain_earth_corner_tl.png",
+      "references": [
+        "docs/art-direction/phase-a/oak-road-style-v2.png"
+      ],
+      "date": "2026-11-22",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-20b3ac76-9c85-408c-b3ef-ba82aa310768.png",
+      "nativeSize": [
+        1254,
+        1254
+      ],
+      "exportMode": "canvas",
+      "sourceSurfaceY": 376,
+      "exportOperation": "Bicubic resampling to requested canvas; alpha preserved; prop margin trimmed; narrow premultiplied opposing-edge reconciliation on declared repeat axes.",
+      "sha256": "2a6e09f9a4e4a159ff97f277038cff11699a89c21e1a4887b48bcc22346da15f",
+      "sourceSha256": "7b2e34a95a784328d669ca2139b71b8e9954adb98126f33af91ab644dabd0179",
+      "exportDate": "2026-11-23",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "edgeContinuity": "not applicable",
+      "surfaceLineFromTop": 64
+    },
+    {
+      "name": "terrain_earth_corner_tr",
+      "size": [
+        192,
+        192
+      ],
+      "folder": "Environment/Forest",
+      "tile": "",
+      "transparent": true,
+      "prompt": "Use case: stylized-concept. Production PNG asset for original Ironoak 2D platformer, Gaul circa 50 BC. Reference image is ONLY our own approved Oak Road style and lighting. Hand-painted storybook cartoon, soft visible brush grain, smooth silhouettes, warm natural materials, gentle top-left light, subdued cool aerial distance. Match the reference's original Celtic oak/bronze visual language. No pixel art, no photorealism, no 3D render, no text, watermarks, panels, labels or UI. No characters unless explicitly requested. Deliver ONE asset only, no presentation sheet, no cast ground shadows. Rounded TOP RIGHT convex grassy terrain corner,192x192. Matches warm earth and grassy top edge from reference. Horizontal top walking surface at y64px runs from left into the rounded right cliff face. Soil continues to left and bottom canvas boundaries, transparent above grass and outside corner. Root hairs and moss, no outline or separate floating rock. Top-right counterpart to a top-left terrain corner, lighting remains from top-left. Genuine RGBA transparent background; never paint a checkerboard.",
+      "source": "docs/art-source/poc-batch-1/terrain_earth_corner_tr-source.png",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Environment/Forest/terrain_earth_corner_tr.png",
+      "references": [
+        "docs/art-direction/phase-a/oak-road-style-v2.png"
+      ],
+      "date": "2026-11-22",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-45c94dec-0e6c-4fa5-8171-abf35d52faf4.png",
+      "nativeSize": [
+        1254,
+        1254
+      ],
+      "exportMode": "canvas",
+      "sourceSurfaceY": 376,
+      "exportOperation": "Bicubic resampling to requested canvas; alpha preserved; prop margin trimmed; narrow premultiplied opposing-edge reconciliation on declared repeat axes.",
+      "sha256": "f60ef6188d15a0d43097df1c74a06e2de0aff9ca0dcac26f39a7a15851e77563",
+      "sourceSha256": "2a618c09206e9d486edd9e61e181ac5af7456032ddb57a8c4d1363daeb9e40f7",
+      "exportDate": "2026-11-23",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "edgeContinuity": "not applicable",
+      "surfaceLineFromTop": 64
+    },
+    {
+      "name": "bg_sky",
+      "size": [
+        2560,
+        1440
+      ],
+      "folder": "Environment/Forest",
+      "tile": "",
+      "transparent": false,
+      "prompt": "Use case: stylized-concept. Production PNG asset for original Ironoak 2D platformer, Gaul circa 50 BC. Reference image is ONLY our own approved Oak Road style and lighting. Hand-painted storybook cartoon, soft visible brush grain, smooth silhouettes, warm natural materials, gentle top-left light, subdued cool aerial distance. Match the reference's original Celtic oak/bronze visual language. No pixel art, no photorealism, no 3D render, no text, watermarks, panels, labels or UI. No characters unless explicitly requested. Deliver ONE asset only, no presentation sheet, no cast ground shadows. OPAQUE full-canvas soft pale blue sky fading down into warm cream atmospheric haze, a few subtle painterly clouds. Quiet low contrast, no terrain, trees, village, horizon line, celestial bodies or foreground. Widescreen16:9,2560x1440.",
+      "source": "docs/art-source/poc-batch-1/bg_sky-source.png",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Environment/Forest/bg_sky.png",
+      "references": [
+        "docs/art-direction/phase-a/oak-road-style-v2.png"
+      ],
+      "date": "2026-11-22",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-6f1a9f32-9f64-49a2-bd03-2b13d2de8a5b.png",
+      "nativeSize": [
+        1672,
+        941
+      ],
+      "exportMode": "canvas",
+      "sourceSurfaceY": 0,
+      "exportOperation": "Bicubic resampling to requested canvas; alpha preserved; prop margin trimmed; narrow premultiplied opposing-edge reconciliation on declared repeat axes.",
+      "sha256": "6489b514835362fba88e22dacc096cc1872af56d261ba16129354fb2c2f0401b",
+      "sourceSha256": "39cdba389c8a72ae4bb1bdfc9787938e9fe742d4ca8917054a67bb0074f2c093",
+      "exportDate": "2026-11-23",
+      "alphaRange": [
+        255,
+        255
+      ],
+      "edgeContinuity": "not applicable"
+    },
+    {
+      "name": "bg_far_hills",
+      "size": [
+        3840,
+        900
+      ],
+      "folder": "Environment/Forest",
+      "tile": "x",
+      "transparent": true,
+      "prompt": "Use case: stylized-concept. Production PNG asset for original Ironoak 2D platformer, Gaul circa 50 BC. Reference image is ONLY our own approved Oak Road style and lighting. Hand-painted storybook cartoon, soft visible brush grain, smooth silhouettes, warm natural materials, gentle top-left light, subdued cool aerial distance. Match the reference's original Celtic oak/bronze visual language. No pixel art, no photorealism, no 3D render, no text, watermarks, panels, labels or UI. No characters unless explicitly requested. Deliver ONE asset only, no presentation sheet, no cast ground shadows. Very wide thin FAR HILLS parallax band,3840x900 aspect64:15. Hazy blue-green rolling hills in low contrast, transparent above skyline; painted land fills entirely to bottom edge. ONE SMALL Celtic hillfort slightly LEFT of center with thatched round houses and tiny soft smoke, no other settlement. Goal village seen from far away. Seamlessly tiles LEFT-RIGHT with equal skyline height and color at edges. No trees in foreground, no sky backdrop, no hero. Genuine RGBA transparent background; never paint a checkerboard.",
+      "source": "docs/art-source/poc-batch-1/bg_far_hills-source.png",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Environment/Forest/bg_far_hills.png",
+      "references": [
+        "docs/art-direction/phase-a/oak-road-style-v2.png"
+      ],
+      "date": "2026-11-22",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-fcc05157-1fb5-4829-ae31-f54642f3f2a1.png",
+      "nativeSize": [
+        2172,
+        724
+      ],
+      "exportMode": "bottom",
+      "sourceSurfaceY": 0,
+      "exportOperation": "Bicubic resampling to requested canvas; alpha preserved; prop margin trimmed; narrow premultiplied opposing-edge reconciliation on declared repeat axes.",
+      "sha256": "b6ee67622f91faf6409fc5899bd4b910b7af2400f766be905166c4be0b4a30e6",
+      "sourceSha256": "fccad917fa0b4cd3dcb3ee03633a920343ddda564e65dc703732cb1e67d5e474",
+      "exportDate": "2026-11-23",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "edgeContinuity": "Exact RGBA boundary equality on declared repeat axes after narrow edge reconciliation"
+    },
+    {
+      "name": "bg_far_forest",
+      "size": [
+        3840,
+        1000
+      ],
+      "folder": "Environment/Forest",
+      "tile": "x",
+      "transparent": true,
+      "prompt": "Use case: stylized-concept. Production PNG asset for original Ironoak 2D platformer, Gaul circa 50 BC. Reference image is ONLY our own approved Oak Road style and lighting. Hand-painted storybook cartoon, soft visible brush grain, smooth silhouettes, warm natural materials, gentle top-left light, subdued cool aerial distance. Match the reference's original Celtic oak/bronze visual language. No pixel art, no photorealism, no 3D render, no text, watermarks, panels, labels or UI. No characters unless explicitly requested. Deliver ONE asset only, no presentation sheet, no cast ground shadows. Very wide FAR FOREST band,3840x1000 aspect96:25. Misty desaturated blue oak forest silhouettes with soft painterly crowns, low contrast distant trunks, transparent above canopy and completely filled blue woodland at bottom. Seamless LEFT-RIGHT, equal edge canopy height and tones. No sky, village, hills, props, hero or foreground details. Only ONE distant forest depth layer. Genuine RGBA transparent background; never paint a checkerboard.",
+      "source": "docs/art-source/poc-batch-1/bg_far_forest-source.png",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Environment/Forest/bg_far_forest.png",
+      "references": [
+        "docs/art-direction/phase-a/oak-road-style-v2.png"
+      ],
+      "date": "2026-11-22",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-430be7e4-3d66-4a2e-9666-d5cb60b05528.png",
+      "nativeSize": [
+        2172,
+        724
+      ],
+      "exportMode": "bottom",
+      "sourceSurfaceY": 0,
+      "exportOperation": "Bicubic resampling to requested canvas; alpha preserved; prop margin trimmed; narrow premultiplied opposing-edge reconciliation on declared repeat axes.",
+      "sha256": "75c2a78fbf2e32304c89ecc601ba1fb46c894c4d106f228e0041a55081c96c07",
+      "sourceSha256": "3a2506b00848104f35034d0f9cc2bfef159b8ca476c4606a02d9320f3b2ffcf5",
+      "exportDate": "2026-11-23",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "edgeContinuity": "Exact RGBA boundary equality on declared repeat axes after narrow edge reconciliation"
+    },
+    {
+      "name": "bg_mid_forest",
+      "size": [
+        3840,
+        1300
+      ],
+      "folder": "Environment/Forest",
+      "tile": "x",
+      "transparent": true,
+      "prompt": "Use case: stylized-concept. Production PNG asset for original Ironoak 2D platformer, Gaul circa 50 BC. Reference image is ONLY our own approved Oak Road style and lighting. Hand-painted storybook cartoon, soft visible brush grain, smooth silhouettes, warm natural materials, gentle top-left light, subdued cool aerial distance. Match the reference's original Celtic oak/bronze visual language. No pixel art, no photorealism, no 3D render, no text, watermarks, panels, labels or UI. No characters unless explicitly requested. Deliver ONE asset only, no presentation sheet, no cast ground shadows. Wide MID FOREST parallax band,3840x1300. Greener painted oak crowns and trunks, restrained warm light patches, roughly one substantial tree trunk every1000logical pixels across width. Transparent sky between/above trees, muted cool green lower woodland fills base. Seamless LEFT-RIGHT, matching edge values and contours. One forest layer only, no sky, hills, village, path, hero or interactables. Calmer and dimmer than gameplay. Genuine RGBA transparent background; never paint a checkerboard.",
+      "source": "docs/art-source/poc-batch-1/bg_mid_forest-source.png",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Environment/Forest/bg_mid_forest.png",
+      "references": [
+        "docs/art-direction/phase-a/oak-road-style-v2.png"
+      ],
+      "date": "2026-11-22",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-c2543198-fff5-4ab0-b718-2aa9ce0834ce.png",
+      "nativeSize": [
+        2155,
+        730
+      ],
+      "exportMode": "bottom",
+      "sourceSurfaceY": 0,
+      "exportOperation": "Bicubic resampling to requested canvas; alpha preserved; prop margin trimmed; narrow premultiplied opposing-edge reconciliation on declared repeat axes.",
+      "sha256": "7248f9ad9c4269faf8b00d7b427d3899a7b2cc3945d27507fd2df8f12e3cdc24",
+      "sourceSha256": "1403ea289a662e18202841614e06d86a0cc174a0dd68eb986b60d5d1728828cd",
+      "exportDate": "2026-11-23",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "edgeContinuity": "Exact RGBA boundary equality on declared repeat axes after narrow edge reconciliation"
+    },
+    {
+      "name": "bg_near_trunks",
+      "size": [
+        3840,
+        1600
+      ],
+      "folder": "Environment/Forest",
+      "tile": "x",
+      "transparent": true,
+      "prompt": "Use case: stylized-concept. Production PNG asset for original Ironoak 2D platformer, Gaul circa 50 BC. Reference image is ONLY our own approved Oak Road style and lighting. Hand-painted storybook cartoon, soft visible brush grain, smooth silhouettes, warm natural materials, gentle top-left light, subdued cool aerial distance. Match the reference's original Celtic oak/bronze visual language. No pixel art, no photorealism, no 3D render, no text, watermarks, panels, labels or UI. No characters unless explicitly requested. Deliver ONE asset only, no presentation sheet, no cast ground shadows. Wide NEAR TRUNKS parallax layer,3840x1600. Exactly TWO OR THREE large mossy oak trunks with restrained bronze bands and spiral carving, like our reference. Mostly EMPTY TRANSPARENT SPACE BETWEEN trunks, no backdrop, crowns, sky or ground plane. All roots touch bottom; trunks extend through TOP edge naturally. Place trunks away from both horizontal edges so borders are empty alpha and repeat seamlessly LEFT-RIGHT. No glowing sap knots on scenery: interaction glows belong to separate props. Genuine RGBA transparent background; never paint a checkerboard.",
+      "source": "docs/art-source/poc-batch-1/bg_near_trunks-source.png",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Environment/Forest/bg_near_trunks.png",
+      "references": [
+        "docs/art-direction/phase-a/oak-road-style-v2.png"
+      ],
+      "date": "2026-11-22",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-b9ad214c-064f-450e-9fb0-083af6d9a5ab.png",
+      "nativeSize": [
+        1942,
+        809
+      ],
+      "exportMode": "bottom",
+      "sourceSurfaceY": 0,
+      "exportOperation": "Bicubic resampling to requested canvas; alpha preserved; prop margin trimmed; narrow premultiplied opposing-edge reconciliation on declared repeat axes.",
+      "sha256": "4e1fd573dc3e2bce9a61225c68855be7d5ed12c57aa6f1bcf5e5fff40ddb3ba4",
+      "sourceSha256": "7251a3247bee045d3f5666e689f99d6d2b3261ca8fa30a9be0c93f40d9e7eeaf",
+      "exportDate": "2026-11-23",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "edgeContinuity": "Exact RGBA boundary equality on declared repeat axes after narrow edge reconciliation"
+    },
+    {
+      "name": "fg_leaves_top",
+      "size": [
+        3840,
+        600
+      ],
+      "folder": "Environment/Forest",
+      "tile": "x",
+      "transparent": true,
+      "prompt": "Use case: stylized-concept. Production PNG asset for original Ironoak 2D platformer, Gaul circa 50 BC. Reference image is ONLY our own approved Oak Road style and lighting. Hand-painted storybook cartoon, soft visible brush grain, smooth silhouettes, warm natural materials, gentle top-left light, subdued cool aerial distance. Match the reference's original Celtic oak/bronze visual language. No pixel art, no photorealism, no 3D render, no text, watermarks, panels, labels or UI. No characters unless explicitly requested. Deliver ONE asset only, no presentation sheet, no cast ground shadows. Extremely wide thin TOP FOREGROUND canopy strip,3840x600 aspect32:5. Dark green oak leaves hang DOWN from top canvas edge with soft slightly defocused painterly edges. Mostly transparent below the hanging silhouettes, a few sparse branch connections. Must NEVER form a bottom hedge or ground. Seamless LEFT-RIGHT, matching edge coverage, no sky, trunks, bright flowers or playfield. Atmospheric dark framing only. Genuine RGBA transparent background; never paint a checkerboard.",
+      "source": "docs/art-source/poc-batch-1/fg_leaves_top-source.png",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Environment/Forest/fg_leaves_top.png",
+      "references": [
+        "docs/art-direction/phase-a/oak-road-style-v2.png"
+      ],
+      "date": "2026-11-22",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-5ef4294e-a6ed-48a8-97ee-4210dc5515ea.png",
+      "nativeSize": [
+        2172,
+        724
+      ],
+      "exportMode": "canvas",
+      "sourceSurfaceY": 0,
+      "exportOperation": "Bicubic resampling to requested canvas; alpha preserved; prop margin trimmed; narrow premultiplied opposing-edge reconciliation on declared repeat axes.",
+      "sha256": "26639a426fea5c23d3c95788c4211696800c4fe62224dbe026bd35e93ff34b6d",
+      "sourceSha256": "49d95b04e2036553eed96a67bfce452b6296dbe48d9ab2d22efdaf02ce852903",
+      "exportDate": "2026-11-23",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "edgeContinuity": "Exact RGBA boundary equality on declared repeat axes after narrow edge reconciliation"
+    },
+    {
+      "name": "fg_bushes_bottom",
+      "size": [
+        3840,
+        500
+      ],
+      "folder": "Environment/Forest",
+      "tile": "x",
+      "transparent": true,
+      "prompt": "Use case: stylized-concept. Production PNG asset for original Ironoak 2D platformer, Gaul circa 50 BC. Reference image is ONLY our own approved Oak Road style and lighting. Hand-painted storybook cartoon, soft visible brush grain, smooth silhouettes, warm natural materials, gentle top-left light, subdued cool aerial distance. Match the reference's original Celtic oak/bronze visual language. No pixel art, no photorealism, no 3D render, no text, watermarks, panels, labels or UI. No characters unless explicitly requested. Deliver ONE asset only, no presentation sheet, no cast ground shadows. Extremely wide thin BOTTOM FOREGROUND strip,3840x500 aspect192:25. Dark forest-green sparse ferns and small bushes rise UP from bottom edge, uneven clump rhythm with lots of empty transparent gaps. Avoid an opaque tall hedge; most playfield must stay visible. Slightly soft edges, shadowy framing only, no bright flowers, trees, ground slab or background. Seamless LEFT-RIGHT with transparent matching ends. Genuine RGBA transparent background; never paint a checkerboard.",
+      "source": "docs/art-source/poc-batch-1/fg_bushes_bottom-source.png",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Environment/Forest/fg_bushes_bottom.png",
+      "references": [
+        "docs/art-direction/phase-a/oak-road-style-v2.png"
+      ],
+      "date": "2026-11-22",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-0609d498-552b-4843-a98d-56516adb9967.png",
+      "nativeSize": [
+        2172,
+        724
+      ],
+      "exportMode": "bottom",
+      "sourceSurfaceY": 0,
+      "exportOperation": "Bicubic resampling to requested canvas; alpha preserved; prop margin trimmed; narrow premultiplied opposing-edge reconciliation on declared repeat axes.",
+      "sha256": "66dce0a35dca8f9a65fb66a311c6c02c937cf4c1f650b54e8c17bdb1c4651996",
+      "sourceSha256": "469ffad9cb21db96fb221a96801ec15db13942b4bec81a97de8f5afa186e369f",
+      "exportDate": "2026-11-23",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "edgeContinuity": "Exact RGBA boundary equality on declared repeat axes after narrow edge reconciliation"
+    },
+    {
+      "name": "fx_light_shafts",
+      "size": [
+        2048,
+        2048
+      ],
+      "folder": "Environment/Forest",
+      "tile": "",
+      "transparent": false,
+      "prompt": "Use case: stylized-concept. Production PNG asset for original Ironoak 2D platformer, Gaul circa 50 BC. Reference image is ONLY our own approved Oak Road style and lighting. Hand-painted storybook cartoon, soft visible brush grain, smooth silhouettes, warm natural materials, gentle top-left light, subdued cool aerial distance. Match the reference's original Celtic oak/bronze visual language. No pixel art, no photorealism, no 3D render, no text, watermarks, panels, labels or UI. No characters unless explicitly requested. Deliver ONE asset only, no presentation sheet, no cast ground shadows. Square2048x2048 additive LIGHT OVERLAY: soft painterly diagonal golden-white god-rays entering from TOP LEFT and streaming down-right. PURE BLACK background, not transparent, no scenery, trees, particles or sun disc. Subtle broad beams with feathered edges and generous black negative space; intensity strongest near top-left fading across canvas. Intended additive blending, avoid solid white mass.",
+      "source": "docs/art-source/poc-batch-1/fx_light_shafts-source.png",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Environment/Forest/fx_light_shafts.png",
+      "references": [
+        "docs/art-direction/phase-a/oak-road-style-v2.png"
+      ],
+      "date": "2026-11-22",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-784af37b-71c8-436b-a871-e1a8522a5340.png",
+      "nativeSize": [
+        1254,
+        1254
+      ],
+      "exportMode": "canvas",
+      "sourceSurfaceY": 0,
+      "exportOperation": "Bicubic resampling to requested canvas; alpha preserved; prop margin trimmed; narrow premultiplied opposing-edge reconciliation on declared repeat axes.",
+      "sha256": "9abadf3d4d9299eaabbc5ee3e551d092bf1b571b000463430f2d4f29c1c652aa",
+      "sourceSha256": "0965fa99a5d3f657f978cdb514809ad72ee0402e3829e5d80ce409b7a904fa61",
+      "exportDate": "2026-11-23",
+      "alphaRange": [
+        255,
+        255
+      ],
+      "edgeContinuity": "not applicable"
+    },
+    {
+      "name": "sap_knot",
+      "size": [
+        192,
+        96
+      ],
+      "folder": "Props",
+      "tile": "",
+      "transparent": true,
+      "prompt": "Use case: stylized-concept. Production PNG asset for original Ironoak 2D platformer, Gaul circa 50 BC. Reference image is ONLY our own approved Oak Road style and lighting. Hand-painted storybook cartoon, soft visible brush grain, smooth silhouettes, warm natural materials, gentle top-left light, subdued cool aerial distance. Match the reference's original Celtic oak/bronze visual language. No pixel art, no photorealism, no 3D render, no text, watermarks, panels, labels or UI. No characters unless explicitly requested. Deliver ONE asset only, no presentation sheet, no cast ground shadows. Single small living wood SPIRAL SAP KNOT emerging from ground,192x96 wide2:1 canvas. Carved organic swirled spiral knot, knobbly low root base and tiny moss detail, but painted in LIGHT NEUTRAL ivory-grey and pale bark tones so game tint can make it dormant grey or awake amber. No baked amber glow, no colored scenery, no gold metal. Thin warm dark outline, strong recognizable spiral silhouette. Base touches bottom center, transparent outside, side-view. Genuine RGBA transparent background; never paint a checkerboard.",
+      "source": "docs/art-source/poc-batch-1/sap_knot-source.png",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/sap_knot.png",
+      "references": [
+        "docs/art-direction/phase-a/oak-road-style-v2.png"
+      ],
+      "date": "2026-11-22",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-5d8b95de-cba8-4050-82a5-eba5f48de6b8.png",
+      "nativeSize": [
+        1774,
+        887
+      ],
+      "exportMode": "prop",
+      "sourceSurfaceY": 0,
+      "exportOperation": "Bicubic resampling to requested canvas; alpha preserved; prop margin trimmed; narrow premultiplied opposing-edge reconciliation on declared repeat axes.",
+      "sha256": "3481668bbb14b66e535582faf9c74c327ab2d12e5fab1f915470c8c5f4280cc8",
+      "sourceSha256": "47e76d65a7607b6a4011fd03c7e9e2fe11b257c1da6ae6f8a6ed46340d8bf278",
+      "exportDate": "2026-11-23",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "edgeContinuity": "not applicable"
+    },
+    {
+      "name": "sap_knot_glow",
+      "size": [
+        256,
+        256
+      ],
+      "folder": "Props",
+      "tile": "",
+      "transparent": true,
+      "prompt": "Use case: stylized-concept. Production PNG asset for original Ironoak 2D platformer, Gaul circa 50 BC. Reference image is ONLY our own approved Oak Road style and lighting. Hand-painted storybook cartoon, soft visible brush grain, smooth silhouettes, warm natural materials, gentle top-left light, subdued cool aerial distance. Match the reference's original Celtic oak/bronze visual language. No pixel art, no photorealism, no 3D render, no text, watermarks, panels, labels or UI. No characters unless explicitly requested. Deliver ONE asset only, no presentation sheet, no cast ground shadows. Single centered SOFT AMBER HALO on genuine transparency,256x256. Very subtle spiral hint in glowing golden sap light, smooth feathered circular falloff to fully transparent edges. No solid wood, no hard disc, no background, no shadow. Designed as additive glow placed BEHIND sap knot, no opaque border. Genuine RGBA transparent background; never paint a checkerboard.",
+      "source": "docs/art-source/poc-batch-1/sap_knot_glow-source.png",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/sap_knot_glow.png",
+      "references": [
+        "docs/art-direction/phase-a/oak-road-style-v2.png"
+      ],
+      "date": "2026-11-22",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-8c5d688c-aab1-4557-96e5-53fdf76ce8fe.png",
+      "nativeSize": [
+        1254,
+        1254
+      ],
+      "exportMode": "canvas",
+      "sourceSurfaceY": 0,
+      "exportOperation": "Bicubic resampling to requested canvas; alpha preserved; prop margin trimmed; narrow premultiplied opposing-edge reconciliation on declared repeat axes.",
+      "sha256": "b28df898d7b546530133eb59efa357158d43f564a9d1daf843a9a442c70e6c4c",
+      "sourceSha256": "516ad0421b5a5310ce94caf3babda14fc4d00abde87563f191aef3ec02d4d57f",
+      "exportDate": "2026-11-23",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "edgeContinuity": "not applicable"
+    },
+    {
+      "name": "root_segment",
+      "size": [
+        128,
+        256
+      ],
+      "folder": "Props",
+      "tile": "y",
+      "transparent": true,
+      "prompt": "Use case: stylized-concept. Production PNG asset for original Ironoak 2D platformer, Gaul circa 50 BC. Reference image is ONLY our own approved Oak Road style and lighting. Hand-painted storybook cartoon, soft visible brush grain, smooth silhouettes, warm natural materials, gentle top-left light, subdued cool aerial distance. Match the reference's original Celtic oak/bronze visual language. No pixel art, no photorealism, no 3D render, no text, watermarks, panels, labels or UI. No characters unless explicitly requested. Deliver ONE asset only, no presentation sheet, no cast ground shadows. ONE vertical ROOT COLUMN SECTION,128x256. Thick twisting oak root with painted bark grain, tiny moss tufts, restrained amber sap veins. Root bark fills entire canvas WIDTH with no transparent side gutter; TOP and BOTTOM edge bark patterns and colors match EXACTLY for seamless vertical repetition. No top crown, grass cap, base, leaves sticking outside, ground or background. Side view, readable brighter than scenery but not neon. Continuous column, not an isolated whole tree stump. Genuine RGBA transparent background; never paint a checkerboard.",
+      "source": "docs/art-source/poc-batch-1/root_segment-source.png",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/root_segment.png",
+      "references": [
+        "docs/art-direction/phase-a/oak-road-style-v2.png"
+      ],
+      "date": "2026-11-22",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-4fd5e1a2-a236-4f71-a2fe-d7c30634ffdc.png",
+      "selectedSource": "docs/art-source/poc-batch-1/root_segment-v2-source.png",
+      "nativeSize": [
+        887,
+        1774
+      ],
+      "exportMode": "canvas",
+      "sourceSurfaceY": 0,
+      "exportOperation": "Bicubic resampling to requested canvas; alpha preserved; prop margin trimmed; narrow premultiplied opposing-edge reconciliation on declared repeat axes.",
+      "sha256": "34eee0d89f5873a3a71e5336ae455b97ab85e7198b9c9690d131e6842c304aba",
+      "sourceSha256": "02c5a2a01af186e1bcc89458bc89bf76342c87f4df44172c13ebb480e1d34bf2",
+      "exportDate": "2026-11-23",
+      "alphaRange": [
+        255,
+        255
+      ],
+      "edgeContinuity": "Exact RGBA boundary equality on declared repeat axes after narrow edge reconciliation"
+    },
+    {
+      "name": "root_crown",
+      "size": [
+        160,
+        160
+      ],
+      "folder": "Props",
+      "tile": "",
+      "transparent": true,
+      "prompt": "Use case: stylized-concept. Production PNG asset for original Ironoak 2D platformer, Gaul circa 50 BC. Reference image is ONLY our own approved Oak Road style and lighting. Hand-painted storybook cartoon, soft visible brush grain, smooth silhouettes, warm natural materials, gentle top-left light, subdued cool aerial distance. Match the reference's original Celtic oak/bronze visual language. No pixel art, no photorealism, no 3D render, no text, watermarks, panels, labels or UI. No characters unless explicitly requested. Deliver ONE asset only, no presentation sheet, no cast ground shadows. TOP CROWN of raised ROOT COLUMN,160x160. Knobbly rounded oak root crown with a few small oak leaves and moss, amber sap vein accents. Its centered flat base is128px wide of160px canvas to meet root_segment, and touches BOTTOM edge. Rounded traversable organic top, side-view, transparent outside. Thin dark-warm outline, clear gameplay silhouette, no ground shadow or whole column. Genuine RGBA transparent background; never paint a checkerboard.",
+      "source": "docs/art-source/poc-batch-1/root_crown-source.png",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/root_crown.png",
+      "references": [
+        "docs/art-direction/phase-a/oak-road-style-v2.png"
+      ],
+      "date": "2026-11-22",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-5d2bba59-0399-4443-8fa3-ffd3a2415a72.png",
+      "selectedSource": "docs/art-source/poc-batch-1/root_crown-v2-source.png",
+      "nativeSize": [
+        1254,
+        1254
+      ],
+      "exportMode": "prop",
+      "sourceSurfaceY": 0,
+      "exportOperation": "Bicubic resampling to requested canvas; alpha preserved; prop margin trimmed; narrow premultiplied opposing-edge reconciliation on declared repeat axes.",
+      "sha256": "b9c7b2323ed3ae3a91bc6a53bbb3c480876f223588c904585ece2863a1ed3383",
+      "sourceSha256": "e7d4f2b84a11c8d3faeaaeedfe5905683695041056419f21143b293dd2b4c4e0",
+      "exportDate": "2026-11-23",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "edgeContinuity": "not applicable"
+    },
+    {
+      "name": "crate",
+      "size": [
+        128,
+        128
+      ],
+      "folder": "Props",
+      "tile": "",
+      "transparent": true,
+      "prompt": "Use case: stylized-concept. Production PNG asset for original Ironoak 2D platformer, Gaul circa 50 BC. Reference image is ONLY our own approved Oak Road style and lighting. Hand-painted storybook cartoon, soft visible brush grain, smooth silhouettes, warm natural materials, gentle top-left light, subdued cool aerial distance. Match the reference's original Celtic oak/bronze visual language. No pixel art, no photorealism, no 3D render, no text, watermarks, panels, labels or UI. No characters unless explicitly requested. Deliver ONE asset only, no presentation sheet, no cast ground shadows. ONE sturdy square wooden CRATE,128x128, strict SIDE VIEW with no visible top or side perspective plane. Warm painted oak planks, dark iron corner brackets and subtle carved Celtic knot mark on front. Fills square canvas exactly edge-to-edge, no transparent padding, base on bottom. No ground shadow, border, frame or scenery. Thin warm dark outline on interactable, bright enough for gameplay, small chamfered corners okay. Genuine RGBA transparent background; never paint a checkerboard.",
+      "source": "docs/art-source/poc-batch-1/crate-source.png",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/crate.png",
+      "references": [
+        "docs/art-direction/phase-a/oak-road-style-v2.png"
+      ],
+      "date": "2026-11-22",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-14400a1c-5878-4141-bc8c-3fab7010230f.png",
+      "nativeSize": [
+        1254,
+        1254
+      ],
+      "exportMode": "prop",
+      "sourceSurfaceY": 0,
+      "exportOperation": "Bicubic resampling to requested canvas; alpha preserved; prop margin trimmed; narrow premultiplied opposing-edge reconciliation on declared repeat axes.",
+      "sha256": "2f12868643c4c3db113523beacc9805e283daf138713707ed2b1c54f6786cc1a",
+      "sourceSha256": "0a527fef6a447b4776a7be056751cf7a7435a6853a4f1cdf9b7a96a05294f7b9",
+      "exportDate": "2026-11-23",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "edgeContinuity": "not applicable"
+    },
+    {
+      "name": "coin_gold",
+      "size": [
+        96,
+        96
+      ],
+      "folder": "Props",
+      "tile": "",
+      "transparent": true,
+      "prompt": "Use case: stylized-concept. Production PNG asset for original Ironoak 2D platformer, Gaul circa 50 BC. Reference image is ONLY our own approved Oak Road style and lighting. Hand-painted storybook cartoon, soft visible brush grain, smooth silhouettes, warm natural materials, gentle top-left light, subdued cool aerial distance. Match the reference's original Celtic oak/bronze visual language. No pixel art, no photorealism, no 3D render, no text, watermarks, panels, labels or UI. No characters unless explicitly requested. Deliver ONE asset only, no presentation sheet, no cast ground shadows. ONE centered CELTIC GOLD STATER COIN,96x96 square, circular flat front face with a simple ORIGINAL horse or spiral motif in relief. Warm bronze shadows and gold highlights, bold simple silhouette, thin warm dark outline. No text, numerals, frame, pouch, shine rays or background. Coin almost fills canvas with a small transparent margin, gold collectible readable at small scale. Genuine RGBA transparent background; never paint a checkerboard.",
+      "source": "docs/art-source/poc-batch-1/coin_gold-source.png",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/coin_gold.png",
+      "references": [
+        "docs/art-direction/phase-a/oak-road-style-v2.png"
+      ],
+      "date": "2026-11-22",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-1befadeb-1041-49bb-8d83-223e8220c51e.png",
+      "nativeSize": [
+        1254,
+        1254
+      ],
+      "exportMode": "icon",
+      "sourceSurfaceY": 0,
+      "exportOperation": "Bicubic resampling to requested canvas; alpha preserved; prop margin trimmed; narrow premultiplied opposing-edge reconciliation on declared repeat axes.",
+      "sha256": "ca8c3843d4541b1ade04b008d197afbe70b975c1544428583786686709d3a7c1",
+      "sourceSha256": "cf71adf80faaa1de6c04334c89eae5725fb768a7385da30f744648c213ad7d7b",
+      "exportDate": "2026-11-23",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "edgeContinuity": "not applicable"
+    },
+    {
+      "name": "ui_heart_full",
+      "size": [
+        96,
+        96
+      ],
+      "folder": "UI",
+      "tile": "",
+      "transparent": true,
+      "prompt": "Use case: stylized-concept. Production PNG asset for original Ironoak 2D platformer, Gaul circa 50 BC. Reference image is ONLY our own approved Oak Road style and lighting. Hand-painted storybook cartoon, soft visible brush grain, smooth silhouettes, warm natural materials, gentle top-left light, subdued cool aerial distance. Match the reference's original Celtic oak/bronze visual language. No pixel art, no photorealism, no 3D render, no text, watermarks, panels, labels or UI. No characters unless explicitly requested. Deliver ONE asset only, no presentation sheet, no cast ground shadows. ONE compact painted HUD ICON,96x96: full saturated RED HEART inside a SMALL BRONZE CELTIC KNOTWORK FRAME. Original storybook painted shading, clear bold silhouette, top-left highlights, limited fine detail so readable small. Centered, genuine transparent outside the frame, no scene, text or extra icons. Heart fills frame and contrasts with bronze. Genuine RGBA transparent background; never paint a checkerboard.",
+      "source": "docs/art-source/poc-batch-1/ui_heart_full-source.png",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/UI/ui_heart_full.png",
+      "references": [
+        "docs/art-direction/phase-a/oak-road-style-v2.png"
+      ],
+      "date": "2026-11-22",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-5ac2e10d-3eaa-4a92-b67e-b41a333d5ccc.png",
+      "nativeSize": [
+        1254,
+        1254
+      ],
+      "exportMode": "icon",
+      "sourceSurfaceY": 0,
+      "exportOperation": "Bicubic resampling to requested canvas; alpha preserved; prop margin trimmed; narrow premultiplied opposing-edge reconciliation on declared repeat axes.",
+      "sha256": "ebc337ef57ea56e9467c99fd7a7dcd4b7cfaed1a74eef00d9fd72e0421cd006a",
+      "sourceSha256": "8290dc8ef78c9dc68caa4aa496290141ff4ce98f5708fea94a0dea7d9645dbfa",
+      "exportDate": "2026-11-23",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "edgeContinuity": "not applicable"
+    },
+    {
+      "name": "ui_heart_empty",
+      "size": [
+        96,
+        96
+      ],
+      "folder": "UI",
+      "tile": "",
+      "transparent": true,
+      "prompt": "Use case: precise-object-edit. Reference image 1 is our own full-heart HUD icon EDIT TARGET. Produce its EMPTY health state. Keep the bronze knotwork frame, shape, placement, scale, paint texture and light EXACTLY unchanged. Replace ONLY the saturated red heart fill with a very dark muted brown recessed heart silhouette, no red and no glossy highlight. Frame stays bronze. Preserve genuine transparent exterior and no background. One icon only, no text, labels or other changes.",
+      "source": "docs/art-source/poc-batch-1/ui_heart_empty-source.png",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/UI/ui_heart_empty.png",
+      "references": [
+        "docs/art-source/poc-batch-1/ui_heart_full-source.png"
+      ],
+      "date": "2026-11-22",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-14d78911-6ee5-431b-8043-9b81cade2aa9.png",
+      "nativeSize": [
+        1254,
+        1254
+      ],
+      "exportMode": "icon",
+      "sourceSurfaceY": 0,
+      "exportOperation": "Bicubic resampling to requested canvas; alpha preserved; prop margin trimmed; narrow premultiplied opposing-edge reconciliation on declared repeat axes.",
+      "sha256": "9e9e3b1fe018003cdc713f500e508fe854d3a040f6276148973a5349332220d0",
+      "sourceSha256": "cd20644fa2ef0b0cc57d90af349da49d831748bc1dd55f4bbf952e9ef1de0136",
+      "exportDate": "2026-11-23",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "edgeContinuity": "not applicable"
+    },
+    {
+      "name": "ui_coin",
+      "size": [
+        96,
+        96
+      ],
+      "folder": "UI",
+      "tile": "",
+      "transparent": true,
+      "prompt": "Use case: precise-object-edit. Reference image 1 is our own Celtic gold stater coin. Create the matching small HUD coin icon, preserving the exact round silhouette, horse and spiral relief, gold/bronze palette and top-left light. Simplify the finest brush texture slightly for readability at96x96, keeping the original horse motif. Keep a small transparent margin. Genuine transparent background, no glow rays, scene, frame, labels or text.",
+      "source": "docs/art-source/poc-batch-1/ui_coin-source.png",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/UI/ui_coin.png",
+      "references": [
+        "docs/art-source/poc-batch-1/coin_gold-source.png"
+      ],
+      "date": "2026-11-22",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-242d74e5-a6a6-47bf-95c7-7f5740c96706.png",
+      "nativeSize": [
+        1254,
+        1254
+      ],
+      "exportMode": "icon",
+      "sourceSurfaceY": 0,
+      "exportOperation": "Bicubic resampling to requested canvas; alpha preserved; prop margin trimmed; narrow premultiplied opposing-edge reconciliation on declared repeat axes.",
+      "sha256": "5f554966d32d20f2bb466dea53d5b22647e120003bdc3df04f46c6e4340d170a",
+      "sourceSha256": "eb33912f35b7d50275254cadcf8c9be77c652ee1b34490331ed65b6f7a3be56d",
+      "exportDate": "2026-11-23",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "edgeContinuity": "not applicable"
+    }
+  ],
+  "iterations": [
+    {
+      "name": "root_segment",
+      "prompt": "Use case: precise-object-edit. Image1 is our own root-column section. REMOVE ALL bronze bands, metal, rivets and medallions and replace them seamlessly with organic twisting oak bark. Retain small moss flecks and subtle amber sap veins. This is a rectangular TILE, not an isolated trunk: opaque continuous bark fills the ENTIRE128x256 canvas including both side edges, no transparent gutters, no background, no crown or base. Root folds continue TOP to BOTTOM with matching colors and grain for vertical seamless tiling. No directional light ramp top-to-bottom. Top-left painterly highlights stay subtle. No text, no new ornaments. Output full-frame opaque organic bark texture.",
+      "transparent": false,
+      "references": [
+        "docs/art-source/poc-batch-1/root_segment-source.png"
+      ],
+      "source": "docs/art-source/poc-batch-1/root_segment-v2-source.png",
+      "date": "2026-11-22",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-582340cb-064e-4c01-9b64-7ee75c6b2c35.png"
+    },
+    {
+      "name": "root_crown",
+      "prompt": "Use case: precise-object-edit. Image1 is our own root crown. REMOVE ALL bronze band, medallion, rivets and metal; paint organic knobbly oak bark in their place, keeping moss, a few leaves and subtle amber sap veins. Preserve this as a standalone ROOT CROWN, side view, no whole trunk. Crown should be nearly square160x160 and its flat base128px wide (80 percent of canvas width), centered and touching bottom. Top rounded and traversable. Fully transparent background, no shadows, no new decorative objects, no text.",
+      "transparent": true,
+      "references": [
+        "docs/art-source/poc-batch-1/root_crown-source.png"
+      ],
+      "source": "docs/art-source/poc-batch-1/root_crown-v2-source.png",
+      "date": "2026-11-22",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-74bc14fc-b9d7-49a0-922d-b0064d881c20.png"
+    },
+    {
+      "name": "terrain_earth_top",
+      "prompt": "Use case: precise-object-edit. Image1 is our own horizontal grass-and-soil platform lip. Keep painterly grass, flowers, roots, dirt and top-left light. REMOVE ALL glowing yellow atmospheric haze above the grass, leaving genuine fully transparent holes and background around every blade and flower, with only antialiased painted edges. It must be a flat horizontal texture strip512x192; walkable path baseline exactly64px from top (one third canvas height). Top64px are sparse tufts/flowers on clear alpha; bottom128px is the continuous soil lip with root hairs. No backdrop, no glow, no shadow. Edges left-right must match for seamless repetition; no framing or padding. No text.",
+      "transparent": true,
+      "references": [
+        "docs/art-source/poc-batch-1/terrain_earth_top-source.png"
+      ],
+      "source": "docs/art-source/poc-batch-1/terrain_earth_top-v2-source.png",
+      "date": "2026-11-22",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-41097b1a-3e2d-48d6-b4eb-f6609fd9631e.png"
+    },
+    {
+      "name": "terrain_earth_side",
+      "prompt": "Use case: background-extraction. Image1 is our own vertical cliff strip. Keep the layered brown soil, roots, moss and embedded stones. REMOVE ALL yellow atmospheric backdrop, haze, glow or background outside the rocky LEFT cliff edge; outside must be genuine clear transparency. Remove gold medallions and replace with plain natural stone. Keep soil filled toward RIGHT canvas edge. Tall192x512 side strip, no grass cap or ground base, no shadow. Continue details top-to-bottom with exactly matching edge color and silhouette for seamless vertical repeat. No text.",
+      "transparent": true,
+      "references": [
+        "docs/art-source/poc-batch-1/terrain_earth_side-source.png"
+      ],
+      "source": "docs/art-source/poc-batch-1/terrain_earth_side-v2-source.png",
+      "date": "2026-11-22",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-c46d5cc8-1291-43b5-b4ac-5ade4ef08a02.png"
+    }
+  ],
+  "completedDate": "2026-11-23",
+  "contactSheet": "docs/art-source/poc-batch-1/contact-sheet.png",
+  "integrationNotes": [
+    "Files are asset delivery only; URP, Sprite Shape, parallax and prefab integration are owned by Claude per the request.",
+    "Current painted importer caps textures at 2048 and clamps wrapping; integration must raise maxTextureSize to 4096 for wide layers and choose Repeat on declared axes.",
+    "Current painted importer uses centre pivots; set bottom-centre for standing props and centre for coins/glows/UI, or use equivalent anchor offsets.",
+    "bg_far_hills has one village in its texture; repeat will also repeat that village. Place a single instance or separate village at integration if the village must appear only once in the entire level.",
+    "The art is resampled to requested canvases; exported size does not add source detail. Native sizes and all operations are recorded."
+  ]
+}

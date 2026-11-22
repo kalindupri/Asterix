@@ -5,7 +5,8 @@ namespace Ironoak.Core
 {
     /// <summary>
     /// Follows the player with look-ahead and smoothing, stays inside the level bounds
-    /// (or the active camera zone), shakes on impacts, and snaps to the pixel grid.
+    /// (or the active camera zone), zooms per zone (Native mode), shakes on impacts, and snaps
+    /// to the pixel grid in PixelPerfect mode.
     /// Can also slowly auto-pan for the title screen.
     /// </summary>
     [DefaultExecutionOrder(50)]
@@ -16,11 +17,13 @@ namespace Ironoak.Core
         public float smoothTime = 0.12f;
         public float lookAheadDistance = 2.5f;
         public float verticalOffset = 1.5f;
+        public float zoomTime = 0.6f;
 
         Camera _cam;
         Rigidbody2D _target;
         Rect _bounds;
         Rect? _zone;
+        float _zoneHalf, _zoomVel;
         Vector2 _pos, _vel;
         float _lookAhead;
         bool _autoPan;
@@ -34,6 +37,7 @@ namespace Ironoak.Core
         }
 
         float HalfH => _cam.orthographicSize;
+        float BaseHalf => IronoakConfig.DefaultHalfHeight;
         float HalfW => _cam.orthographicSize * _cam.aspect;
 
         public void Follow(Rigidbody2D target, Rect bounds)
@@ -42,6 +46,8 @@ namespace Ironoak.Core
             _bounds = bounds;
             _zone = null;
             _autoPan = false;
+            _cam.orthographicSize = BaseHalf;
+            _zoomVel = 0f;
             _lookAhead = 0f;
             _vel = Vector2.zero;
             _pos = Clamp(target.position + Vector2.up * verticalOffset);
@@ -53,6 +59,7 @@ namespace Ironoak.Core
             _target = null;
             _bounds = bounds;
             _zone = null;
+            _cam.orthographicSize = BaseHalf;
             _autoPan = true;
             _panSpeed = speed;
             _panDir = 1f;
@@ -60,8 +67,21 @@ namespace Ironoak.Core
             Apply(Vector2.zero);
         }
 
-        /// <summary>Frames a puzzle room: the camera is confined to this rect while it is set.</summary>
-        public void SetZone(Rect zone) => _zone = zone;
+        /// <summary>
+        /// Frames a puzzle room: the camera is confined to this rect while it is set. In Native mode
+        /// it also zooms: <paramref name="viewHeight"/> &gt; 0 sets the view height, 0 zooms out just
+        /// enough to show the whole zone, and a negative value keeps the default zoom.
+        /// </summary>
+        public void SetZone(Rect zone, float viewHeight = 0f)
+        {
+            _zone = zone;
+            float baseHalf = BaseHalf;
+            if (IronoakConfig.PixelPerfect || viewHeight < 0f) _zoneHalf = baseHalf;
+            else if (viewHeight > 0f) _zoneHalf = viewHeight * 0.5f;
+            else _zoneHalf = Mathf.Max(zone.height * 0.5f, zone.width * 0.5f / Mathf.Max(0.1f, _cam.aspect));
+            float maxHalf = IronoakConfig.Current.maxZoneViewHeight * 0.5f;
+            _zoneHalf = Mathf.Clamp(_zoneHalf, baseHalf, Mathf.Max(baseHalf, maxHalf));
+        }
 
         public void ClearZone(Rect zone)
         {
@@ -78,6 +98,14 @@ namespace Ironoak.Core
         {
             if (_cam == null) return;
             float dt = Time.deltaTime;
+
+            float targetHalf = _zone.HasValue ? _zoneHalf : BaseHalf;
+            if (!Mathf.Approximately(_cam.orthographicSize, targetHalf))
+            {
+                float half = Mathf.SmoothDamp(_cam.orthographicSize, targetHalf, ref _zoomVel, zoomTime, Mathf.Infinity, Mathf.Max(dt, 0.0001f));
+                if (Mathf.Abs(half - targetHalf) < 0.002f) { half = targetHalf; _zoomVel = 0f; }
+                _cam.orthographicSize = half;
+            }
 
             if (_target != null)
             {
