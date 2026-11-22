@@ -70,7 +70,7 @@ namespace Ironoak.Core
             _layers.Add(layer);
         }
 
-        static float Snap(float v) => Mathf.Round(v * PixelArt.PPU) / PixelArt.PPU;
+        static float Snap(float v) => IronoakConfig.PixelPerfect ? Mathf.Round(v * PixelArt.PPU) / PixelArt.PPU : v;
 
         void LateUpdate()
         {
@@ -78,6 +78,10 @@ namespace Ironoak.Core
             Vector3 cp = _cam.transform.position;
             float bottom = cp.y - _cam.orthographicSize;
             _sky.position = new Vector3(cp.x, cp.y, 0f);
+            // Cover the whole view on any aspect ratio (the sky art is exactly 16:9).
+            float viewH = _cam.orthographicSize * 2f, viewW = viewH * _cam.aspect;
+            float cover = Mathf.Max(viewW / 30f, viewH / 16.875f);
+            _sky.localScale = new Vector3(cover, cover, 1f);
 
             foreach (var layer in _layers)
             {

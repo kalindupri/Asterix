@@ -22,6 +22,20 @@ namespace Ironoak.Art
             return sprite;
         }
 
+        /// <summary>
+        /// Painted (high-resolution) art: Resources/Art/Painted/&lt;folder&gt;/&lt;name&gt;.png, falling back to
+        /// a code-painted placeholder.
+        /// </summary>
+        public static Sprite GetPainted(string folder, string name)
+        {
+            string key = "painted/" + folder + "/" + name;
+            if (Cache.TryGetValue(key, out var cached) && cached != null) return cached;
+            var sprite = Resources.Load<Sprite>($"Art/Painted/{folder}/{name}");
+            if (sprite == null) sprite = ProceduralArt.CreatePainted(name);
+            Cache[key] = sprite;
+            return sprite;
+        }
+
         public static Sprite[] GetFrames(params string[] names)
         {
             var frames = new Sprite[names.Length];

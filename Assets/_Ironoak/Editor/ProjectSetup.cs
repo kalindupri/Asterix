@@ -7,33 +7,28 @@ using UnityEngine;
 namespace Ironoak.EditorTools
 {
     /// <summary>
-    /// One-time project bootstrap: creates the Main scene (a single IronoakGame object),
-    /// registers it in Build Settings and applies player settings. Also available from
-    /// the "Ironoak" menu.
+    /// Project bootstrap: bakes art, generates prefabs, builds the greybox level, creates the
+    /// Main scene (a single IronoakGame object) and registers scenes in Build Settings.
+    /// Runs automatically the first time the project is opened; also on the Ironoak menu.
     /// </summary>
     [InitializeOnLoad]
     public static class ProjectSetup
     {
-        /// <summary>Entry point for command-line setup: -executeMethod Ironoak.EditorTools.ProjectSetup.BatchSetup</summary>
-        public static void BatchSetup()
-        {
-            ApplyProjectSettings();
-            Directory.CreateDirectory(SceneDir);
-            var scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
-            new GameObject("IronoakGame").AddComponent<IronoakGame>();
-            EditorSceneManager.SaveScene(scene, ScenePath);
-            EnsureBuildSettings();
-            AssetDatabase.SaveAssets();
-            Debug.Log("[Ironoak] Batch setup complete.");
-        }
-
         const string SceneDir = "Assets/_Ironoak/Scenes";
-        const string ScenePath = SceneDir + "/Main.unity";
+        public const string MainScenePath = SceneDir + "/Main.unity";
         const string SessionKey = "Ironoak.SetupChecked";
 
         static ProjectSetup()
         {
             EditorApplication.delayCall += AutoSetup;
+        }
+
+        /// <summary>Command line: -executeMethod Ironoak.EditorTools.ProjectSetup.BatchSetup</summary>
+        public static void BatchSetup()
+        {
+            ApplyProjectSettings();
+            RunPipeline(rebuildLevel: true);
+            Debug.Log("[Ironoak] Batch setup complete.");
         }
 
         static void AutoSetup()
@@ -42,28 +37,40 @@ namespace Ironoak.EditorTools
             SessionState.SetBool(SessionKey, true);
             if (EditorApplication.isPlayingOrWillChangePlaymode) return;
 
-            if (!File.Exists(ScenePath))
+            if (!File.Exists(MainScenePath) || !File.Exists(Level1Blueprint.ScenePath))
             {
                 ApplyProjectSettings();
-                CreateMainScene();
-                Debug.Log("[Ironoak] Created Main scene. Press Play to run the game.");
+                RunPipeline(rebuildLevel: !File.Exists(Level1Blueprint.ScenePath));
+                EditorSceneManager.OpenScene(MainScenePath);
+                Debug.Log("[Ironoak] Project set up. Press Play in the Main scene.");
             }
             EnsureBuildSettings();
+        }
+
+        static void RunPipeline(bool rebuildLevel)
+        {
+            ArtBaker.BakeMissing();
+            CharacterTools.RunAll();
+            PrefabFactory.BuildAll();
+            if (rebuildLevel) Level1Blueprint.Build();
+            CreateMainScene();
+            EnsureBuildSettings();
+            AssetDatabase.SaveAssets();
         }
 
         [MenuItem("Ironoak/Open Main Scene", priority = 0)]
         static void OpenMainScene()
         {
-            if (!File.Exists(ScenePath)) CreateMainScene();
+            if (!File.Exists(MainScenePath)) CreateMainScene();
             else if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
-                EditorSceneManager.OpenScene(ScenePath);
+                EditorSceneManager.OpenScene(MainScenePath);
         }
 
-        [MenuItem("Ironoak/Rebuild Main Scene", priority = 1)]
-        static void RebuildMainScene()
+        [MenuItem("Ironoak/Open Level 1 Scene", priority = 1)]
+        static void OpenLevel1()
         {
-            CreateMainScene();
-            EnsureBuildSettings();
+            if (File.Exists(Level1Blueprint.ScenePath) && EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
+                EditorSceneManager.OpenScene(Level1Blueprint.ScenePath);
         }
 
         [MenuItem("Ironoak/Apply Project Settings", priority = 20)]
@@ -89,18 +96,21 @@ namespace Ironoak.EditorTools
 
         static void CreateMainScene()
         {
-            if (!EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return;
             Directory.CreateDirectory(SceneDir);
             var scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
             new GameObject("IronoakGame").AddComponent<IronoakGame>();
-            EditorSceneManager.SaveScene(scene, ScenePath);
+            EditorSceneManager.SaveScene(scene, MainScenePath);
             AssetDatabase.Refresh();
         }
 
         static void EnsureBuildSettings()
         {
-            if (!File.Exists(ScenePath)) return;
-            EditorBuildSettings.scenes = new[] { new EditorBuildSettingsScene(ScenePath, true) };
+            if (!File.Exists(MainScenePath)) return;
+            EditorBuildSettings.scenes = new[]
+            {
+                new EditorBuildSettingsScene(MainScenePath, true),
+                new EditorBuildSettingsScene(Level1Blueprint.ScenePath, File.Exists(Level1Blueprint.ScenePath)),
+            };
         }
     }
 }

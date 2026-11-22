@@ -45,6 +45,14 @@ namespace Ironoak.Gameplay
             _pc.Knockback(Mathf.Abs(dir) < 0.05f ? -_pc.Facing : Mathf.Sign(dir));
         }
 
+        /// <summary>Fell into deep water: back to the last safe spot, no damage.</summary>
+        public void ReturnToSafeGround()
+        {
+            if (Dead) return;
+            _pc.Teleport(_pc.LastSafePosition + Vector2.up * 0.05f);
+            _invulnerable = Mathf.Max(_invulnerable, 0.6f);
+        }
+
         void FellOut()
         {
             if (!LoseHeart()) return;

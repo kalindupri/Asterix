@@ -30,7 +30,12 @@ namespace Ironoak.Screens
             gameObject.SetActive(true);
             _title.Text = win ? "VILLAGE REACHED!" : "DEFEATED";
             _title.SetColor(win ? UITheme.GoldTop : UITheme.Red, win ? UITheme.GoldBottom : UITheme.Red);
-            _stats.Text = stats;
+            // Pad every line to the same width so the centred columns line up (monospace font).
+            var lines = stats.Split('\n');
+            int width = 0;
+            foreach (var l in lines) width = Mathf.Max(width, l.Length);
+            for (int i = 0; i < lines.Length; i++) lines[i] = lines[i].PadRight(width);
+            _stats.Text = string.Join("\n", lines);
             _winMenu.gameObject.SetActive(win);
             _loseMenu.gameObject.SetActive(!win);
         }

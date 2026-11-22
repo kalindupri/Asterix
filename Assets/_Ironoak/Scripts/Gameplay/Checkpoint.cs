@@ -29,6 +29,8 @@ namespace Ironoak.Gameplay
             return cp;
         }
 
+        void Awake() => _sr = GetComponent<SpriteRenderer>();
+
         void Start()
         {
             _off = SpriteLibrary.Get("torch_off");

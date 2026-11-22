@@ -8,7 +8,7 @@ namespace Ironoak.Art
     /// replaced by final art in Resources/Art (see SpriteLibrary / docs/ART_SPEC.md).
     /// All characters are original Ironoak designs.
     /// </summary>
-    internal static class ProceduralArt
+    public static partial class ProceduralArt
     {
         static Color32 C(string h) => PixelArt.Hex(h);
 
@@ -170,6 +170,8 @@ namespace Ironoak.Art
                 case "bg_forest": return Forest(name);
 
                 default:
+                    var m1 = CreatePuzzleArt(name);
+                    if (m1 != null) return m1;
                     Debug.LogWarning($"[Ironoak] No sprite named '{name}', using magenta placeholder.");
                     var buf = new PixelBuffer(16, 16);
                     for (int y = 0; y < 16; y++)

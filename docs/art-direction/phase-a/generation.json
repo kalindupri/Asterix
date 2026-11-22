@@ -1,0 +1,318 @@
+{
+  "phase": "A",
+  "status": "ready-for-gate-a-review",
+  "date": "2026-11-22",
+  "referencePolicy": "Only original Ironoak art was supplied; no external image references, artist names, studios or game titles were used in prompts.",
+  "assets": [
+    {
+      "id": "brenna-concepts-v1",
+      "prompt": "Use case: stylized-concept. Asset type: Phase A character concept sheet, review concept rather than rig-ready separated parts. Hand-painted 2D game art, original storybook cartoon design for Ironoak, Gaul circa 50 BC. Soft painterly brush textures and smooth shapes, bold chunky silhouettes, exaggerated large heads and hands and small feet, warm saturated palette, gentle warm rim light from top-left, Celtic knotwork details, thin dark-warm outlines on characters. No pixel art, no photorealism, no 3D render, no franchise designs, no watermark. Brenna, an agile determined young Celtic woman slinger, vivid red hair in one long thick braid, green woven wool tunic with restrained gold Celtic trim, brown leather belt and gold buckle, brown checked trousers, small leather boots, practical leather sling and stone pouch. Friendly expressive face, approximately three heads tall, consistent outfit and facial features in every view. Landscape 1920x1080 composition on a clean warm ivory studio background. Carefully organised model sheet: top row has equally sized full-body FRONT, RIGHT SIDE PROFILE and BACK turnaround with feet on same baseline; bottom row has three isolated face studies (determined, delighted, worried) and one full-body action pose aiming and releasing a handheld leather sling to the right, no bow. Every figure fully visible with generous separation. Pose and construction clear for a later human animator. Keep braid attachment, tunic hem, belt and pouch consistent in all views. Text: no text or labels. No extra props.",
+      "transparent": false,
+      "date": "2026-11-22",
+      "tool": "Built-in image_gen",
+      "source": "docs/art-direction/phase-a/brenna-concepts-v1.png",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-03721053-003c-44e9-8bee-202ac4d6b899.png",
+      "status": "gate-a-review",
+      "nativeSize": [
+        1672,
+        941
+      ],
+      "sha256": "e35e7cc1643e91ad9c03260ce756fd37fece1400a7a1d6fd2b65f93668632a81"
+    },
+    {
+      "id": "oak-road-style-v1",
+      "prompt": "Use case: stylized-concept. Asset type: Phase A STYLE FRAME 01, Oak Road forest, high-resolution side-view 2D platformer art-direction illustration. Output 1920x1080 pixels, widescreen 16:9. Reference image 1 is ONLY our own Brenna design and brush/material language, preserve that character identity. Hand-painted 2D game art, original storybook cartoon design for Ironoak, Gaul circa 50 BC. Soft painterly brush textures and smooth shapes, bold chunky silhouettes, exaggerated large heads and hands and small feet, warm saturated palette, gentle warm rim light from top-left, Celtic knotwork details, thin dark-warm outlines on characters. No pixel art, no photorealism, no 3D render, no franchise designs, no watermark. A sunny Celtic oak forest in greens and golds with dappled top-left sunlight and subtle canopy rays, living carved oak, bronze spiral accents, drifting pollen. Strict side-on playable composition, no isometric camera: an organic earth platform with bright grassy lip clearly crosses the lower quarter of the frame. Brenna stands on the path facing right, full body approximately 12 percent of frame height, clearly readable against calm background. One bright glowing amber sap knot in a gnarled oak at reachable height, unmistakable spiral silhouette. Visually establish six depth bands: dark soft foreground leaves at the outer corners only; bright playable path and interactable tree; middle-distance muted shrubs; separate cool desaturated woodland silhouettes; still lighter blue distant hills; pale sky. The three background bands must read distinctly. Environments have no dark outlines. Gameplay path and sap knot have highest contrast; background low contrast and cool, hero gets warm rim light. Restrained fine brush grain, smooth painted forms, no grids or tile seams. No UI, text, labels, logos, watermark. This is one composed look-development painting, not a production sprite layer export.",
+      "transparent": false,
+      "references": [
+        "docs/art-direction/phase-a/brenna-concepts-v1.png"
+      ],
+      "date": "2026-11-22",
+      "tool": "Built-in image_gen",
+      "source": "docs/art-direction/phase-a/oak-road-style-v1.png",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-c60c8965-3b37-4653-8fc4-c206932be05b.png",
+      "status": "superseded",
+      "nativeSize": [
+        1672,
+        941
+      ],
+      "sha256": "af1133a094fb6d8bf2cd6d059aa99f35558d92d6bb900201df33fd1a10dc94f1"
+    },
+    {
+      "id": "oak-road-style-v2",
+      "prompt": "Use case: precise-object-edit. Image 1 is our own Oak Road style-frame edit target. Keep its painterly materials, forest design, terrain, light direction, colors, composition and all environmental silhouettes unchanged. Change ONLY these two scale/readability issues: reduce Brenna to 12 percent of the total canvas height (about 130 pixels in a 1080-pixel-tall composition), standing on the SAME path baseline near the left quarter, preserving her face, braid, outfit and full-body right-facing pose. She should be a small gameplay-scale hero, not a large portrait. Remove the previous oversized character cleanly and paint the forest behind her seamlessly. Move the amber glowing spiral sap knot down the main oak trunk so its center is about one small Brenna height above the path, making it reachable; keep it bright but reduce its diameter to half a small Brenna height. Everything else unchanged. Maintain widescreen 16:9, target 1920x1080, no text or UI.",
+      "transparent": false,
+      "references": [
+        "docs/art-direction/phase-a/oak-road-style-v1.png"
+      ],
+      "date": "2026-11-22",
+      "tool": "Built-in image_gen",
+      "source": "docs/art-direction/phase-a/oak-road-style-v2.png",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-9fe9cef0-597c-42fd-ab02-cbe61db1639f.png",
+      "status": "gate-a-review",
+      "nativeSize": [
+        1672,
+        941
+      ],
+      "sha256": "37b3130fb7a478fb3acb98c3df393ef581522561a2a460f7e07d9fc02629b8c8"
+    },
+    {
+      "id": "druids-trial-style-v1",
+      "transparent": false,
+      "references": [
+        "docs/art-direction/phase-a/oak-road-style-v2.png",
+        "docs/art-direction/phase-a/brenna-concepts-v1.png"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: Phase A STYLE FRAME 02, Druid's Trial underground ruin. Widescreen 1920x1080, strict side-on 2D platformer playfield, not a perspective room or isometric scene. Reference image 1 is our own forest painting for material/brush consistency; reference image 2 is our own Brenna identity. Hand-painted 2D game art, original storybook cartoon design for Ironoak, Gaul circa 50 BC. Soft painterly brush textures and smooth shapes, bold chunky silhouettes, exaggerated large heads and hands and small feet, warm saturated palette, gentle warm rim light from top-left, Celtic knotwork details, thin dark-warm outlines on characters. No pixel art, no photorealism, no 3D render, no franchise designs, no watermark. Brenna, an agile determined young Celtic woman slinger, vivid red hair in one long thick braid, green woven wool tunic with restrained gold Celtic trim, brown leather belt and gold buckle, brown checked trousers, small leather boots, practical leather sling and stone pouch. Friendly expressive face, approximately three heads tall, consistent outfit and facial features in every view. Old Celtic stone trial room below oak roots, weathered carved knotwork slabs, a simple readable raised platform route, amber torch braziers, restrained mysterious purple druid light from a spiral shrine. Brenna stands facing right at gameplay scale, ONLY 12 percent of canvas height, on the bright continuous lower path. Warm torchlight on hero and walkable stone edges; lavender magical accents on one clear interactable; deep blue-violet recesses and cool distant ruined arches recede in three low-contrast depth planes. Near-black foreground root silhouettes frame only outer corners. Painterly surfaces without environment outlines. Mystery and inviting exploration, no horror or gore. Keep the ground and hero readable even in shadow, subtle glow rather than blown-out bloom. No UI, text, watermark, labels. One composed concept frame, not separate production layers.",
+      "date": "2026-11-22",
+      "tool": "Built-in image_gen",
+      "source": "docs/art-direction/phase-a/druids-trial-style-v1.png",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-35a571ca-2433-4643-8d2e-9b21064bddde.png",
+      "status": "gate-a-review",
+      "nativeSize": [
+        1672,
+        941
+      ],
+      "sha256": "f92453ad1948dde010511e6277e13f34770e191dd02bbf31099b9f572565bb69"
+    },
+    {
+      "id": "legionary-concepts-v1",
+      "transparent": false,
+      "references": [
+        "docs/art-direction/phase-a/brenna-concepts-v1.png"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: Phase A enemy character concept model sheet on warm ivory background, widescreen. Reference image 1 is our own Brenna sheet: match the brushwork, proportions, eye design, light and material finish, but create a distinct generic Roman legionary. Hand-painted 2D game art, original storybook cartoon design for Ironoak, Gaul circa 50 BC. Soft painterly brush textures and smooth shapes, bold chunky silhouettes, exaggerated large heads and hands and small feet, warm saturated palette, gentle warm rim light from top-left, Celtic knotwork details, thin dark-warm outlines on characters. No pixel art, no photorealism, no 3D render, no franchise designs, no watermark. Short stocky slightly clumsy soldier, large head and hands, tiny sandal-clad feet, red horsehair crest on plain steel helmet, segmented steel armour over red wool tunic, leather belt, warm friendly comic attitude. Original character, no signature franchise features. Top row: matching full-body FRONT, RIGHT SIDE PROFILE, BACK orthographic turnaround with same helmet and armour in all views and feet on common baseline. Bottom row: three clear face expressions alert, dizzy/stunned, sheepish; one patrol walking pose and one flattened comic stomp silhouette. Generous spacing, every figure fully visible. Gentle top-left rim light, red cloth and cool steel contrast. No text, labels, watermark. This is a concept sheet, not separated rig parts.",
+      "date": "2026-11-22",
+      "tool": "Built-in image_gen",
+      "source": "docs/art-direction/phase-a/legionary-concepts-v1.png",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-db8c2800-e805-49bb-91b6-b2ba2dbafdc7.png",
+      "status": "gate-a-review",
+      "nativeSize": [
+        1672,
+        941
+      ],
+      "sha256": "ee5247983430273f2aba5e55e31e9d9c1a1b9ae7ffd54530c83e4fb2e97efb28"
+    },
+    {
+      "id": "boar-concepts-v1",
+      "transparent": false,
+      "references": [
+        "docs/art-direction/phase-a/brenna-concepts-v1.png"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: Phase A boar-herd concept model sheet on warm ivory background, widescreen. Reference image 1 is our own character art for consistent storybook brushwork, exaggeration, light and finish. Hand-painted 2D game art, original storybook cartoon design for Ironoak, Gaul circa 50 BC. Soft painterly brush textures and smooth shapes, bold chunky silhouettes, exaggerated large heads and hands and small feet, warm saturated palette, gentle warm rim light from top-left, Celtic knotwork details, thin dark-warm outlines on characters. No pixel art, no photorealism, no 3D render, no franchise designs, no watermark. Original wild forest boar for a comic stampede in Gaul. Chunky barrel body, oversized wedge head and broad snout, short sturdy FOUR legs with small cloven hooves, small curved ivory tusks, warm umber bristles with golden rim light, darker ridge on spine. Animal quadruped, no clothes or accessories. Top row: consistent full-body FRONT, RIGHT SIDE PROFILE and BACK views on common baseline. Bottom row: head studies curious, determined, comically surprised; two clear right-facing gallop key poses with offset legs and one harmless tumble pose. Preserve anatomy, color, bristle ridge and tusks between views; appealing but readable as a charging obstacle. Every pose separated and fully visible, no text, labels, watermark. Concept only, not rig-ready parts.",
+      "date": "2026-11-22",
+      "tool": "Built-in image_gen",
+      "source": "docs/art-direction/phase-a/boar-concepts-v1.png",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-0bac8342-6e81-4fb7-a4ab-44ec1344eaaa.png",
+      "status": "superseded",
+      "nativeSize": [
+        1672,
+        941
+      ],
+      "sha256": "e362c41eed5c91606d056082969516e821ecee9b1860791a6dd93182f45963d7"
+    },
+    {
+      "id": "lighting-key-01-oak-road-v1",
+      "transparent": false,
+      "references": [
+        "docs/art-direction/phase-a/oak-road-style-v2.png",
+        "docs/art-direction/phase-a/brenna-concepts-v1.png"
+      ],
+      "palette": [
+        "#243D33",
+        "#547442",
+        "#97B54B",
+        "#C69350",
+        "#F4C665",
+        "#A7C3CA"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: one level palette and lighting key board for The Oak Road. Reference image 1 is our own approved-for-exploration brush and depth language (not yet locked); reference image 2 is our own Brenna identity. Hand-painted 2D game art, original storybook cartoon design for Ironoak, Gaul circa 50 BC. Soft painterly brush textures and smooth shapes, bold chunky silhouettes, exaggerated large heads and hands and small feet, warm saturated palette, gentle warm rim light from top-left, Celtic knotwork details, thin dark-warm outlines on characters. No pixel art, no photorealism, no 3D render, no franchise designs, no watermark. Landscape 16:9 layout, main upper 80 percent is one compact strict side-on 2D platformer scene; bottom 20 percent is a clean neutral strip of SIX large flat painted color swatches, no text, no labels, no hex strings. Level identity: Greens and golds; sunny oak woodland, bright grassy lip and rooted earth path, a glowing amber spiral sap knot, cool blue distant trees and hills; warm top-left dappled canopy rays and drifting pollen. Small Brenna on the path at 12% screen height. Color intent from dark to light and accent: #243D33, #547442, #97B54B, #C69350, #F4C665, #A7C3CA. Materials and foreground warmly saturated while distant layers are cooler, desaturated, calmer. Walkable surfaces and interactive silhouettes brighter and higher contrast than the background; keep unimportant decorative elements quiet. Each light source has a clear job: mood in background, hero separation, interaction highlight. Exaggerated chunky hero, thin dark warm character outline; environments have none. Subtle brush grain, smooth shapes, no pixels, no UI, no watermark. This is a color script study, not a new gameplay level implementation.",
+      "date": "2026-11-22",
+      "tool": "Built-in image_gen",
+      "source": "docs/art-direction/phase-a/lighting-key-01-oak-road-v1.png",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-c8ae3bb9-adbe-4b6c-af3d-57f7a500fd40.png",
+      "status": "gate-a-review",
+      "nativeSize": [
+        1672,
+        941
+      ],
+      "sha256": "c8af3542c227f64ff1af26d41fde33b13e7cda3207947f17a881e5a23670e9e4"
+    },
+    {
+      "id": "lighting-key-02-river-crossing-v1",
+      "transparent": false,
+      "references": [
+        "docs/art-direction/phase-a/oak-road-style-v2.png",
+        "docs/art-direction/phase-a/brenna-concepts-v1.png"
+      ],
+      "palette": [
+        "#243E50",
+        "#40758A",
+        "#76B6C5",
+        "#DDE9DF",
+        "#8B7651",
+        "#D9B563"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: one level palette and lighting key board for The River Crossing. Reference image 1 is our own approved-for-exploration brush and depth language (not yet locked); reference image 2 is our own Brenna identity. Hand-painted 2D game art, original storybook cartoon design for Ironoak, Gaul circa 50 BC. Soft painterly brush textures and smooth shapes, bold chunky silhouettes, exaggerated large heads and hands and small feet, warm saturated palette, gentle warm rim light from top-left, Celtic knotwork details, thin dark-warm outlines on characters. No pixel art, no photorealism, no 3D render, no franchise designs, no watermark. Landscape 16:9 layout, main upper 80 percent is one compact strict side-on 2D platformer scene; bottom 20 percent is a clean neutral strip of SIX large flat painted color swatches, no text, no labels, no hex strings. Level identity: Cool blues and whites; rising river, calm dark blue banks, whitewater mist, floating logs and a small raft; a clear brighter branch bridge across the lower playable band, amber spiral knot on bank; diffuse cool top-left daylight with warm hero rim. Small Brenna at 12% screen height. Color intent from dark to light and accent: #243E50, #40758A, #76B6C5, #DDE9DF, #8B7651, #D9B563. Materials and foreground warmly saturated while distant layers are cooler, desaturated, calmer. Walkable surfaces and interactive silhouettes brighter and higher contrast than the background; keep unimportant decorative elements quiet. Each light source has a clear job: mood in background, hero separation, interaction highlight. Exaggerated chunky hero, thin dark warm character outline; environments have none. Subtle brush grain, smooth shapes, no pixels, no UI, no watermark. This is a color script study, not a new gameplay level implementation.",
+      "date": "2026-11-22",
+      "tool": "Built-in image_gen",
+      "source": "docs/art-direction/phase-a/lighting-key-02-river-crossing-v1.png",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-814e420f-654a-4bf9-bcfd-a851a44e54c7.png",
+      "status": "gate-a-review",
+      "nativeSize": [
+        1672,
+        941
+      ],
+      "sha256": "8bc39e1b8770c47ac7aedfa4ad452fcf10c47f646937f1bfd8d3be0dcb7d5a78"
+    },
+    {
+      "id": "lighting-key-03-night-marsh-v1",
+      "transparent": false,
+      "references": [
+        "docs/art-direction/phase-a/oak-road-style-v2.png",
+        "docs/art-direction/phase-a/brenna-concepts-v1.png"
+      ],
+      "palette": [
+        "#201D32",
+        "#39324D",
+        "#645273",
+        "#8F91AE",
+        "#D4E593",
+        "#E6AE62"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: one level palette and lighting key board for The Night Marsh. Reference image 1 is our own approved-for-exploration brush and depth language (not yet locked); reference image 2 is our own Brenna identity. Hand-painted 2D game art, original storybook cartoon design for Ironoak, Gaul circa 50 BC. Soft painterly brush textures and smooth shapes, bold chunky silhouettes, exaggerated large heads and hands and small feet, warm saturated palette, gentle warm rim light from top-left, Celtic knotwork details, thin dark-warm outlines on characters. No pixel art, no photorealism, no 3D render, no franchise designs, no watermark. Landscape 16:9 layout, main upper 80 percent is one compact strict side-on 2D platformer scene; bottom 20 percent is a clean neutral strip of SIX large flat painted color swatches, no text, no labels, no hex strings. Level identity: Purple-black foggy marsh at night, reeds, sinking mud, hanging vines, fireflies and a distant Roman lantern search line. Bright desaturated lavender walkable edges, small warm firefly trail and gold lantern cones, background purple silhouettes kept very low contrast; no crushed unreadable black. Small Brenna at 12% screen height. Color intent from dark to light and accent: #201D32, #39324D, #645273, #8F91AE, #D4E593, #E6AE62. Materials and foreground warmly saturated while distant layers are cooler, desaturated, calmer. Walkable surfaces and interactive silhouettes brighter and higher contrast than the background; keep unimportant decorative elements quiet. Each light source has a clear job: mood in background, hero separation, interaction highlight. Exaggerated chunky hero, thin dark warm character outline; environments have none. Subtle brush grain, smooth shapes, no pixels, no UI, no watermark. This is a color script study, not a new gameplay level implementation.",
+      "date": "2026-11-22",
+      "tool": "Built-in image_gen",
+      "source": "docs/art-direction/phase-a/lighting-key-03-night-marsh-v1.png",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-a0c8ecc8-f8ad-4181-840f-670317868dbc.png",
+      "status": "gate-a-review",
+      "nativeSize": [
+        1672,
+        941
+      ],
+      "sha256": "0e454a0e8b6be2ee746e42b3b2a74c42e1201ab108a8c500b8ab79330eeef1d6"
+    },
+    {
+      "id": "lighting-key-04-roman-camp-v1",
+      "transparent": false,
+      "references": [
+        "docs/art-direction/phase-a/oak-road-style-v2.png",
+        "docs/art-direction/phase-a/brenna-concepts-v1.png"
+      ],
+      "palette": [
+        "#302B31",
+        "#654235",
+        "#9C5040",
+        "#B98252",
+        "#E6B564",
+        "#7C9099"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: one level palette and lighting key board for The Roman Camp. Reference image 1 is our own approved-for-exploration brush and depth language (not yet locked); reference image 2 is our own Brenna identity. Hand-painted 2D game art, original storybook cartoon design for Ironoak, Gaul circa 50 BC. Soft painterly brush textures and smooth shapes, bold chunky silhouettes, exaggerated large heads and hands and small feet, warm saturated palette, gentle warm rim light from top-left, Celtic knotwork details, thin dark-warm outlines on characters. No pixel art, no photorealism, no 3D render, no franchise designs, no watermark. Landscape 16:9 layout, main upper 80 percent is one compact strict side-on 2D platformer scene; bottom 20 percent is a clean neutral strip of SIX large flat painted color swatches, no text, no labels, no hex strings. Level identity: Warm reds and browns, palisades, faded red tents, prisoner wagon and iron chain, brighter carved timber walkway with gold torch highlights; cooler muted grey-blue background camp silhouettes, directional amber torch pools and restrained smoke. Small Brenna at 12% screen height. Color intent from dark to light and accent: #302B31, #654235, #9C5040, #B98252, #E6B564, #7C9099. Materials and foreground warmly saturated while distant layers are cooler, desaturated, calmer. Walkable surfaces and interactive silhouettes brighter and higher contrast than the background; keep unimportant decorative elements quiet. Each light source has a clear job: mood in background, hero separation, interaction highlight. Exaggerated chunky hero, thin dark warm character outline; environments have none. Subtle brush grain, smooth shapes, no pixels, no UI, no watermark. This is a color script study, not a new gameplay level implementation.",
+      "date": "2026-11-22",
+      "tool": "Built-in image_gen",
+      "source": "docs/art-direction/phase-a/lighting-key-04-roman-camp-v1.png",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-f80c4743-1723-44e7-a00a-5e2b4116d7cb.png",
+      "status": "gate-a-review",
+      "nativeSize": [
+        1671,
+        941
+      ],
+      "sha256": "f58f6e60337e1cc6a2a969d8dc27ca343790ca85fa407fc5de47c5e0533acb2b"
+    },
+    {
+      "id": "lighting-key-05-iron-mines-v1",
+      "transparent": false,
+      "references": [
+        "docs/art-direction/phase-a/oak-road-style-v2.png",
+        "docs/art-direction/phase-a/brenna-concepts-v1.png"
+      ],
+      "palette": [
+        "#211F25",
+        "#42434A",
+        "#72757D",
+        "#B95A32",
+        "#F59C3B",
+        "#FFE0A1"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: one level palette and lighting key board for The Iron Mines. Reference image 1 is our own approved-for-exploration brush and depth language (not yet locked); reference image 2 is our own Brenna identity. Hand-painted 2D game art, original storybook cartoon design for Ironoak, Gaul circa 50 BC. Soft painterly brush textures and smooth shapes, bold chunky silhouettes, exaggerated large heads and hands and small feet, warm saturated palette, gentle warm rim light from top-left, Celtic knotwork details, thin dark-warm outlines on characters. No pixel art, no photorealism, no 3D render, no franchise designs, no watermark. Landscape 16:9 layout, main upper 80 percent is one compact strict side-on 2D platformer scene; bottom 20 percent is a clean neutral strip of SIX large flat painted color swatches, no text, no labels, no hex strings. Level identity: Charcoal black and molten orange underground mine, iron rails and mine cart, furnace glow, a clear playable rock ledge with iron bars highlighted as interactables, sparks, cool slate distant tunnel haze; darkest recesses quiet, molten amber-white reserved for hot iron and forge points. Small Brenna at 12% screen height. Color intent from dark to light and accent: #211F25, #42434A, #72757D, #B95A32, #F59C3B, #FFE0A1. Materials and foreground warmly saturated while distant layers are cooler, desaturated, calmer. Walkable surfaces and interactive silhouettes brighter and higher contrast than the background; keep unimportant decorative elements quiet. Each light source has a clear job: mood in background, hero separation, interaction highlight. Exaggerated chunky hero, thin dark warm character outline; environments have none. Subtle brush grain, smooth shapes, no pixels, no UI, no watermark. This is a color script study, not a new gameplay level implementation.",
+      "date": "2026-11-22",
+      "tool": "Built-in image_gen",
+      "source": "docs/art-direction/phase-a/lighting-key-05-iron-mines-v1.png",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-65f441f5-c2a7-49fb-b263-bf522c67b81f.png",
+      "status": "gate-a-review",
+      "nativeSize": [
+        1672,
+        941
+      ],
+      "sha256": "55f6f906a8519a82982c7045edd34a247f2793d70da8d47a1636fc82c71065da"
+    },
+    {
+      "id": "lighting-key-06-fort-varro-v1",
+      "transparent": false,
+      "references": [
+        "docs/art-direction/phase-a/oak-road-style-v2.png",
+        "docs/art-direction/phase-a/brenna-concepts-v1.png"
+      ],
+      "palette": [
+        "#29333F",
+        "#4C6173",
+        "#8195A4",
+        "#BAC8CB",
+        "#F0E9CC",
+        "#C69858"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: one level palette and lighting key board for Fort Varro. Reference image 1 is our own approved-for-exploration brush and depth language (not yet locked); reference image 2 is our own Brenna identity. Hand-painted 2D game art, original storybook cartoon design for Ironoak, Gaul circa 50 BC. Soft painterly brush textures and smooth shapes, bold chunky silhouettes, exaggerated large heads and hands and small feet, warm saturated palette, gentle warm rim light from top-left, Celtic knotwork details, thin dark-warm outlines on characters. No pixel art, no photorealism, no 3D render, no franchise designs, no watermark. Landscape 16:9 layout, main upper 80 percent is one compact strict side-on 2D platformer scene; bottom 20 percent is a clean neutral strip of SIX large flat painted color swatches, no text, no labels, no hex strings. Level identity: Stormy grey stone Roman fort wall, rain and wind, distant restrained silhouette of a mechanical ballista-like war machine, clear playable stone wall ledge, lightning across cool blue-grey clouds, small warm torch and bronze interaction highlights; readable despite weather, no lightning obscuring ground. Small Brenna at 12% screen height. Color intent from dark to light and accent: #29333F, #4C6173, #8195A4, #BAC8CB, #F0E9CC, #C69858. Materials and foreground warmly saturated while distant layers are cooler, desaturated, calmer. Walkable surfaces and interactive silhouettes brighter and higher contrast than the background; keep unimportant decorative elements quiet. Each light source has a clear job: mood in background, hero separation, interaction highlight. Exaggerated chunky hero, thin dark warm character outline; environments have none. Subtle brush grain, smooth shapes, no pixels, no UI, no watermark. This is a color script study, not a new gameplay level implementation.",
+      "date": "2026-11-22",
+      "tool": "Built-in image_gen",
+      "source": "docs/art-direction/phase-a/lighting-key-06-fort-varro-v1.png",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-2241e53e-f799-4e23-b1f0-0fa8063a459e.png",
+      "status": "gate-a-review",
+      "nativeSize": [
+        1672,
+        941
+      ],
+      "sha256": "0f4cec17065e1e48113c41f4741200ab3e79e259fd390beb644ad30da11af46b"
+    },
+    {
+      "id": "boar-concepts-v2",
+      "transparent": false,
+      "references": [
+        "docs/art-direction/phase-a/boar-concepts-v1.png"
+      ],
+      "prompt": "Use case: precise-object-edit. Image 1 is our own boar concept sheet edit target. Keep the entire sheet's layout, painterly style, colors, character identity, turnarounds, expressions and the two gallop poses unchanged. Change ONLY the bottom-right upside-down tumble pose: it currently has too many legs/hooves. Redraw that tumble pose with exactly FOUR short legs total and exactly FOUR cloven hooves total, attached anatomically as two front limbs and two hind limbs to one body. No extra feet, floating hooves, duplicate limbs or hand shapes. Retain the playful pose, same barrel body, tusks, head, ears, tail and dust marks. Everything else on the sheet stays unchanged. No text or watermark.",
+      "date": "2026-11-22",
+      "tool": "Built-in image_gen",
+      "source": "docs/art-direction/phase-a/boar-concepts-v2.png",
+      "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-0bbda27c-e1a2-49ca-9b91-780454a3dbb5.png",
+      "status": "gate-a-review",
+      "nativeSize": [
+        1672,
+        941
+      ],
+      "sha256": "465e41664bf5e84a853f3e03a35737ac3c699e3cd1987afecae7be2cbc8b68e3"
+    }
+  ],
+  "presentationExports": [
+    {
+      "sourceAsset": "oak-road-style-v2",
+      "file": "docs/art-direction/phase-a/oak-road-style-1920x1080.png",
+      "size": [
+        1920,
+        1080
+      ],
+      "operation": "Presentation export only; high-quality bicubic resampling from native image; no new detail added.",
+      "date": "2026-11-22",
+      "sha256": "7dd0a4b4377a311d3e65dd913b79946a8986ee4b5f7f9c8987b2d3b5f51f4b1d"
+    },
+    {
+      "sourceAsset": "druids-trial-style-v1",
+      "file": "docs/art-direction/phase-a/druids-trial-style-1920x1080.png",
+      "size": [
+        1920,
+        1080
+      ],
+      "operation": "Presentation export only; high-quality bicubic resampling from native image; no new detail added.",
+      "date": "2026-11-22",
+      "sha256": "2ed9a9902b3843a4296a93d9aee8b35a5ada6def3fa10186751153f74ad220bb"
+    }
+  ]
+}

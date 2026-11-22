@@ -1,6 +1,18 @@
 # Ironoak — Art Spec for Codex
 
-Every sprite in the game is currently a **code-generated placeholder**. Drop a PNG with the
+> **Art direction is changing.** The game is moving from pixel art to hand-painted 2D; see
+> [design/ART_DIRECTION.md](design/ART_DIRECTION.md). This pixel spec stays valid for the
+> greybox and placeholders until Phase B of that plan lands. **New art requests should follow
+> ART_DIRECTION.md** (style pillars, prompt template, and the rule of never naming other games
+> or using their images as references).
+
+The first generated art pass now supplies all **27 PNGs** in `Assets/_Ironoak/Resources/Art/`.
+See `art-contact-sheet.png` for a preview, `art-generation.json` for the built-in image_gen
+prompt set and asset sizes, and `art-source/` for preserved originals. Rebuild the sized
+PNGs with `python tools/prepare_art.py docs/art-generation.json` (requires Pillow).
+The procedural art remains a fallback for any missing file.
+
+Drop a PNG with the
 exact file name below into `Assets/_Ironoak/Resources/Art/` and it replaces the placeholder
 automatically. No code or Inspector changes are needed: the import settings (16 PPU, point
 filter, no compression, pivot) are applied for you by `ArtImportPostprocessor`.

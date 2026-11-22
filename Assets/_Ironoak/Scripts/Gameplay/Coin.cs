@@ -29,6 +29,8 @@ namespace Ironoak.Gameplay
             return coin;
         }
 
+        void Awake() => _sr = GetComponent<SpriteRenderer>();
+
         void Start()
         {
             _frames = SpriteLibrary.GetFrames("coin_0", "coin_1", "coin_2", "coin_3");

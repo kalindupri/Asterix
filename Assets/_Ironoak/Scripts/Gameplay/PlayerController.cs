@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
-using Ironoak.Art;
 using Ironoak.Controls;
+using Ironoak.Powers;
 using Ironoak.Sound;
 using UnityEngine;
 
@@ -22,7 +22,7 @@ namespace Ironoak.Gameplay
         public float airDecel = 25f;
 
         [Header("Jump")]
-        public float jumpVelocity = 15f;
+        public float jumpVelocity = 16f; // ~3.6 tiles: 3-tile steps are comfortable, 4-tile walls are not
         public float gravityScale = 3.6f;
         public float fallGravityMultiplier = 1.7f;
         public float jumpCutMultiplier = 0.45f;
@@ -34,24 +34,30 @@ namespace Ironoak.Gameplay
         public event Action Landed;
 
         public bool InputEnabled { get; set; } = true;
+        /// <summary>Set while aiming the sling: feet planted, no running or jumping.</summary>
+        public bool AimLock { get; set; }
         public bool Grounded { get; private set; }
         public int Facing { get; private set; } = 1;
         public Vector2 Velocity => _rb.linearVelocity;
         public Rigidbody2D Body => _rb;
         public BoxCollider2D Collider => _col;
         public PlayerHealth Health { get; private set; }
+        public PlayerPowers Powers { get; private set; }
+        /// <summary>Last position where Brenna stood on static ground (used after falling in water).</summary>
+        public Vector2 LastSafePosition { get; private set; }
 
         Rigidbody2D _rb;
         BoxCollider2D _col;
-        float _coyote, _buffer, _controlLock, _moveInput;
+        float _coyote, _buffer, _controlLock, _moveInput, _safeTimer;
         bool _jumpHeld, _jumping;
+        Collider2D _groundCollider;
         ContactFilter2D _groundFilter;
         readonly List<RaycastHit2D> _hits = new List<RaycastHit2D>(4);
 
         public static PlayerController Spawn(Transform parent, Vector2 position)
         {
             var go = new GameObject("Player");
-            go.transform.SetParent(parent, false);
+            if (parent != null) go.transform.SetParent(parent, false);
             go.transform.position = position;
 
             var rb = go.AddComponent<Rigidbody2D>();
@@ -62,18 +68,29 @@ namespace Ironoak.Gameplay
             var col = go.AddComponent<BoxCollider2D>();
             col.size = new Vector2(0.55f, 0.85f);
             col.offset = new Vector2(0f, 0.43f);
-            col.sharedMaterial = new PhysicsMaterial2D("PlayerNoFriction") { friction = 0f, bounciness = 0f };
+            col.sharedMaterial = PhysicsMaterials.NoFriction;
 
+            go.AddComponent<PlayerPowers>();
             var pc = go.AddComponent<PlayerController>();
             var health = go.AddComponent<PlayerHealth>();
-            pc.Health = health;
             health.RespawnPoint = position;
+            go.AddComponent<SlingAbility>();
+            go.AddComponent<RootgrowAbility>();
 
-            var visualGo = new GameObject("Visual");
-            visualGo.transform.SetParent(go.transform, false);
-            var sr = visualGo.AddComponent<SpriteRenderer>();
-            sr.sortingOrder = 10;
-            visualGo.AddComponent<PlayerVisual>().Init(pc, health, sr);
+            if (Core.IronoakConfig.Current.cutoutPlayer)
+            {
+                // Painted cut-out puppet, animated procedurally from the physics state.
+                var rig = Characters.PuppetRig.Build(go.transform, Characters.PuppetDefinition.LoadOrDefault("Brenna"), 10);
+                rig.gameObject.AddComponent<Characters.PuppetAnimator>().Init(rig, pc, health);
+            }
+            else
+            {
+                var visualGo = new GameObject("Visual");
+                visualGo.transform.SetParent(go.transform, false);
+                var sr = visualGo.AddComponent<SpriteRenderer>();
+                sr.sortingOrder = 10;
+                visualGo.AddComponent<PlayerVisual>().Init(pc, health, sr);
+            }
             return pc;
         }
 
@@ -83,15 +100,23 @@ namespace Ironoak.Gameplay
             _col = GetComponent<BoxCollider2D>();
             _rb.gravityScale = gravityScale;
             _groundFilter = new ContactFilter2D { useTriggers = false };
+            Health = GetComponent<PlayerHealth>();
+            Powers = GetComponent<PlayerPowers>();
+            LastSafePosition = transform.position;
+        }
+
+        void Start()
+        {
             if (Health == null) Health = GetComponent<PlayerHealth>();
         }
 
         void Update()
         {
-            if (!InputEnabled)
+            if (!InputEnabled || AimLock)
             {
                 _moveInput = 0f;
                 _jumpHeld = false;
+                _buffer = 0f;
                 return;
             }
             if (GameInput.JumpPressed) _buffer = jumpBufferTime;
@@ -100,18 +125,24 @@ namespace Ironoak.Gameplay
             _moveInput = GameInput.Horizontal;
         }
 
+        public void FaceTowards(float x)
+        {
+            if (Mathf.Abs(x) > 0.01f) Facing = x > 0f ? 1 : -1;
+        }
+
         void FixedUpdate()
         {
             float dt = Time.fixedDeltaTime;
             Vector2 v = _rb.linearVelocity;
 
             bool wasGrounded = Grounded;
-            Grounded = v.y <= 0.01f && CheckGround();
+            Grounded = v.y <= 0.01f + GroundVelocityY() && CheckGround();
             if (Grounded)
             {
                 _coyote = coyoteTime;
                 _jumping = false;
                 if (!wasGrounded) Landed?.Invoke();
+                TrackSafeGround(dt);
             }
             else
             {
@@ -130,7 +161,7 @@ namespace Ironoak.Gameplay
                 float accel = Grounded ? (moving ? groundAccel : groundDecel) : (moving ? airAccel : airDecel);
                 if (moving && Mathf.Abs(v.x) > 0.01f && Mathf.Sign(target) != Mathf.Sign(v.x)) accel *= 1.5f; // snappy turn
                 v.x = Mathf.MoveTowards(v.x, target, accel * dt);
-                if (moving) Facing = target > 0f ? 1 : -1;
+                if (moving && !AimLock) Facing = target > 0f ? 1 : -1;
             }
 
             // Jump (buffered + coyote)
@@ -157,15 +188,37 @@ namespace Ironoak.Gameplay
             _rb.linearVelocity = v;
         }
 
+        float GroundVelocityY()
+        {
+            // Standing on a rising root counts as grounded even though we're moving up.
+            if (_groundCollider == null || _groundCollider.attachedRigidbody == null) return 0f;
+            return Mathf.Max(0f, _groundCollider.attachedRigidbody.linearVelocity.y);
+        }
+
         bool CheckGround()
         {
             int n = _col.Cast(Vector2.down, _groundFilter, _hits, 0.06f);
             for (int i = 0; i < n; i++)
             {
                 var hit = _hits[i];
-                if (hit.normal.y > 0.6f && hit.collider.GetComponent<SolidGround>() != null) return true;
+                if (hit.normal.y > 0.6f && hit.collider.GetComponent<SolidGround>() != null)
+                {
+                    _groundCollider = hit.collider;
+                    return true;
+                }
             }
+            _groundCollider = null;
             return false;
+        }
+
+        void TrackSafeGround(float dt)
+        {
+            _safeTimer -= dt;
+            if (_safeTimer > 0f || _groundCollider == null) return;
+            var body = _groundCollider.attachedRigidbody;
+            if (body != null && body.bodyType != RigidbodyType2D.Static) return; // not on roots/crates/bridges
+            _safeTimer = 0.25f;
+            LastSafePosition = _rb.position;
         }
 
         /// <summary>Upward bounce after stomping an enemy. Holding jump gives a higher bounce.</summary>

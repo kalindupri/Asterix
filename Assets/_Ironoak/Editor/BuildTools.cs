@@ -13,7 +13,7 @@ namespace Ironoak.EditorTools
         {
             var options = new BuildPlayerOptions
             {
-                scenes = new[] { "Assets/_Ironoak/Scenes/Main.unity" },
+                scenes = EditorBuildSettingsScene.GetActiveSceneList(EditorBuildSettings.scenes),
                 locationPathName = Output,
                 target = BuildTarget.StandaloneWindows64,
                 options = BuildOptions.Development

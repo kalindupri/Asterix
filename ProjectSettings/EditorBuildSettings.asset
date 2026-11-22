@@ -8,5 +8,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Ironoak/Scenes/Main.unity
     guid: 7706c13a100716743aa264be11501b6c
+  - enabled: 1
+    path: Assets/_Ironoak/Scenes/Levels/L1_OakRoad.unity
+    guid: 6822959b69470fb43a4a80aacaef7186
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
