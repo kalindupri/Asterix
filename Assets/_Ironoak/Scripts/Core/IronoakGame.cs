@@ -194,10 +194,30 @@ namespace Ironoak.Core
             {
                 var look = _level.look ?? LevelLook.Default;
                 foreach (var go in _levelScene.GetRootGameObjects()) PaintedTerrain.ApplyAll(go);
+                HideSecretsInTerrain();
                 ParallaxBackground.Instance?.SetBounds(_level.bounds);
                 ParallaxBackground.Instance?.Use(look.parallaxSet);
                 SceneLighting.Instance?.Apply(look);
             }
+        }
+
+        /// <summary>
+        /// Painted mode: rock covers over secret chambers are redrawn as the surrounding ground
+        /// (earth, cliff faces, grass), so a chamber is invisible until found, then fades away.
+        /// </summary>
+        void HideSecretsInTerrain()
+        {
+            var terrain = _level.GetComponentInChildren<PaintedTerrain>();
+            if (terrain == null) return;
+            foreach (var area in _level.GetComponentsInChildren<SecretArea>(true))
+                foreach (var cover in area.covers)
+                {
+                    if (cover == null || cover.sprite == null || cover.sprite.name != "secret_cover_rock") continue;
+                    var meshes = terrain.PaintCover(cover.bounds, cover.sortingOrder);
+                    if (meshes.Count == 0) continue;
+                    cover.enabled = false;
+                    area.Fading += PaintedTerrain.Fader(meshes);
+                }
         }
 
         void BeginRun()

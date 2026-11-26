@@ -1,4 +1,5 @@
 # Export authored images and produce the batch contact sheet / tiling QA.
+param([ValidateSet('poc-batch-1','poc-batch-2')][string]$BatchName='poc-batch-1')
 $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName System.Drawing
 $probe = [System.Drawing.Bitmap]::new(1,1); $probe.Dispose()
@@ -51,7 +52,7 @@ public static class PocBatchExport {
             im.SetPixel(xa,ya,Mix(a,mid,t)); im.SetPixel(xb,yb,Mix(b,mid,t));
         }
     }
-    public static void Export(string input,string output,int w,int h,string mode,string tile,int surface) {
+    public static void Export(string input,string output,int w,int h,string mode,string tile,int surface,int[] crop,int[] placement) {
         using(var source=new Bitmap(input)) using(var result=new Bitmap(w,h,PixelFormat.Format32bppArgb)) {
             Rectangle src=new Rectangle(0,0,source.Width,source.Height);
             Rectangle dst=new Rectangle(0,0,w,h);
@@ -62,6 +63,11 @@ public static class PocBatchExport {
             if(mode=="bottom") {
                 var bounds=Bounds(source); src=new Rectangle(0,0,source.Width,bounds.Bottom);
             }
+            if(mode=="strip") { var b=Bounds(source); src=new Rectangle(0,b.Top,source.Width,b.Height); }
+            if(mode=="rope") { var b=Bounds(source); src=new Rectangle(b.Left,0,b.Width,source.Height); dst=new Rectangle(4,0,w-8,h); }
+            if(mode=="spikes") { src=Bounds(source); dst=new Rectangle(0,h-90,w,90); }
+            if(crop!=null && crop.Length==4) src=new Rectangle(crop[0],crop[1],crop[2],crop[3]);
+            if(placement!=null && placement.Length==4) dst=new Rectangle(placement[0],placement[1],placement[2],placement[3]);
             using(var g=Setup(result)) {
                 g.CompositingMode=CompositingMode.SourceCopy; g.Clear(Color.Transparent);
                 if(surface>0) {
@@ -72,7 +78,8 @@ public static class PocBatchExport {
             // Canonicalise transparent RGB, and restore full coverage in authored solid regions.
             for(int y=0;y<h;y++) for(int x=0;x<w;x++) {
                 Color c=result.GetPixel(x,y);
-                if(c.A==0) result.SetPixel(x,y,Color.Transparent);
+                if(mode=="water") result.SetPixel(x,y,Color.FromArgb(179,c.R,c.G,c.B));
+                else if(c.A==0) result.SetPixel(x,y,Color.Transparent);
                 else if(c.A>=250) result.SetPixel(x,y,Color.FromArgb(255,c.R,c.G,c.B));
             }
             // Narrow premultiplied edge reconciliation only; authored centre remains unchanged.
@@ -119,17 +126,17 @@ public static class PocBatchExport {
 }
 '@
 $batchRoot = Split-Path $PSScriptRoot -Parent
-$batchData = Get-Content (Join-Path $batchRoot 'docs/art-source/poc-batch-1/generation.json') -Raw | ConvertFrom-Json
-$previewPath = Join-Path $batchRoot 'docs/art-source/poc-batch-1/tiling-previews'
+$batchData = Get-Content (Join-Path $batchRoot "docs/art-source/$BatchName/generation.json") -Raw | ConvertFrom-Json
+$previewPath = Join-Path $batchRoot "docs/art-source/$BatchName/tiling-previews"
 New-Item -ItemType Directory -Force $previewPath | Out-Null
 $images = @(); $labels = @()
 foreach ($asset in $batchData.assets) {
     $sourceFile = if ($asset.selectedSource) { $asset.selectedSource } else { $asset.source }
     $outputFile = Join-Path $batchRoot $asset.output
     New-Item -ItemType Directory -Force (Split-Path $outputFile -Parent) | Out-Null
-    [PocBatchExport]::Export((Join-Path $batchRoot $sourceFile),$outputFile,$asset.size[0],$asset.size[1],$asset.exportMode,$asset.tile,$asset.sourceSurfaceY)
+    [PocBatchExport]::Export((Join-Path $batchRoot $sourceFile),$outputFile,$asset.size[0],$asset.size[1],$asset.exportMode,$asset.tile,$asset.sourceSurfaceY,[int[]]$asset.exportCrop,[int[]]$asset.exportPlacement)
     if ($asset.tile) { [PocBatchExport]::TilePreview($outputFile,(Join-Path $previewPath ($asset.name+'.png'))) }
     $images += $outputFile; $labels += "$($asset.name)  $($asset.size[0])x$($asset.size[1])"
     Write-Output "Exported $($asset.name)"
 }
-[PocBatchExport]::Contact([string[]]$images,[string[]]$labels,(Join-Path $batchRoot 'docs/art-source/poc-batch-1/contact-sheet.png'))
+[PocBatchExport]::Contact([string[]]$images,[string[]]$labels,(Join-Path $batchRoot "docs/art-source/$BatchName/contact-sheet.png"))

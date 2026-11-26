@@ -13,13 +13,28 @@ namespace Ironoak.Characters
     /// </summary>
     public class PuppetAnimator : MonoBehaviour
     {
-        [Header("Run")]
-        public float strideRate = 2.4f;     // cycle radians per unit travelled
-        public float legSwing = 38f;
-        public float kneeBend = 60f;
-        public float armSwing = 32f;
-        public float runLean = 9f;
-        public float bobHeight = 0.045f;
+        [Header("Locomotion")]
+        [Tooltip("Distance covered by one full cycle (two steps) when walking slowly / at full run.")]
+        public float walkStride = 1.1f;
+        public float runStride = 2.1f;
+        public float walkArmSwing = 22f;
+        public float runArmSwing = 52f;
+        public float runLean = 13f;
+        public float runBob = 0.05f;
+        public float walkBob = 0.02f;
+        [Tooltip("Extra forward lean per unit/s² of acceleration (negative when braking).")]
+        public float accelLean = 0.12f;
+
+        // Key poses sampled at 8 evenly spaced points of the stride (0 = this leg's heel contact).
+        // Thigh: + forward. Shin: relative to thigh, - bends the knee back.
+        static readonly float[] RunThigh = { 28f, 10f, -15f, -38f, -25f, 15f, 50f, 45f };
+        static readonly float[] RunShin = { -12f, -38f, -30f, -25f, -95f, -108f, -65f, -18f };
+        static readonly float[] WalkThigh = { 22f, 12f, 0f, -12f, -22f, -10f, 12f, 24f };
+        static readonly float[] WalkShin = { -5f, -12f, -6f, -8f, -25f, -50f, -35f, -10f };
+        // Body height over the stride (both legs, so the pattern repeats twice): low just after
+        // contact, high in flight (run) or while passing (walk).
+        static readonly float[] RunBob = { -0.2f, -1f, 0.1f, 0.9f, -0.2f, -1f, 0.1f, 0.9f };
+        static readonly float[] WalkBob = { -0.5f, 0f, 0.7f, 0.1f, -0.5f, 0f, 0.7f, 0.1f };
 
         [Header("Secondary motion")]
         public float braidStiffness = 14f;
@@ -35,7 +50,8 @@ namespace Ironoak.Characters
         readonly float[] _braidAngle = new float[3];
         Vector3 _pelvisRest;
 
-        float _t, _phase, _runW, _airW, _aimW, _castT, _throwT, _deadSpin;
+        float _t, _phase, _moveW, _speed01, _airW, _aimW, _castT, _throwT, _landT, _deadSpin;
+        float _lastVx, _accel;
         Vector2 _squash = Vector2.one;
 
         public void Init(PuppetRig rig, PlayerController pc, PlayerHealth hp)
@@ -61,7 +77,7 @@ namespace Ironoak.Characters
             _pelvisRest = rig.RestPosition("pelvis");
 
             pc.Jumped += () => _squash = new Vector2(0.86f, 1.14f);
-            pc.Landed += () => _squash = new Vector2(1.16f, 0.84f);
+            pc.Landed += () => { _squash = new Vector2(1.16f, 0.84f); _landT = LandTime; };
             if (_sling != null) _sling.Thrown += () => _throwT = 0.25f;
             if (root != null) root.Cast += () => _castT = 0.45f;
         }
@@ -74,6 +90,21 @@ namespace Ironoak.Characters
         static float Approach(float current, float target, float rate, float dt) =>
             Mathf.Lerp(current, target, 1f - Mathf.Exp(-rate * dt));
 
+        const float LandTime = 0.16f;
+
+        /// <summary>Smooth looping (Catmull-Rom) sample of evenly spaced keys at phase p (cycles).</summary>
+        static float Cyc(float[] k, float p)
+        {
+            int n = k.Length;
+            float x = Mathf.Repeat(p, 1f) * n;
+            int i = (int)x;
+            float t = x - i;
+            float p0 = k[(i - 1 + n) % n], p1 = k[i % n], p2 = k[(i + 1) % n], p3 = k[(i + 2) % n];
+            return 0.5f * (2f * p1 + (p2 - p0) * t + (2f * p0 - 5f * p1 + 4f * p2 - p3) * t * t + (3f * p1 - p0 - 3f * p2 + p3) * t * t * t);
+        }
+
+        static float Gait(float[] walk, float[] run, float p, float s01) => Mathf.Lerp(Cyc(walk, p), Cyc(run, p), s01);
+
         void LateUpdate()
         {
             if (_pc == null || _rig == null) return;
@@ -85,28 +116,65 @@ namespace Ironoak.Characters
             bool grounded = _pc.Grounded;
             float speed = Mathf.Abs(v.x);
 
-            _runW = Approach(_runW, grounded ? Mathf.Clamp01(speed / _pc.maxSpeed) : 0f, 12f, dt);
+            _moveW = Approach(_moveW, grounded && speed > 0.25f ? 1f : 0f, 10f, dt);
+            _speed01 = Approach(_speed01, Mathf.Clamp01(speed / _pc.maxSpeed), 8f, dt);
             _airW = Approach(_airW, grounded ? 0f : 1f, 18f, dt);
             _aimW = Approach(_aimW, _sling != null && _sling.Aiming ? 1f : 0f, 20f, dt);
             _castT = Mathf.Max(0f, _castT - dt);
             _throwT = Mathf.Max(0f, _throwT - dt);
-            if (grounded) _phase += speed * strideRate * dt;
+            _landT = Mathf.Max(0f, _landT - dt);
+            float s01 = _speed01;
+            if (grounded) _phase += speed / Mathf.Lerp(walkStride, runStride, s01) * dt;
+            if (dt > 0f) _accel = Approach(_accel, grounded ? (v.x - _lastVx) / dt * facing : 0f, 10f, dt);
+            _lastVx = v.x;
 
-            float s = Mathf.Sin(_phase), c = Mathf.Cos(_phase);
             float breathe = Mathf.Sin(_t * 2.2f);
+            float idleW = 1f - _moveW;
 
-            // ---- ground pose: idle blended with run cycle ----
-            float legF = s * legSwing * _runW;
-            float legB = -s * legSwing * _runW;
-            float shinF = -(Mathf.Max(0f, c) * kneeBend * _runW + 4f);
-            float shinB = -(Mathf.Max(0f, -c) * kneeBend * _runW + 4f);
-            float armF = -s * armSwing * _runW + 3f;
-            float armB = s * armSwing * _runW - 3f;
-            float foreF = 12f + 28f * _runW;
-            float foreB = 12f + 28f * _runW;
-            float torso = -runLean * _runW + breathe * 1.2f * (1f - _runW);
-            float head = breathe * 1.6f * (1f - _runW) + runLean * 0.5f * _runW;
-            float bob = (Mathf.Abs(c) - 0.6f) * bobHeight * _runW + breathe * 0.006f * (1f - _runW);
+            // ---- idle: relaxed, weight on the back leg, breathing through the shoulders ----
+            float sway = Mathf.Sin(_t * 0.9f);
+            float iLegF = 9f, iShinF = -7f, iLegB = -5f, iShinB = -3f;
+            float iArmF = 7f + breathe * 2.5f, iForeF = 18f + breathe * 3f;
+            float iArmB = -6f - breathe * 2f, iForeB = 14f;
+            float iTorso = breathe * 1.5f + sway * 0.8f;
+            float iHead = -breathe * 1f + Mathf.Sin(_t * 0.63f) * 2.5f;
+            float iBob = breathe * 0.007f - 0.01f;
+
+            // ---- walk/run: key-posed gait, legs half a stride apart, arms opposite the legs ----
+            float pF = _phase, pB = _phase + 0.5f;
+            float mLegF = Gait(WalkThigh, RunThigh, pF, s01), mShinF = Gait(WalkShin, RunShin, pF, s01);
+            float mLegB = Gait(WalkThigh, RunThigh, pB, s01), mShinB = Gait(WalkShin, RunShin, pB, s01);
+            float armAmp = Mathf.Lerp(walkArmSwing, runArmSwing, s01);
+            float armWave = Mathf.Cos((_phase - 0.78f) * Mathf.PI * 2f); // 1 when the front leg is furthest forward
+            float mArmF = -armAmp * armWave, mArmB = armAmp * armWave;
+            float foreBase = Mathf.Lerp(18f, 82f, s01), foreExtra = Mathf.Lerp(14f, 24f, s01);
+            float mForeF = foreBase + foreExtra * Mathf.Max(0f, -armWave);
+            float mForeB = foreBase + foreExtra * Mathf.Max(0f, armWave);
+            float lean = Mathf.Lerp(3f, runLean, s01) + Mathf.Clamp(_accel * accelLean, -8f, 9f);
+            float bobKey = Mathf.Lerp(Cyc(WalkBob, _phase) * walkBob, Cyc(RunBob, _phase) * runBob, s01);
+            float mTorso = -lean + bobKey * 25f;               // chest dips a little on each contact
+            float mHead = lean * 0.55f - bobKey * 30f;         // eyes stay on the road ahead
+            float mBob = bobKey - Mathf.Lerp(0.02f, 0.035f, s01); // angled legs are shorter: keep the feet on the ground
+
+            float legF = Mathf.Lerp(mLegF, iLegF, idleW), shinF = Mathf.Lerp(mShinF, iShinF, idleW);
+            float legB = Mathf.Lerp(mLegB, iLegB, idleW), shinB = Mathf.Lerp(mShinB, iShinB, idleW);
+            float armF = Mathf.Lerp(mArmF, iArmF, idleW), foreF = Mathf.Lerp(mForeF, iForeF, idleW);
+            float armB = Mathf.Lerp(mArmB, iArmB, idleW), foreB = Mathf.Lerp(mForeB, iForeB, idleW);
+            float torso = Mathf.Lerp(mTorso, iTorso, idleW);
+            float head = Mathf.Lerp(mHead, iHead, idleW);
+            float bob = Mathf.Lerp(mBob, iBob, idleW);
+            float hipX = sway * 0.012f * idleW;
+
+            // ---- landing: knees soak up the impact ----
+            if (_landT > 0f)
+            {
+                float k = Mathf.Sin(_landT / LandTime * Mathf.PI) * (1f - 0.5f * _moveW);
+                legF += 30f * k; shinF -= 55f * k;
+                legB += 22f * k; shinB -= 45f * k;
+                torso -= 10f * k; head += 6f * k;
+                bob -= 0.09f * k;
+                armF += 15f * k; armB += 10f * k;
+            }
 
             // ---- air pose: jump (rising) blended with fall ----
             if (_airW > 0.001f)
@@ -151,7 +219,7 @@ namespace Ironoak.Characters
             if (_throwT > 0f) foreF -= Mathf.Sin(_throwT / 0.25f * Mathf.PI) * 70f; // whip on release
 
             // ---- apply ----
-            if (_pelvis != null) _pelvis.localPosition = _pelvisRest + new Vector3(0f, bob, 0f);
+            if (_pelvis != null) _pelvis.localPosition = _pelvisRest + new Vector3(hipX, bob, 0f);
             Rot(_torso, torso);
             Rot(_head, head);
             Rot(_legFU, legF); Rot(_legFL, shinF);

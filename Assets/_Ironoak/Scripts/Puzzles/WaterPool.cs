@@ -1,3 +1,4 @@
+using Ironoak.Art;
 using Ironoak.Core;
 using Ironoak.Gameplay;
 using Ironoak.Sound;
@@ -16,8 +17,10 @@ namespace Ironoak.Puzzles
         public float depth = 2f;
         public bool hazard = true;
         public float drainTime = 2.2f;
+        [Tooltip("Optional: faded in as the water drains (e.g. silt and reeds piled against a dam).")]
+        public SpriteRenderer revealOnDrain;
 
-        SpriteRenderer _sr;
+        SpriteRenderer _sr, _surface;
         BoxCollider2D _box;
         float _level = 1f;
         bool _draining;
@@ -28,7 +31,25 @@ namespace Ironoak.Puzzles
         {
             _sr = GetComponent<SpriteRenderer>();
             _box = GetComponent<BoxCollider2D>();
+            var foam = SpriteLibrary.GetPaintedOrNull("Props", "water_surface");
+            if (foam != null && _sr != null && SpriteLibrary.IsPainted(_sr.sprite))
+            {
+                _sr.color = Color.white; // the painted water already carries its transparency
+                _surface = new GameObject("Surface").AddComponent<SpriteRenderer>();
+                _surface.transform.SetParent(transform, false);
+                _surface.sprite = foam;
+                _surface.drawMode = SpriteDrawMode.Tiled;
+                _surface.sortingOrder = _sr.sortingOrder + 1;
+            }
+            if (revealOnDrain != null) SetAlpha(revealOnDrain, 0f);
             Apply();
+        }
+
+        static void SetAlpha(SpriteRenderer r, float a)
+        {
+            var c = r.color;
+            c.a = a;
+            r.color = c;
         }
 
         protected override void OnPoweredChanged(bool powered)
@@ -54,6 +75,17 @@ namespace Ironoak.Puzzles
                 _sr.drawMode = SpriteDrawMode.Tiled;
                 _sr.size = new Vector2(width, Mathf.Max(0.01f, d));
             }
+            if (_surface != null)
+            {
+                // Foam crest sits a hair above the water line; shallow water gets a thinner strip.
+                float h = _surface.sprite.bounds.size.y;
+                float k = Mathf.Clamp01((d + 0.1f) / h);
+                _surface.transform.localScale = new Vector3(1f, k, 1f);
+                _surface.size = new Vector2(width, h);
+                _surface.transform.localPosition = new Vector3(0f, d + 0.06f - h * k, 0f);
+                _surface.enabled = d > 0.02f;
+            }
+            if (revealOnDrain != null) SetAlpha(revealOnDrain, 1f - _level);
             if (_box != null)
             {
                 _box.size = new Vector2(width, Mathf.Max(0.01f, d - 0.25f));

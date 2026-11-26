@@ -27,6 +27,28 @@ namespace Ironoak.Art
             { "heart_full", "UI/ui_heart_full" },
             { "heart_empty", "UI/ui_heart_empty" },
             { "ui_coin", "UI/ui_coin" },
+            // Batch 2: Level 1 puzzle pieces
+            { "bell", "Props/bell" },
+            { "bell_post", "Props/bell_post" },
+            { "gate_bars", "Props/gate_portcullis" },
+            { "bridge_plank", "Props/bridge_plank" },
+            { "rope", "Props/rope" },
+            { "plate_up", "Props/plate_up" },
+            { "plate_down", "Props/plate_down" },
+            { "wall_cracked", "Props/wall_cracked" },
+            { "water", "Props/water_body" },
+            { "spikes", "Props/spikes_stakes" },
+            { "torch_off", "Props/torch_post_off" },
+            { "torch_on1", "Props/torch_post_on" },
+            { "torch_on2", "Props/torch_post_on" },
+            { "goal_banner", "Props/goal_banner" },
+            { "cart_broken", "Props/cart_broken" },
+            { "item_ogham", "Props/item_ogham" },
+            { "item_golden_torc", "Props/item_golden_torc" },
+            { "item_heartwood_torc", "Props/item_heartwood_torc" },
+            { "item_shard", "Props/item_shard" },
+            { "item_druid_mark", "Props/item_druid_mark" },
+            { "secret_cover", "Props/secret_cover_rock" },
         };
 
         /// <summary>True when painted art should be preferred (Native display mode).</summary>

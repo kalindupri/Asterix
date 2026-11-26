@@ -888,7 +888,7 @@
   },
   "pocBatches": {
     "batch1": {
-      "batch": "POC Batch 1 \u00e2\u20ac\u201d Phase B tech spike",
+      "batch": "POC Batch 1 â€” Phase B tech spike",
       "tool": "Built-in image_gen",
       "date": "2026-11-22",
       "status": "ready-for-integration",
@@ -1715,6 +1715,1213 @@
         "Current painted importer uses centre pivots; set bottom-centre for standing props and centre for coins/glows/UI, or use equivalent anchor offsets.",
         "bg_far_hills has one village in its texture; repeat will also repeat that village. Place a single instance or separate village at integration if the village must appear only once in the entire level.",
         "The art is resampled to requested canvases; exported size does not add source detail. Native sizes and all operations are recorded."
+      ]
+    },
+    "batch2": {
+      "batch": "POC Batch 2 — Level 1 puzzle pieces",
+      "tool": "Built-in image_gen",
+      "date": "2026-11-23",
+      "status": "delivered; runtime integration pending",
+      "request": "docs/art-requests/POC_ASSET_REQUESTS.md",
+      "assets": [
+        {
+          "name": "bell_post",
+          "size": [
+            160,
+            416
+          ],
+          "tile": "",
+          "exportMode": "prop",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: stylized-concept. Production game asset for original Ironoak, Gaul circa50BC. Match ONLY the attached original Ironoak art references: hand-painted storybook cartoon, soft brush texture, warm saturated natural foreground materials, gentle TOP-LEFT light, thin dark-warm outline on interactables. Strict side view, orthographic silhouette, no isometric or perspective ground plane. One asset, isolated on genuine transparent RGBA unless a full texture is explicitly requested. No text, watermarks, labels, UI, characters, presentation frames or ground shadows. Exact requested canvas aspect; standing props touch bottom-centre; keep all non-tiling details within canvas. No unintended gold/bronze ornament on organic roots or plain timber. Canvas 160x416. One carved oak BELL POST with a cantilever arm reaching RIGHT, no bell or rope attached. Hook at approx70%canvaswidth and90%canvasheight measured from bottom-left, which is10%from top. Full post base touches bottomcenter. Restrained Celtic carving, iron hook and braces, stable simple silhouette.",
+          "source": "docs/art-source/poc-batch-2/bell_post-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/bell_post.png",
+          "references": [
+            "docs/art-direction/phase-a/oak-road-style-v2.png"
+          ],
+          "transparent": true,
+          "anchor": "bottom-centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-6b46eb2c-e62e-4eae-a578-95e149d2c033.png",
+          "selectedSource": "docs/art-source/poc-batch-2/bell_post-v2-source.png",
+          "exportPlacement": [
+            70,
+            0,
+            48,
+            416
+          ],
+          "nativeSize": [
+            778,
+            2022
+          ],
+          "sourceSha256": "c85516bf0c503d51c12a2137654a8403a0c4debb7230b63924b3a1081234e480",
+          "selectedSourceSha256": "a27195013163bf423c958e6b9557b5960e09caa9b2122f5c9fbdb3eec1ba4de9",
+          "outputSha256": "ecd84fb270e1c2f78324eccdcb3ffb05603d9b8a72d54ad8d19c56762cc31039"
+        },
+        {
+          "name": "bell",
+          "size": [
+            112,
+            128
+          ],
+          "tile": "",
+          "exportMode": "prop",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: stylized-concept. Production game asset for original Ironoak, Gaul circa50BC. Match ONLY the attached original Ironoak art references: hand-painted storybook cartoon, soft brush texture, warm saturated natural foreground materials, gentle TOP-LEFT light, thin dark-warm outline on interactables. Strict side view, orthographic silhouette, no isometric or perspective ground plane. One asset, isolated on genuine transparent RGBA unless a full texture is explicitly requested. No text, watermarks, labels, UI, characters, presentation frames or ground shadows. Exact requested canvas aspect; standing props touch bottom-centre; keep all non-tiling details within canvas. No unintended gold/bronze ornament on organic roots or plain timber. Canvas 112x128. ONE small bronze hanging BELL with a restrained knotwork band and visible clapper. Suspension loop touches TOP CENTRE; open bottom shows bell mouth. No post, arm, rope or backdrop. It hangs vertically and will swing around top-centre.",
+          "source": "docs/art-source/poc-batch-2/bell-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/bell.png",
+          "references": [
+            "docs/art-direction/phase-a/oak-road-style-v2.png"
+          ],
+          "transparent": true,
+          "anchor": "top-centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-f9b8ca9c-20f7-48e2-a47b-9ee714fb8485.png",
+          "selectedSource": "docs/art-source/poc-batch-2/bell-v2-source.png",
+          "exportPlacement": [
+            0,
+            0,
+            112,
+            128
+          ],
+          "nativeSize": [
+            1173,
+            1341
+          ],
+          "sourceSha256": "034431c3054c22040f3b2908256a9d492e442b71a7b57d9d5051bab5fa64cc42",
+          "selectedSourceSha256": "d2ac32f9ed20e6dd54a3583a7ab10205f247a24776e3f25096d73eca3e99cec9",
+          "outputSha256": "a841ef5e5d7eb95e9b98b29654a65d195848155f7adfe73db50d8aebf5058d1d"
+        },
+        {
+          "name": "gate_portcullis",
+          "size": [
+            128,
+            256
+          ],
+          "tile": "y",
+          "exportMode": "canvas",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: stylized-concept. Production game asset for original Ironoak, Gaul circa50BC. Match ONLY the attached original Ironoak art references: hand-painted storybook cartoon, soft brush texture, warm saturated natural foreground materials, gentle TOP-LEFT light, thin dark-warm outline on interactables. Strict side view, orthographic silhouette, no isometric or perspective ground plane. One asset, isolated on genuine transparent RGBA unless a full texture is explicitly requested. No text, watermarks, labels, UI, characters, presentation frames or ground shadows. Exact requested canvas aspect; standing props touch bottom-centre; keep all non-tiling details within canvas. No unintended gold/bronze ornament on organic roots or plain timber. Canvas 128x256. RECTANGULAR REPEATABLE MIDDLE SECTION of heavy wooden PORTCULLIS, straight vertical oak bars and horizontal dark iron straps, transparent gaps between bars. Bars reach top AND bottom canvas boundaries. Seamless TOP-BOTTOM: equal bar/strap pattern at ends. NO spiked tips or terminal row in this middle section; tips are separate asset. Width fills canvas.",
+          "source": "docs/art-source/poc-batch-2/gate_portcullis-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/gate_portcullis.png",
+          "references": [
+            "docs/art-direction/phase-a/oak-road-style-v2.png"
+          ],
+          "transparent": true,
+          "anchor": "bottom-centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-45661c4a-4031-4c6b-816a-91c0851d7b63.png",
+          "nativeSize": [
+            887,
+            1774
+          ],
+          "sourceSha256": "d4afdf53b1207a7602812eabbfb06dcbed7ad5dc41ecebf8d620a91b4511834b",
+          "selectedSourceSha256": "d4afdf53b1207a7602812eabbfb06dcbed7ad5dc41ecebf8d620a91b4511834b",
+          "outputSha256": "a6888bc1cbad1f06b3e9ee8a2271006e852a62678d8b1bcc10f75fd4784417b4"
+        },
+        {
+          "name": "gate_portcullis_bottom",
+          "size": [
+            128,
+            96
+          ],
+          "tile": "",
+          "exportMode": "prop",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: stylized-concept. Production game asset for original Ironoak, Gaul circa50BC. Match ONLY the attached original Ironoak art references: hand-painted storybook cartoon, soft brush texture, warm saturated natural foreground materials, gentle TOP-LEFT light, thin dark-warm outline on interactables. Strict side view, orthographic silhouette, no isometric or perspective ground plane. One asset, isolated on genuine transparent RGBA unless a full texture is explicitly requested. No text, watermarks, labels, UI, characters, presentation frames or ground shadows. Exact requested canvas aspect; standing props touch bottom-centre; keep all non-tiling details within canvas. No unintended gold/bronze ornament on organic roots or plain timber. Canvas 128x96. ONLY the bottom terminal row of matching wooden PORTCULLIS: vertical oak bars bound with dark iron cross strap, each bar ends in a sharp wooden spike pointing DOWN. Transparent gaps. No whole gate, post or ground. Upper attachment edge fullwidth, spikes bottomaligned.",
+          "source": "docs/art-source/poc-batch-2/gate_portcullis_bottom-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/gate_portcullis_bottom.png",
+          "references": [
+            "docs/art-direction/phase-a/oak-road-style-v2.png"
+          ],
+          "transparent": true,
+          "anchor": "bottom-centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-a6cea472-d238-4898-968a-b003fc419ee3.png",
+          "selectedSource": "docs/art-source/poc-batch-2/gate_portcullis_bottom-v2-source.png",
+          "nativeSize": [
+            1448,
+            1086
+          ],
+          "sourceSha256": "c7373c82354dc0eea28224860d4047d0c0fef862cd698c01edd834603c5c91d9",
+          "selectedSourceSha256": "7f5f14b622df34569e9dde68035bee6a6a32bc79f82c53f3084ed8bf0f40929f",
+          "outputSha256": "1a6b0840d54e35f92933e142f9dccba38d60c37ff4a3baaafda1fd3b37d0bf6b"
+        },
+        {
+          "name": "bridge_plank",
+          "size": [
+            256,
+            64
+          ],
+          "tile": "x",
+          "exportMode": "strip",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: stylized-concept. Production game asset for original Ironoak, Gaul circa50BC. Match ONLY the attached original Ironoak art references: hand-painted storybook cartoon, soft brush texture, warm saturated natural foreground materials, gentle TOP-LEFT light, thin dark-warm outline on interactables. Strict side view, orthographic silhouette, no isometric or perspective ground plane. One asset, isolated on genuine transparent RGBA unless a full texture is explicitly requested. No text, watermarks, labels, UI, characters, presentation frames or ground shadows. Exact requested canvas aspect; standing props touch bottom-centre; keep all non-tiling details within canvas. No unintended gold/bronze ornament on organic roots or plain timber. Canvas 256x64. Horizontal side-view lashed plank BRIDGE SECTION, rough oak planks and hemp rope bindings. Thin top walkable surface, visible timber thickness below, transparent beyond silhouette. Extends left to right canvas edges, NO end posts or terminalcaps. Repeats seamlessly LEFT-RIGHT, identical edge profile and top line.",
+          "source": "docs/art-source/poc-batch-2/bridge_plank-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/bridge_plank.png",
+          "references": [
+            "docs/art-direction/phase-a/oak-road-style-v2.png"
+          ],
+          "transparent": true,
+          "anchor": "bottom-centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-922d2186-8bbf-4003-b53c-6a96158df072.png",
+          "nativeSize": [
+            2172,
+            724
+          ],
+          "sourceSha256": "dc9a2b6fb963265379c6e9beb6c8877a486b3b6c9088edb83399c355d454cc5c",
+          "selectedSourceSha256": "dc9a2b6fb963265379c6e9beb6c8877a486b3b6c9088edb83399c355d454cc5c",
+          "outputSha256": "8c6e37faebf75271d79aa28da3777cd80580e3546d8b93868e1c584232718b9a"
+        },
+        {
+          "name": "rope",
+          "size": [
+            32,
+            128
+          ],
+          "tile": "y",
+          "exportMode": "rope",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: stylized-concept. Production game asset for original Ironoak, Gaul circa50BC. Match ONLY the attached original Ironoak art references: hand-painted storybook cartoon, soft brush texture, warm saturated natural foreground materials, gentle TOP-LEFT light, thin dark-warm outline on interactables. Strict side view, orthographic silhouette, no isometric or perspective ground plane. One asset, isolated on genuine transparent RGBA unless a full texture is explicitly requested. No text, watermarks, labels, UI, characters, presentation frames or ground shadows. Exact requested canvas aspect; standing props touch bottom-centre; keep all non-tiling details within canvas. No unintended gold/bronze ornament on organic roots or plain timber. Canvas 32x128. ONE straight vertical twisted hemp ROPE SECTION, neutral tan fibres, no knot or frayed ends. Narrow portrait1:4, rope centered, transparent slim margins sides, fibers extend TOP/BOTTOM edges and align seamlessly for vertical repetition. No hanging loop, posts, wooden ornament or ground.",
+          "source": "docs/art-source/poc-batch-2/rope-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/rope.png",
+          "references": [
+            "docs/art-direction/phase-a/oak-road-style-v2.png"
+          ],
+          "transparent": true,
+          "anchor": "bottom-centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-4d135a65-2257-4a61-bb1c-5c5c074b0706.png",
+          "nativeSize": [
+            724,
+            2172
+          ],
+          "sourceSha256": "dc2d4c4a585516040d8949272a637150a739f52d07af66839fac5f92ed5ff5ca",
+          "selectedSourceSha256": "dc2d4c4a585516040d8949272a637150a739f52d07af66839fac5f92ed5ff5ca",
+          "outputSha256": "c8e9b91e70b83dcc85c02b89fb5e00b94e4aa9ef9cef69687e698587e77122fa"
+        },
+        {
+          "name": "rope_stake",
+          "size": [
+            96,
+            128
+          ],
+          "tile": "",
+          "exportMode": "prop",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: stylized-concept. Production game asset for original Ironoak, Gaul circa50BC. Match ONLY the attached original Ironoak art references: hand-painted storybook cartoon, soft brush texture, warm saturated natural foreground materials, gentle TOP-LEFT light, thin dark-warm outline on interactables. Strict side view, orthographic silhouette, no isometric or perspective ground plane. One asset, isolated on genuine transparent RGBA unless a full texture is explicitly requested. No text, watermarks, labels, UI, characters, presentation frames or ground shadows. Exact requested canvas aspect; standing props touch bottom-centre; keep all non-tiling details within canvas. No unintended gold/bronze ornament on organic roots or plain timber. Canvas 96x128. Single stout wooden STAKE driven into ground, thick hemp rope knotted around upper third with a short rope tail. Base touches bottom, not buried in a painted ground patch. Side view, simple woodgrain, no metal ring or glow.",
+          "source": "docs/art-source/poc-batch-2/rope_stake-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/rope_stake.png",
+          "references": [
+            "docs/art-direction/phase-a/oak-road-style-v2.png"
+          ],
+          "transparent": true,
+          "anchor": "bottom-centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-f3bdcf8c-b924-434f-a6e1-3ea0740cd295.png",
+          "nativeSize": [
+            1086,
+            1448
+          ],
+          "sourceSha256": "30c2bf7cfae7f6e0468f8193a9c8dee6850fb20251a8cc0b058ffd96f28edd5b",
+          "selectedSourceSha256": "30c2bf7cfae7f6e0468f8193a9c8dee6850fb20251a8cc0b058ffd96f28edd5b",
+          "outputSha256": "7bfac2edd124ac108fdb44a4442cb2365f6f3bd43a392816890f3bf2b8b1fdba"
+        },
+        {
+          "name": "plate_up",
+          "size": [
+            128,
+            48
+          ],
+          "tile": "",
+          "exportMode": "prop",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: stylized-concept. Production game asset for original Ironoak, Gaul circa50BC. Match ONLY the attached original Ironoak art references: hand-painted storybook cartoon, soft brush texture, warm saturated natural foreground materials, gentle TOP-LEFT light, thin dark-warm outline on interactables. Strict side view, orthographic silhouette, no isometric or perspective ground plane. One asset, isolated on genuine transparent RGBA unless a full texture is explicitly requested. No text, watermarks, labels, UI, characters, presentation frames or ground shadows. Exact requested canvas aspect; standing props touch bottom-centre; keep all non-tiling details within canvas. No unintended gold/bronze ornament on organic roots or plain timber. Canvas 128x48. RAISED stone pressure PLATE, low carved round flat grey stone pad seen side-on as squat ellipse, clear spiral carving on visible upper lip. Raised resting state with visible lower stone support and dark shadow IN its own recess, no ground shadow. Neutral pale mossy stone, subtle warmhighlight, no glow.",
+          "source": "docs/art-source/poc-batch-2/plate_up-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/plate_up.png",
+          "references": [
+            "docs/art-direction/phase-a/oak-road-style-v2.png"
+          ],
+          "transparent": true,
+          "anchor": "bottom-centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-1a356b61-698e-4944-b118-63015d36182d.png",
+          "exportCrop": [
+            121,
+            236,
+            1806,
+            421
+          ],
+          "nativeSize": [
+            2050,
+            767
+          ],
+          "sourceSha256": "5306799c7ece11d55c743b24159cee3a98a76ba0444cf4c3e169b5c13cb3c3bc",
+          "selectedSourceSha256": "5306799c7ece11d55c743b24159cee3a98a76ba0444cf4c3e169b5c13cb3c3bc",
+          "outputSha256": "df8bbfc03a7fbf7be2f17c9ecb2fc318f321b971e53f640ffc0373d42f14f080"
+        },
+        {
+          "name": "plate_down",
+          "size": [
+            128,
+            48
+          ],
+          "tile": "",
+          "exportMode": "prop",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: precise-object-edit. Reference image1 is our own raised pressure plate EDIT TARGET. Keep its canvas, stone palette, spiral design, support/base, moss, brushwork and lighting unchanged. Create the PRESSED state: lower ONLY the circular stone pad onto its support until nearly flush, with a faint amber glow in the spiral grooves. Preserve the exact bottom baseline and horizontal center; no new ground, foliage, effects or objects. Transparent background; no text. Canvas aspect128x48. This is a matching animation state, not a redesigned plate.",
+          "source": "docs/art-source/poc-batch-2/plate_down-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/plate_down.png",
+          "references": [
+            "docs/art-source/poc-batch-2/plate_up-source.png"
+          ],
+          "transparent": true,
+          "anchor": "bottom-centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-5ad3e8c8-8c0f-4abb-bbaa-a9e28ab36c2f.png",
+          "exportCrop": [
+            121,
+            236,
+            1804,
+            422
+          ],
+          "nativeSize": [
+            2048,
+            768
+          ],
+          "sourceSha256": "a7d738f73edb5f528c4f9b75387937311a08240a0bf2969030ba0ef9c9c9ec80",
+          "selectedSourceSha256": "a7d738f73edb5f528c4f9b75387937311a08240a0bf2969030ba0ef9c9c9ec80",
+          "outputSha256": "9d2959750553c44d9d8dfbcbde0fb0a9506bd05719ff943d3f52132953b5344e"
+        },
+        {
+          "name": "wall_cracked",
+          "size": [
+            128,
+            128
+          ],
+          "tile": "y",
+          "exportMode": "canvas",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: stylized-concept. Production game asset for original Ironoak, Gaul circa50BC. Match ONLY the attached original Ironoak art references: hand-painted storybook cartoon, soft brush texture, warm saturated natural foreground materials, gentle TOP-LEFT light, thin dark-warm outline on interactables. Strict side view, orthographic silhouette, no isometric or perspective ground plane. One asset, isolated on genuine transparent RGBA unless a full texture is explicitly requested. No text, watermarks, labels, UI, characters, presentation frames or ground shadows. Exact requested canvas aspect; standing props touch bottom-centre; keep all non-tiling details within canvas. No unintended gold/bronze ornament on organic roots or plain timber. Canvas 128x128. Square weak STONE WALL texture module, pale weathered Celtic dressed stones, LARGE clear dark branching fissures and loosened pieces making it obviously breakable. Seamless TOP-BOTTOM; fills entire square to edges, no border, floating-block bevel, grass cap or explosion. No glow, metal or intact flawlessbrick.",
+          "source": "docs/art-source/poc-batch-2/wall_cracked-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/wall_cracked.png",
+          "references": [
+            "docs/art-direction/phase-a/druids-trial-style-v1.png"
+          ],
+          "transparent": false,
+          "anchor": "bottom-centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-d97f1606-7d83-431f-8e1e-6fbc750b5b34.png",
+          "nativeSize": [
+            1254,
+            1254
+          ],
+          "sourceSha256": "9ebff67ccf998aa19dc1e4e83990375e7d60c59cd530a9eaff8f71c3535a081b",
+          "selectedSourceSha256": "9ebff67ccf998aa19dc1e4e83990375e7d60c59cd530a9eaff8f71c3535a081b",
+          "outputSha256": "08f645a02cf7dd5ef5889f629ab78f234cd61483616807ca0b6d16f27bbe31d0"
+        },
+        {
+          "name": "debris_rock_1",
+          "size": [
+            64,
+            64
+          ],
+          "tile": "",
+          "exportMode": "icon",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: stylized-concept. Production game asset for original Ironoak, Gaul circa50BC. Match ONLY the attached original Ironoak art references: hand-painted storybook cartoon, soft brush texture, warm saturated natural foreground materials, gentle TOP-LEFT light, thin dark-warm outline on interactables. Strict side view, orthographic silhouette, no isometric or perspective ground plane. One asset, isolated on genuine transparent RGBA unless a full texture is explicitly requested. No text, watermarks, labels, UI, characters, presentation frames or ground shadows. Exact requested canvas aspect; standing props touch bottom-centre; keep all non-tiling details within canvas. No unintended gold/bronze ornament on organic roots or plain timber. Canvas 64x64. ONE isolated angular grey broken masonry chunk, warm top-left paintedhighlight, no cracks radiating outside, dust or ground. Centered with small transparent margin. Same stone palette as breakable Celtic ruin wall.",
+          "source": "docs/art-source/poc-batch-2/debris_rock_1-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/debris_rock_1.png",
+          "references": [
+            "docs/art-direction/phase-a/druids-trial-style-v1.png"
+          ],
+          "transparent": true,
+          "anchor": "centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-6d5d41da-c5a7-4dee-9a71-c6b11063c685.png",
+          "selectedSource": "docs/art-source/poc-batch-2/debris_rock_1-v2-source.png",
+          "nativeSize": [
+            1254,
+            1254
+          ],
+          "sourceSha256": "de0dc6c3235f3b3b8bf525c414d1a4d9c108845f42d1f0af844c201464f696bd",
+          "selectedSourceSha256": "397f0524096ec0d6732ee87eb15ef125b9ccbb2c21f3ae3d48820f4f9e4b9e90",
+          "outputSha256": "ce6f091b7498bc42322d8d4a312977c74ee9a3d7f9283bf73df89fc5135f0793"
+        },
+        {
+          "name": "debris_rock_2",
+          "size": [
+            64,
+            64
+          ],
+          "tile": "",
+          "exportMode": "icon",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: stylized-concept. Production game asset for original Ironoak, Gaul circa50BC. Match ONLY the attached original Ironoak art references: hand-painted storybook cartoon, soft brush texture, warm saturated natural foreground materials, gentle TOP-LEFT light, thin dark-warm outline on interactables. Strict side view, orthographic silhouette, no isometric or perspective ground plane. One asset, isolated on genuine transparent RGBA unless a full texture is explicitly requested. No text, watermarks, labels, UI, characters, presentation frames or ground shadows. Exact requested canvas aspect; standing props touch bottom-centre; keep all non-tiling details within canvas. No unintended gold/bronze ornament on organic roots or plain timber. Canvas 64x64. ONE isolated rounded grey stone chunk with tiny moss fleck, warm top-left paintedhighlight, no cracks radiating outside, dust or ground. Centered with small transparent margin. Same stone palette as breakable Celtic ruin wall.",
+          "source": "docs/art-source/poc-batch-2/debris_rock_2-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/debris_rock_2.png",
+          "references": [
+            "docs/art-direction/phase-a/druids-trial-style-v1.png"
+          ],
+          "transparent": true,
+          "anchor": "centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-c096fb5e-a46a-48e1-a391-d773d407dcf1.png",
+          "nativeSize": [
+            1254,
+            1254
+          ],
+          "sourceSha256": "d807faba8a4b6dd78a06ba4a18edfb693525d0d18cf752806d6d73f140e98e87",
+          "selectedSourceSha256": "d807faba8a4b6dd78a06ba4a18edfb693525d0d18cf752806d6d73f140e98e87",
+          "outputSha256": "66fbccfdef2da373ae869944af312a53599f014bc020fad1a03886821d06454a"
+        },
+        {
+          "name": "debris_rock_3",
+          "size": [
+            64,
+            64
+          ],
+          "tile": "",
+          "exportMode": "icon",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: stylized-concept. Production game asset for original Ironoak, Gaul circa50BC. Match ONLY the attached original Ironoak art references: hand-painted storybook cartoon, soft brush texture, warm saturated natural foreground materials, gentle TOP-LEFT light, thin dark-warm outline on interactables. Strict side view, orthographic silhouette, no isometric or perspective ground plane. One asset, isolated on genuine transparent RGBA unless a full texture is explicitly requested. No text, watermarks, labels, UI, characters, presentation frames or ground shadows. Exact requested canvas aspect; standing props touch bottom-centre; keep all non-tiling details within canvas. No unintended gold/bronze ornament on organic roots or plain timber. Canvas 64x64. ONE isolated triangular chipped grey stone fragment, warm top-left paintedhighlight, no cracks radiating outside, dust or ground. Centered with small transparent margin. Same stone palette as breakable Celtic ruin wall. Reference is a single stone, keep ONE SMALL triangular fragment only, not ruins or masonry wall.",
+          "source": "docs/art-source/poc-batch-2/debris_rock_3-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/debris_rock_3.png",
+          "references": [
+            "docs/art-source/poc-batch-2/debris_rock_2-source.png"
+          ],
+          "transparent": true,
+          "anchor": "centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-d04164f3-d5dc-439a-916f-3c3850bb2f19.png",
+          "nativeSize": [
+            1254,
+            1254
+          ],
+          "sourceSha256": "b5f0b8cd5da29dec1920a34df2d1df5d351958beba791f6ecce04b53ad56b5eb",
+          "selectedSourceSha256": "b5f0b8cd5da29dec1920a34df2d1df5d351958beba791f6ecce04b53ad56b5eb",
+          "outputSha256": "8a98b1cd7d95e1189410ba7e550e18483a4d6e51b510f78cc388deca297f54d6"
+        },
+        {
+          "name": "water_body",
+          "size": [
+            256,
+            256
+          ],
+          "tile": "xy",
+          "exportMode": "water",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: stylized-concept. Production game asset for original Ironoak, Gaul circa50BC. Match ONLY the attached original Ironoak art references: hand-painted storybook cartoon, soft brush texture, warm saturated natural foreground materials, gentle TOP-LEFT light, thin dark-warm outline on interactables. Strict side view, orthographic silhouette, no isometric or perspective ground plane. One asset, isolated on genuine transparent RGBA unless a full texture is explicitly requested. No text, watermarks, labels, UI, characters, presentation frames or ground shadows. Exact requested canvas aspect; standing props touch bottom-centre; keep all non-tiling details within canvas. No unintended gold/bronze ornament on organic roots or plain timber. Canvas 256x256. FULL SQUARE stream WATER FILL TEXTURE, clear cool blue-turquoise, soft painterly caustics, lowcontrast transparent body intended about70%alpha. No surface foam line, horizon, waterfall, shore, plants, rocks or perspective. Seamlessly repeats BOTH axes. Texture fills entire square edge-to-edge; transparency uniform across fulltile, no vignette, border or transparent padding.",
+          "source": "docs/art-source/poc-batch-2/water_body-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/water_body.png",
+          "references": [
+            "docs/art-direction/phase-a/oak-road-style-v2.png"
+          ],
+          "transparent": true,
+          "anchor": "bottom-centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-a5f9e54f-af62-422d-9c18-6c5914487412.png",
+          "nativeSize": [
+            1254,
+            1254
+          ],
+          "sourceSha256": "d53bbda3d55766d9119f2bf54750cfa6f58d816f95a6721780a5b16ae2969671",
+          "selectedSourceSha256": "d53bbda3d55766d9119f2bf54750cfa6f58d816f95a6721780a5b16ae2969671",
+          "outputSha256": "979578a098d7261e080d22b92e2345f8ba7f16f50c29127cdda5a215f7d2424f"
+        },
+        {
+          "name": "water_surface",
+          "size": [
+            256,
+            64
+          ],
+          "tile": "x",
+          "exportMode": "strip",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: stylized-concept. Production game asset for original Ironoak, Gaul circa50BC. Match ONLY the attached original Ironoak art references: hand-painted storybook cartoon, soft brush texture, warm saturated natural foreground materials, gentle TOP-LEFT light, thin dark-warm outline on interactables. Strict side view, orthographic silhouette, no isometric or perspective ground plane. One asset, isolated on genuine transparent RGBA unless a full texture is explicitly requested. No text, watermarks, labels, UI, characters, presentation frames or ground shadows. Exact requested canvas aspect; standing props touch bottom-centre; keep all non-tiling details within canvas. No unintended gold/bronze ornament on organic roots or plain timber. Canvas 256x64. Thin horizontal stream WATER SURFACE strip, bright cream-white small foam ripples along a level blue surface line, a little translucent turquoise below, clear alpha above. No big splash, waterfall, shore or scenery. Extends edge-to-edge horizontally with identical foam rhythm at endpoints for seamless LEFT-RIGHT repeat.",
+          "source": "docs/art-source/poc-batch-2/water_surface-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/water_surface.png",
+          "references": [
+            "docs/art-direction/phase-a/oak-road-style-v2.png"
+          ],
+          "transparent": true,
+          "anchor": "bottom-centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-cc882874-56de-4b2e-921d-9398b9f2008b.png",
+          "nativeSize": [
+            2172,
+            724
+          ],
+          "sourceSha256": "035419d30addfe8148f65189bcc16f2999b6720178196df64c008a3df41408ad",
+          "selectedSourceSha256": "035419d30addfe8148f65189bcc16f2999b6720178196df64c008a3df41408ad",
+          "outputSha256": "bed8a6a9f12878b4df1346032917d9fdc978abec045d2ad1019f63da545e5a32"
+        },
+        {
+          "name": "spikes_stakes",
+          "size": [
+            128,
+            128
+          ],
+          "tile": "",
+          "exportMode": "spikes",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: stylized-concept. Production game asset for original Ironoak, Gaul circa50BC. Match ONLY the attached original Ironoak art references: hand-painted storybook cartoon, soft brush texture, warm saturated natural foreground materials, gentle TOP-LEFT light, thin dark-warm outline on interactables. Strict side view, orthographic silhouette, no isometric or perspective ground plane. One asset, isolated on genuine transparent RGBA unless a full texture is explicitly requested. No text, watermarks, labels, UI, characters, presentation frames or ground shadows. Exact requested canvas aspect; standing props touch bottom-centre; keep all non-tiling details within canvas. No unintended gold/bronze ornament on organic roots or plain timber. Canvas 128x128. Row of FOUR sharpened wooden STAKES pointing UP, lashed at base with hemp rope, about90pixels tall in128x128canvas with empty space above. Slightly varied stakes but unmistakable hazard silhouette. Base flat on bottomcentre. No painted dirtpatch, skulls, gore, metal or ground shadow.",
+          "source": "docs/art-source/poc-batch-2/spikes_stakes-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/spikes_stakes.png",
+          "references": [
+            "docs/art-direction/phase-a/oak-road-style-v2.png"
+          ],
+          "transparent": true,
+          "anchor": "bottom-centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-713f8a76-701e-44bb-86bb-e292a7f8a3e5.png",
+          "nativeSize": [
+            1254,
+            1254
+          ],
+          "sourceSha256": "e607d427965b5a33155eb30c125f426e6d351fd1c75e60f7bc2bb3e0573922f7",
+          "selectedSourceSha256": "e607d427965b5a33155eb30c125f426e6d351fd1c75e60f7bc2bb3e0573922f7",
+          "outputSha256": "959f04edb795f4b126c7c4612fa1c3a8790629356e8f542a19b81dcfe657e4f8"
+        },
+        {
+          "name": "torch_post_off",
+          "size": [
+            128,
+            256
+          ],
+          "tile": "",
+          "exportMode": "prop",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: stylized-concept. Production game asset for original Ironoak, Gaul circa50BC. Match ONLY the attached original Ironoak art references: hand-painted storybook cartoon, soft brush texture, warm saturated natural foreground materials, gentle TOP-LEFT light, thin dark-warm outline on interactables. Strict side view, orthographic silhouette, no isometric or perspective ground plane. One asset, isolated on genuine transparent RGBA unless a full texture is explicitly requested. No text, watermarks, labels, UI, characters, presentation frames or ground shadows. Exact requested canvas aspect; standing props touch bottom-centre; keep all non-tiling details within canvas. No unintended gold/bronze ornament on organic roots or plain timber. Canvas 128x256. UNLIT checkpoint TORCH POST: iron brazier bowl on a carved wooden pole, cold dark embers, fullpole base bottomcentre. Subtle Celtic knot carving, warm timber, iron rim. No flame, glow, smoke, background or ground shadow. Bowl opening clear for separate flame overlay.",
+          "source": "docs/art-source/poc-batch-2/torch_post_off-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/torch_post_off.png",
+          "references": [
+            "docs/art-direction/phase-a/oak-road-style-v2.png"
+          ],
+          "transparent": true,
+          "anchor": "bottom-centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-fd2405d0-df6f-420a-8853-4cd87c2568e4.png",
+          "exportCrop": [
+            156,
+            120,
+            573,
+            1641
+          ],
+          "nativeSize": [
+            887,
+            1774
+          ],
+          "sourceSha256": "379bcf94b0a6186d6bc7e9633b9e1f17fc7fc3239b6c7022f68c935f1c1b472d",
+          "selectedSourceSha256": "379bcf94b0a6186d6bc7e9633b9e1f17fc7fc3239b6c7022f68c935f1c1b472d",
+          "outputSha256": "057f34c8492b2f7e11e6ac905d2a19bff4cc53ccefd3e2a6a17d1407c38255c7"
+        },
+        {
+          "name": "torch_post_on",
+          "size": [
+            128,
+            256
+          ],
+          "tile": "",
+          "exportMode": "prop",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: precise-object-edit. Image1 is our original UNLIT TORCH POST edit target. Change ONLY cold embers to softly glowing orange coals inside the iron bowl. Keep every other pixel's composition, iron bowl, carved pole, colors, base, canvas and silhouette unchanged. NO flame, smoke, sparks or broad halo, because those are separate FX. Match original transparency and bottom-centre base. One asset128x256.",
+          "source": "docs/art-source/poc-batch-2/torch_post_on-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/torch_post_on.png",
+          "references": [
+            "docs/art-source/poc-batch-2/torch_post_off-source.png"
+          ],
+          "transparent": true,
+          "anchor": "bottom-centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-77b53aa9-8d9a-4e78-9916-6d0a9fb8bf6c.png",
+          "exportCrop": [
+            156,
+            120,
+            573,
+            1641
+          ],
+          "nativeSize": [
+            887,
+            1774
+          ],
+          "sourceSha256": "55f8c666a1a4f2a15e6cceee7b0c6a66fab2c7e42c721f60f6f23603b658bce8",
+          "selectedSourceSha256": "55f8c666a1a4f2a15e6cceee7b0c6a66fab2c7e42c721f60f6f23603b658bce8",
+          "outputSha256": "b9f92bee777c1cf5d0fb77431ab9970caf1ee7a36e19760318495248dea8dd58"
+        },
+        {
+          "name": "fx_flame_1",
+          "size": [
+            96,
+            128
+          ],
+          "tile": "",
+          "exportMode": "prop",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: stylized-concept. Production game asset for original Ironoak, Gaul circa50BC. Match ONLY the attached original Ironoak art references: hand-painted storybook cartoon, soft brush texture, warm saturated natural foreground materials, gentle TOP-LEFT light, thin dark-warm outline on interactables. Strict side view, orthographic silhouette, no isometric or perspective ground plane. One asset, isolated on genuine transparent RGBA unless a full texture is explicitly requested. No text, watermarks, labels, UI, characters, presentation frames or ground shadows. Exact requested canvas aspect; standing props touch bottom-centre; keep all non-tiling details within canvas. No unintended gold/bronze ornament on organic roots or plain timber. Canvas 96x128. ONE looping torch FLAME animation frame 1 of4, painted gold-orange with pale yellow core, shape leans gently right with two rounded tongues. Transparent background. Same palette, base width, canvas96x128 and BOTTOM-CENTER flame base across frames. No brazier, wood, smoke, black background, detached sparks or ground. Soft edgebut cleanalpha, not giant glowdisk.",
+          "source": "docs/art-source/poc-batch-2/fx_flame_1-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/fx_flame_1.png",
+          "references": [
+            "docs/art-direction/phase-a/oak-road-style-v2.png"
+          ],
+          "transparent": true,
+          "anchor": "bottom-centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-5a0a1d5f-96ce-4a70-b479-4fdc76df82bd.png",
+          "selectedSource": "docs/art-source/poc-batch-2/fx_flame_1-v2-source.png",
+          "exportCrop": [
+            108,
+            32,
+            913,
+            1301
+          ],
+          "exportPlacement": [
+            19,
+            1,
+            76,
+            127
+          ],
+          "nativeSize": [
+            1086,
+            1448
+          ],
+          "sourceSha256": "eb2e9b8c028b478fded5e8c4efac91a654f4c59e8b7c252ada17c2d2dfb816d9",
+          "selectedSourceSha256": "238b4af54a7f83f4d2c515cd97aa7c143568b792601fbdd5ef2acb85ff32e03b",
+          "outputSha256": "d29035b45d1f85524c0538ca3b4c6234b220e6363786467d99b31a6a1d4e1c88"
+        },
+        {
+          "name": "fx_flame_2",
+          "size": [
+            96,
+            128
+          ],
+          "tile": "",
+          "exportMode": "prop",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: stylized-concept. Production game asset for original Ironoak, Gaul circa50BC. Match ONLY the attached original Ironoak art references: hand-painted storybook cartoon, soft brush texture, warm saturated natural foreground materials, gentle TOP-LEFT light, thin dark-warm outline on interactables. Strict side view, orthographic silhouette, no isometric or perspective ground plane. One asset, isolated on genuine transparent RGBA unless a full texture is explicitly requested. No text, watermarks, labels, UI, characters, presentation frames or ground shadows. Exact requested canvas aspect; standing props touch bottom-centre; keep all non-tiling details within canvas. No unintended gold/bronze ornament on organic roots or plain timber. Canvas 96x128. ONE looping torch FLAME animation frame 2 of4, painted gold-orange with pale yellow core, shape rises taller and narrow with one curling tip. Transparent background. Same palette, base width, canvas96x128 and BOTTOM-CENTER flame base across frames. No brazier, wood, smoke, black background, detached sparks or ground. Soft edgebut cleanalpha, not giant glowdisk. Image1 is our OWN frame1 flame reference. Keep its palette, brush style, base width and base position; change only the curling flame silhouette for this frame.",
+          "source": "docs/art-source/poc-batch-2/fx_flame_2-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/fx_flame_2.png",
+          "references": [
+            "docs/art-source/poc-batch-2/fx_flame_1-source.png"
+          ],
+          "transparent": true,
+          "anchor": "bottom-centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-93c8b7b9-2b59-4192-b76c-9820136c402d.png",
+          "selectedSource": "docs/art-source/poc-batch-2/fx_flame_2-v2-source.png",
+          "exportCrop": [
+            108,
+            32,
+            913,
+            1316
+          ],
+          "exportPlacement": [
+            16,
+            0,
+            76,
+            128
+          ],
+          "nativeSize": [
+            1086,
+            1448
+          ],
+          "sourceSha256": "cd438e1383ecb07d1ccbe5ad046b1f9220a7b9d5987be46d805641e8092716ac",
+          "selectedSourceSha256": "919fed29d9df7322eb4b0e11c8e10e46a65697e8a5c54a5031154b76b742e08d",
+          "outputSha256": "252d97a5b9a972960003b3726eacdc661708c2e7e17d7f0cf72e18647247878f"
+        },
+        {
+          "name": "fx_flame_3",
+          "size": [
+            96,
+            128
+          ],
+          "tile": "",
+          "exportMode": "prop",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: precise-object-edit. Image1 is our own ISOLATED FIRE sprite, the only reference. Create flame-frame 3 of4 by changing only its flame silhouette: lean gently LEFT with three shorter tongues. Keep the same painted gold-orange palette, yellow-white core, soft brushgrain, rounded connected base, basewidth and bottomcentre placement. Output ONLY FIRE, never wood, a torch, brazier, rope or fuel. Canvas96x128aspect3:4, genuine transparent exterior, no smoke, sparks, text or broad halo.",
+          "source": "docs/art-source/poc-batch-2/fx_flame_3-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/fx_flame_3.png",
+          "references": [
+            "docs/art-source/poc-batch-2/fx_flame_1-v2-source.png"
+          ],
+          "transparent": true,
+          "anchor": "bottom-centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-f46a7a7d-d763-4066-a678-23099e88ae7a.png",
+          "exportCrop": [
+            108,
+            32,
+            913,
+            1305
+          ],
+          "exportPlacement": [
+            18,
+            1,
+            76,
+            127
+          ],
+          "nativeSize": [
+            1086,
+            1448
+          ],
+          "sourceSha256": "be3b1ac60c0f36d12cae5c8250ee5e2e8de4b2f5571e624c7fafb7aa29a143dc",
+          "selectedSourceSha256": "be3b1ac60c0f36d12cae5c8250ee5e2e8de4b2f5571e624c7fafb7aa29a143dc",
+          "outputSha256": "836b56f3acae2ce66aaf7194ab4c93e963d46541cdfccee776ec088be0dfd222"
+        },
+        {
+          "name": "fx_flame_4",
+          "size": [
+            96,
+            128
+          ],
+          "tile": "",
+          "exportMode": "prop",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: precise-object-edit. Image1 is our own ISOLATED FIRE sprite, the only reference. Create flame-frame 4 of4 by changing only its flame silhouette: settle compact with a split tip curling right. Keep the same painted gold-orange palette, yellow-white core, soft brushgrain, rounded connected base, basewidth and bottomcentre placement. Output ONLY FIRE, never wood, a torch, brazier, rope or fuel. Canvas96x128aspect3:4, genuine transparent exterior, no smoke, sparks, text or broad halo.",
+          "source": "docs/art-source/poc-batch-2/fx_flame_4-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/fx_flame_4.png",
+          "references": [
+            "docs/art-source/poc-batch-2/fx_flame_1-v2-source.png"
+          ],
+          "transparent": true,
+          "anchor": "bottom-centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-46e5bca2-2168-45cb-b323-d1cdd3c2912b.png",
+          "exportCrop": [
+            108,
+            32,
+            913,
+            1304
+          ],
+          "exportPlacement": [
+            19,
+            1,
+            76,
+            127
+          ],
+          "nativeSize": [
+            1086,
+            1448
+          ],
+          "sourceSha256": "b5baf3f67c5db07942fdea284578c90fcc6a39e185dab0c426a0d56ae29095ea",
+          "selectedSourceSha256": "b5baf3f67c5db07942fdea284578c90fcc6a39e185dab0c426a0d56ae29095ea",
+          "outputSha256": "7282457b90e321521ef3964bb144567246b01e381955b57ba0db3c6903500484"
+        },
+        {
+          "name": "goal_banner",
+          "size": [
+            192,
+            416
+          ],
+          "tile": "",
+          "exportMode": "prop",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: stylized-concept. Production game asset for original Ironoak, Gaul circa50BC. Match ONLY the attached original Ironoak art references: hand-painted storybook cartoon, soft brush texture, warm saturated natural foreground materials, gentle TOP-LEFT light, thin dark-warm outline on interactables. Strict side view, orthographic silhouette, no isometric or perspective ground plane. One asset, isolated on genuine transparent RGBA unless a full texture is explicitly requested. No text, watermarks, labels, UI, characters, presentation frames or ground shadows. Exact requested canvas aspect; standing props touch bottom-centre; keep all non-tiling details within canvas. No unintended gold/bronze ornament on organic roots or plain timber. Canvas 192x416. Tall carved timber POLE with friendly Ironoak green wool VILLAGE BANNER fluttering RIGHT. Gold OAK-LEAF EMBLEM centered on cloth, restrained knotwork hem. Wholepole and cloth visible; pole base bottomcenter. No letters, text, Roman emblem, village backdrop or groundshadow.",
+          "source": "docs/art-source/poc-batch-2/goal_banner-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/goal_banner.png",
+          "references": [
+            "docs/art-direction/phase-a/oak-road-style-v2.png"
+          ],
+          "transparent": true,
+          "anchor": "bottom-centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-fd0976e9-b622-4069-b909-aca08e2ed062.png",
+          "exportPlacement": [
+            76,
+            0,
+            116,
+            416
+          ],
+          "nativeSize": [
+            852,
+            1846
+          ],
+          "sourceSha256": "255d5f9a5f581904733f80466a4173dfc71e6158b5b4e5d15ac409f124fb72ce",
+          "selectedSourceSha256": "255d5f9a5f581904733f80466a4173dfc71e6158b5b4e5d15ac409f124fb72ce",
+          "outputSha256": "747e2fe2e1c6f5e5e4da39502e96d0bc9196f9c0d21217983c39f8f471f102c9"
+        },
+        {
+          "name": "stone_block",
+          "size": [
+            128,
+            128
+          ],
+          "tile": "xy",
+          "exportMode": "canvas",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: stylized-concept. Production game asset for original Ironoak, Gaul circa50BC. Match ONLY the attached original Ironoak art references: hand-painted storybook cartoon, soft brush texture, warm saturated natural foreground materials, gentle TOP-LEFT light, thin dark-warm outline on interactables. Strict side view, orthographic silhouette, no isometric or perspective ground plane. One asset, isolated on genuine transparent RGBA unless a full texture is explicitly requested. No text, watermarks, labels, UI, characters, presentation frames or ground shadows. Exact requested canvas aspect; standing props touch bottom-centre; keep all non-tiling details within canvas. No unintended gold/bronze ornament on organic roots or plain timber. Canvas 128x128. FULL square seamless grey dressed-stone MASONRY texture for Celtic ruin wall, small moss in seams, calmer and stronger than cracked wall. All sides tile seamlessly, no frame, bevel, topcap or separate floating block; stone fills canvas edge-to-edge. No glowing carvings or metal ornaments.",
+          "source": "docs/art-source/poc-batch-2/stone_block-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/stone_block.png",
+          "references": [
+            "docs/art-direction/phase-a/druids-trial-style-v1.png"
+          ],
+          "transparent": false,
+          "anchor": "bottom-centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-086c596d-3f0e-4540-bcbb-f4802c8554c8.png",
+          "nativeSize": [
+            1254,
+            1254
+          ],
+          "sourceSha256": "9deefe524f6b01bb9a91bce0ac79f92094b9c8a77a01aaf59839f31d8c1f48f5",
+          "selectedSourceSha256": "9deefe524f6b01bb9a91bce0ac79f92094b9c8a77a01aaf59839f31d8c1f48f5",
+          "outputSha256": "849786834dfe0a7f7dec3d4a3a516e80dd9de7fea350cd8cae61f9397eadfaec"
+        },
+        {
+          "name": "stone_block_top",
+          "size": [
+            128,
+            64
+          ],
+          "tile": "x",
+          "exportMode": "strip",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: stylized-concept. Production game asset for original Ironoak, Gaul circa50BC. Match ONLY the attached original Ironoak art references: hand-painted storybook cartoon, soft brush texture, warm saturated natural foreground materials, gentle TOP-LEFT light, thin dark-warm outline on interactables. Strict side view, orthographic silhouette, no isometric or perspective ground plane. One asset, isolated on genuine transparent RGBA unless a full texture is explicitly requested. No text, watermarks, labels, UI, characters, presentation frames or ground shadows. Exact requested canvas aspect; standing props touch bottom-centre; keep all non-tiling details within canvas. No unintended gold/bronze ornament on organic roots or plain timber. Canvas 128x64. Horizontal moss-capped TOP EDGE strip for grey Celtic dressed-stone wall. Small restrained tufts of moss above level walkable stone top, straight stone coursesbelow. Transparent above irregular moss. Extends fullwidth, seamless LEFT-RIGHT. No floating standalonebrick, sky, pillars or gold ornaments.",
+          "source": "docs/art-source/poc-batch-2/stone_block_top-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/stone_block_top.png",
+          "references": [
+            "docs/art-direction/phase-a/druids-trial-style-v1.png"
+          ],
+          "transparent": true,
+          "anchor": "bottom-centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-7f9d04fc-f448-4853-aaba-17b01e860b4f.png",
+          "nativeSize": [
+            1774,
+            887
+          ],
+          "sourceSha256": "d54159360b65723f0eeb89bd1aab6ceda4197bd60d771e779d5aa48264b9cdc0",
+          "selectedSourceSha256": "d54159360b65723f0eeb89bd1aab6ceda4197bd60d771e779d5aa48264b9cdc0",
+          "outputSha256": "cc3c95bef8c212e1b56a803202ae6fda7a26e9028ee2b97ad134851811683357"
+        },
+        {
+          "name": "cart_broken",
+          "size": [
+            384,
+            256
+          ],
+          "tile": "",
+          "exportMode": "prop",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: stylized-concept. Production game asset for original Ironoak, Gaul circa50BC. Match ONLY the attached original Ironoak art references: hand-painted storybook cartoon, soft brush texture, warm saturated natural foreground materials, gentle TOP-LEFT light, thin dark-warm outline on interactables. Strict side view, orthographic silhouette, no isometric or perspective ground plane. One asset, isolated on genuine transparent RGBA unless a full texture is explicitly requested. No text, watermarks, labels, UI, characters, presentation frames or ground shadows. Exact requested canvas aspect; standing props touch bottom-centre; keep all non-tiling details within canvas. No unintended gold/bronze ornament on organic roots or plain timber. Canvas 384x256. Tavo's overturned TWO-WHEELED smith's CART, side view. Warm oak cart tilted on one broken spoked wheel, second wheel partly visible behind; spilled smith's tongs and hammer and torn cloth form one compact cohesive prop. Original ancient Celtic materials, no modern steel machinery, characters, lettering or gore. Allpieces stay on shared bottom baseline, transparent outside, no painted groundpatch.",
+          "source": "docs/art-source/poc-batch-2/cart_broken-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/cart_broken.png",
+          "references": [
+            "docs/art-direction/phase-a/oak-road-style-v2.png"
+          ],
+          "transparent": true,
+          "anchor": "bottom-centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-eec1b5e5-5417-4f68-92b2-5f5556cf6926.png",
+          "nativeSize": [
+            1536,
+            1024
+          ],
+          "sourceSha256": "024caa97b315e89b3420b0443b843a6da0f5f4a94ba9695729d7d599896fff67",
+          "selectedSourceSha256": "024caa97b315e89b3420b0443b843a6da0f5f4a94ba9695729d7d599896fff67",
+          "outputSha256": "a2a8dce7dffbe616b91105a9bcd8f7149c9f2c8bc2b4e9b2afb30e38272daf17"
+        },
+        {
+          "name": "item_heartwood_torc",
+          "size": [
+            160,
+            160
+          ],
+          "tile": "",
+          "exportMode": "icon",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: stylized-concept. Production game asset for original Ironoak, Gaul circa50BC. Match ONLY the attached original Ironoak art references: hand-painted storybook cartoon, soft brush texture, warm saturated natural foreground materials, gentle TOP-LEFT light, thin dark-warm outline on interactables. Strict side view, orthographic silhouette, no isometric or perspective ground plane. One asset, isolated on genuine transparent RGBA unless a full texture is explicitly requested. No text, watermarks, labels, UI, characters, presentation frames or ground shadows. Exact requested canvas aspect; standing props touch bottom-centre; keep all non-tiling details within canvas. No unintended gold/bronze ornament on organic roots or plain timber. Canvas 160x160. IMPORTANT story collectible HEARTWOOD TORC: open C-shaped neck ring carved from polished living oak heartwood, exposed dark iron CORE visible at both ends, subtle amber-green light in wood grain. Clearly wood not solidgold. Gentle Celtic spiral relief, dignified and special, neutral transparent backdrop, centered with smallmargin. No pedestal, character, chain or text.",
+          "source": "docs/art-source/poc-batch-2/item_heartwood_torc-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/item_heartwood_torc.png",
+          "references": [
+            "docs/art-direction/phase-a/oak-road-style-v2.png"
+          ],
+          "transparent": true,
+          "anchor": "centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-3c845e06-9600-4b7f-8a09-376af4232919.png",
+          "nativeSize": [
+            1254,
+            1254
+          ],
+          "sourceSha256": "7f5ba5237b445cc33453a3cbd6b3743fb77a7d33b0814b3b1e309c94caebc103",
+          "selectedSourceSha256": "7f5ba5237b445cc33453a3cbd6b3743fb77a7d33b0814b3b1e309c94caebc103",
+          "outputSha256": "f574dabfc482530cf844fe653ca2de4a085f9efae5fe5c3d36ac25195ca92c0d"
+        },
+        {
+          "name": "item_ogham",
+          "size": [
+            112,
+            144
+          ],
+          "tile": "",
+          "exportMode": "icon",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: stylized-concept. Production game asset for original Ironoak, Gaul circa50BC. Match ONLY the attached original Ironoak art references: hand-painted storybook cartoon, soft brush texture, warm saturated natural foreground materials, gentle TOP-LEFT light, thin dark-warm outline on interactables. Strict side view, orthographic silhouette, no isometric or perspective ground plane. One asset, isolated on genuine transparent RGBA unless a full texture is explicitly requested. No text, watermarks, labels, UI, characters, presentation frames or ground shadows. Exact requested canvas aspect; standing props touch bottom-centre; keep all non-tiling details within canvas. No unintended gold/bronze ornament on organic roots or plain timber. Canvas 112x144. Small upright grey standing LORE STONE with glowing blue-white OGHAM NOTCHES incised across a vertical stem. Only short abstract carved strokes, NO alphabetic text or readable letters. Moss flecks at base, chunky readable silhouette, faintlocalglow not broadhalo, centered on transparent with small margin.",
+          "source": "docs/art-source/poc-batch-2/item_ogham-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/item_ogham.png",
+          "references": [
+            "docs/art-direction/phase-a/druids-trial-style-v1.png"
+          ],
+          "transparent": true,
+          "anchor": "centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-b4828459-1a0b-47e0-8ba0-37f270a4556f.png",
+          "nativeSize": [
+            1105,
+            1423
+          ],
+          "sourceSha256": "888f2b98aeb780d4d14f690a02fa8f28b3773a8833fd4c9a6923025d406fefdc",
+          "selectedSourceSha256": "888f2b98aeb780d4d14f690a02fa8f28b3773a8833fd4c9a6923025d406fefdc",
+          "outputSha256": "57bd9d45eba44443fc950283ab81bc096a277f66f1a0742f780b2d04831248e2"
+        },
+        {
+          "name": "item_golden_torc",
+          "size": [
+            128,
+            128
+          ],
+          "tile": "",
+          "exportMode": "icon",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: stylized-concept. Production game asset for original Ironoak, Gaul circa50BC. Match ONLY the attached original Ironoak art references: hand-painted storybook cartoon, soft brush texture, warm saturated natural foreground materials, gentle TOP-LEFT light, thin dark-warm outline on interactables. Strict side view, orthographic silhouette, no isometric or perspective ground plane. One asset, isolated on genuine transparent RGBA unless a full texture is explicitly requested. No text, watermarks, labels, UI, characters, presentation frames or ground shadows. Exact requested canvas aspect; standing props touch bottom-centre; keep all non-tiling details within canvas. No unintended gold/bronze ornament on organic roots or plain timber. Canvas 128x128. ONE GOLD TORC collectible: open C-shaped twisted gold wire neck ring with two round knob terminals, original Celtic form. Warm top-left gleam, simple readable chunky silhouette, no jewels, chain, pedestal, letters or glowdisk. Centered on transparent with small margin, clearly metal unlike wooden Heartwood Torc.",
+          "source": "docs/art-source/poc-batch-2/item_golden_torc-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/item_golden_torc.png",
+          "references": [
+            "docs/art-direction/phase-a/oak-road-style-v2.png"
+          ],
+          "transparent": true,
+          "anchor": "centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-0eabdeb4-ecb9-4296-b816-472edce540ec.png",
+          "nativeSize": [
+            1254,
+            1254
+          ],
+          "sourceSha256": "21484e7b7489253875a772c5fafa7d755e88450fc8d3f5faf29ac50907d0884c",
+          "selectedSourceSha256": "21484e7b7489253875a772c5fafa7d755e88450fc8d3f5faf29ac50907d0884c",
+          "outputSha256": "c4c2fe13ed82d5d22684e9424bec9282470029f18fef4e7105a37d488b5657d5"
+        },
+        {
+          "name": "item_shard",
+          "size": [
+            96,
+            128
+          ],
+          "tile": "",
+          "exportMode": "icon",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: stylized-concept. Production game asset for original Ironoak, Gaul circa50BC. Match ONLY the attached original Ironoak art references: hand-painted storybook cartoon, soft brush texture, warm saturated natural foreground materials, gentle TOP-LEFT light, thin dark-warm outline on interactables. Strict side view, orthographic silhouette, no isometric or perspective ground plane. One asset, isolated on genuine transparent RGBA unless a full texture is explicitly requested. No text, watermarks, labels, UI, characters, presentation frames or ground shadows. Exact requested canvas aspect; standing props touch bottom-centre; keep all non-tiling details within canvas. No unintended gold/bronze ornament on organic roots or plain timber. Canvas 96x128. ONE pale BLUE CRYSTAL shrine SHARD, upright tapered angular fragment, soft inner blue-white light, chunky readable silhouette, painterly facets not photorealistic glass. No stonebase, pedestal, necklace, text or broad glowdisk. Centered on clear transparency with smallmargin.",
+          "source": "docs/art-source/poc-batch-2/item_shard-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/item_shard.png",
+          "references": [
+            "docs/art-direction/phase-a/druids-trial-style-v1.png"
+          ],
+          "transparent": true,
+          "anchor": "centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-1a24d3b8-04d3-4e40-b095-af4617e1531b.png",
+          "nativeSize": [
+            1086,
+            1448
+          ],
+          "sourceSha256": "b3f534e0fd8b3c3ed3a21bfb9b86c548c20fd4e8b301dce3f788416c5f204a3d",
+          "selectedSourceSha256": "b3f534e0fd8b3c3ed3a21bfb9b86c548c20fd4e8b301dce3f788416c5f204a3d",
+          "outputSha256": "e9834e88124b9e410900223e787b7ebb11f5a655595cd717857da90e63426fc2"
+        },
+        {
+          "name": "item_druid_mark",
+          "size": [
+            144,
+            144
+          ],
+          "tile": "",
+          "exportMode": "icon",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: stylized-concept. Production game asset for original Ironoak, Gaul circa50BC. Match ONLY the attached original Ironoak art references: hand-painted storybook cartoon, soft brush texture, warm saturated natural foreground materials, gentle TOP-LEFT light, thin dark-warm outline on interactables. Strict side view, orthographic silhouette, no isometric or perspective ground plane. One asset, isolated on genuine transparent RGBA unless a full texture is explicitly requested. No text, watermarks, labels, UI, characters, presentation frames or ground shadows. Exact requested canvas aspect; standing props touch bottom-centre; keep all non-tiling details within canvas. No unintended gold/bronze ornament on organic roots or plain timber. Canvas 144x144. ONE DRUID'S MARK collectible: weathered stone DISC with a clearly carved THREE-ARMED SPIRAL triskele, restrained glowing PURPLE grooves. Rounddiscreadable, painterly Celtic carving, no letters, text, pendantchain, frame or pedestal. Centered on transparency with small margin.",
+          "source": "docs/art-source/poc-batch-2/item_druid_mark-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/item_druid_mark.png",
+          "references": [
+            "docs/art-direction/phase-a/druids-trial-style-v1.png"
+          ],
+          "transparent": true,
+          "anchor": "centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-bd12d44b-9329-4137-be68-95574ba01eaa.png",
+          "nativeSize": [
+            1254,
+            1254
+          ],
+          "sourceSha256": "57ddcfef102b7392719b6b1cc745e367a1eba0a460d10622041301f06b013ba6",
+          "selectedSourceSha256": "57ddcfef102b7392719b6b1cc745e367a1eba0a460d10622041301f06b013ba6",
+          "outputSha256": "8fccc188abf538400436c68e06eabf92f376feedf7020efe602f8d91f02a19a4"
+        },
+        {
+          "name": "fx_pickup_glow",
+          "size": [
+            256,
+            256
+          ],
+          "tile": "",
+          "exportMode": "canvas",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: stylized-concept. Production game asset for original Ironoak, Gaul circa50BC. Match ONLY the attached original Ironoak art references: hand-painted storybook cartoon, soft brush texture, warm saturated natural foreground materials, gentle TOP-LEFT light, thin dark-warm outline on interactables. Strict side view, orthographic silhouette, no isometric or perspective ground plane. One asset, isolated on genuine transparent RGBA unless a full texture is explicitly requested. No text, watermarks, labels, UI, characters, presentation frames or ground shadows. Exact requested canvas aspect; standing props touch bottom-centre; keep all non-tiling details within canvas. No unintended gold/bronze ornament on organic roots or plain timber. Canvas 256x256. Soft WARM GOLD sparkle HALO for pickups, transparent additive FX. Subtle circular feathered warm light with a few tiny four-point glints, smooth alpha falloff to fully transparent edges. No opaque disk, solid object, coin, frame, text, pedestal, shadows or scene. Lowintensity; collectibles remain visible over it.",
+          "source": "docs/art-source/poc-batch-2/fx_pickup_glow-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/fx_pickup_glow.png",
+          "references": [
+            "docs/art-direction/phase-a/oak-road-style-v2.png"
+          ],
+          "transparent": true,
+          "anchor": "centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-81731572-36e5-4d0a-9c7e-f8ea50821ddc.png",
+          "selectedSource": "docs/art-source/poc-batch-2/fx_pickup_glow-v2-source.png",
+          "nativeSize": [
+            1254,
+            1254
+          ],
+          "sourceSha256": "6d5e755c6484632fce30e08b38df32821205c974bc93a74ee32c083305aaa9c4",
+          "selectedSourceSha256": "817e0937e300e5dab0e9553a3314e1e57acee5cee294efe0720b27fd5175eb84",
+          "outputSha256": "dd809fd49bff8a73168c2dae47a346303061dce3c6c88150703a5db4d46ff4eb"
+        },
+        {
+          "name": "secret_cover_rock",
+          "size": [
+            256,
+            256
+          ],
+          "tile": "xy",
+          "exportMode": "canvas",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: stylized-concept. Production game asset for original Ironoak, Gaul circa50BC. Match ONLY the attached original Ironoak art references: hand-painted storybook cartoon, soft brush texture, warm saturated natural foreground materials, gentle TOP-LEFT light, thin dark-warm outline on interactables. Strict side view, orthographic silhouette, no isometric or perspective ground plane. One asset, isolated on genuine transparent RGBA unless a full texture is explicitly requested. No text, watermarks, labels, UI, characters, presentation frames or ground shadows. Exact requested canvas aspect; standing props touch bottom-centre; keep all non-tiling details within canvas. No unintended gold/bronze ornament on organic roots or plain timber. Canvas 256x256. FULL square dark ROCK FACE cover texture, lowcontrast cool grey-brown rough stone to conceal a secret room. Seamless BOTH axes, edge-to-edge, no hole, doorway, border, bevel, topcap, external shadow, glow or visible collectible. Quiet painterly stone, darker than normal walkable masonry.",
+          "source": "docs/art-source/poc-batch-2/secret_cover_rock-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/secret_cover_rock.png",
+          "references": [
+            "docs/art-direction/phase-a/druids-trial-style-v1.png"
+          ],
+          "transparent": false,
+          "anchor": "bottom-centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-051788d0-e84c-47f6-a670-526739aaaf4a.png",
+          "nativeSize": [
+            1254,
+            1254
+          ],
+          "sourceSha256": "f99b4ba4aa4dc370c0de6bb23b202d530473284e2b05c09e773ff1cf0109718b",
+          "selectedSourceSha256": "f99b4ba4aa4dc370c0de6bb23b202d530473284e2b05c09e773ff1cf0109718b",
+          "outputSha256": "60034413729ce66defc98c4c5722d1429345a2a3600624de1f843d70855b73dc"
+        },
+        {
+          "name": "secret_cover_canopy",
+          "size": [
+            512,
+            256
+          ],
+          "tile": "x",
+          "exportMode": "canvas",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: stylized-concept. Production game asset for original Ironoak, Gaul circa50BC. Match ONLY the attached original Ironoak art references: hand-painted storybook cartoon, soft brush texture, warm saturated natural foreground materials, gentle TOP-LEFT light, thin dark-warm outline on interactables. Strict side view, orthographic silhouette, no isometric or perspective ground plane. One asset, isolated on genuine transparent RGBA unless a full texture is explicitly requested. No text, watermarks, labels, UI, characters, presentation frames or ground shadows. Exact requested canvas aspect; standing props touch bottom-centre; keep all non-tiling details within canvas. No unintended gold/bronze ornament on organic roots or plain timber. Canvas 512x256. Dense horizontal leafy OAK CANOPY cover band to hide treetop nest. Deep green overlapping oak leaves with subtle branchweave, mostly filled foliage across central band but soft leafy transparent silhouette above/below. Seamlessly repeats LEFT-RIGHT, no village, sky, hero, flowers, goldenmedallions or ground. Darker than playable platform.",
+          "source": "docs/art-source/poc-batch-2/secret_cover_canopy-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/secret_cover_canopy.png",
+          "references": [
+            "docs/art-direction/phase-a/oak-road-style-v2.png"
+          ],
+          "transparent": true,
+          "anchor": "bottom-centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-cadf99fd-6ef0-4b1e-94ec-1d152135ddee.png",
+          "nativeSize": [
+            1774,
+            887
+          ],
+          "sourceSha256": "0298e11a856e880d224055cb827a29334d31df6a9dee94a293be835f03795983",
+          "selectedSourceSha256": "0298e11a856e880d224055cb827a29334d31df6a9dee94a293be835f03795983",
+          "outputSha256": "37f8b3eae1bf00c3abdb340fef33ad0a25129fad23491a3bbadf9372500c74be"
+        },
+        {
+          "name": "nest_platform",
+          "size": [
+            768,
+            128
+          ],
+          "tile": "",
+          "exportMode": "prop",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: stylized-concept. Production game asset for original Ironoak, Gaul circa50BC. Match ONLY the attached original Ironoak art references: hand-painted storybook cartoon, soft brush texture, warm saturated natural foreground materials, gentle TOP-LEFT light, thin dark-warm outline on interactables. Strict side view, orthographic silhouette, no isometric or perspective ground plane. One asset, isolated on genuine transparent RGBA unless a full texture is explicitly requested. No text, watermarks, labels, UI, characters, presentation frames or ground shadows. Exact requested canvas aspect; standing props touch bottom-centre; keep all non-tiling details within canvas. No unintended gold/bronze ornament on organic roots or plain timber. Canvas 768x128. LONG WIDE woven BRANCH PLATFORM for treetop nest floor, sideview6:1 canvas. Interlocked warm oak twigs and thick curved support branches make a stable nearly level upper landing surface, a few mossflecks. No birds, eggs, nest bowl, leaves blocking landing surface, whole tree, posts or background. Whole platformvisible, basebottomcentre, smooth painterlyorganicends.",
+          "source": "docs/art-source/poc-batch-2/nest_platform-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/nest_platform.png",
+          "references": [
+            "docs/art-direction/phase-a/oak-road-style-v2.png"
+          ],
+          "transparent": true,
+          "anchor": "bottom-centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-bdb3d658-5991-435a-96ff-e1599d0ec262.png",
+          "nativeSize": [
+            2172,
+            724
+          ],
+          "sourceSha256": "d0f023cbef14af6659faca75785baf91f48fafebf57b952c20c1b87362f8e4a5",
+          "selectedSourceSha256": "d0f023cbef14af6659faca75785baf91f48fafebf57b952c20c1b87362f8e4a5",
+          "outputSha256": "4f4bba8d1840d89058f2db283103f7d55f8085b50c728dd5a67b237cd9ea6569"
+        },
+        {
+          "name": "fallen_oak",
+          "size": [
+            384,
+            320
+          ],
+          "tile": "",
+          "exportMode": "prop",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: stylized-concept. Production game asset for original Ironoak, Gaul circa50BC. Match ONLY the attached original Ironoak art references: hand-painted storybook cartoon, soft brush texture, warm saturated natural foreground materials, gentle TOP-LEFT light, thin dark-warm outline on interactables. Strict side view, orthographic silhouette, no isometric or perspective ground plane. One asset, isolated on genuine transparent RGBA unless a full texture is explicitly requested. No text, watermarks, labels, UI, characters, presentation frames or ground shadows. Exact requested canvas aspect; standing props touch bottom-centre; keep all non-tiling details within canvas. No unintended gold/bronze ornament on organic roots or plain timber. Canvas 384x320. HUGE FALLEN OAK TRUNK with exposed rootball, sideview, original Celtic forest. Heavy diagonal horizontal mossy broken trunk and tangled torn roots, clearly a massive solid obstacle for boar stampede finale, not a smalllog. All extremities visible on transparent, flatcompactbottom baseline, no boars, characters, goldbands, terrainpatch, backdrop or groundshadow.",
+          "source": "docs/art-source/poc-batch-2/fallen_oak-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/fallen_oak.png",
+          "references": [
+            "docs/art-direction/phase-a/oak-road-style-v2.png"
+          ],
+          "transparent": true,
+          "anchor": "bottom-centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-378ffa2a-e863-46b7-881a-a5fcdfdf5e44.png",
+          "nativeSize": [
+            1374,
+            1145
+          ],
+          "sourceSha256": "08ecf4913905f0b9068eeac94c274a8505cbbb5157f64f417ee730dd3f7e6e9a",
+          "selectedSourceSha256": "08ecf4913905f0b9068eeac94c274a8505cbbb5157f64f417ee730dd3f7e6e9a",
+          "outputSha256": "40ad8940d82e0a89cd847671d337fef32399d76a4e5e7f5c91e02c6cc2ac4af1"
+        },
+        {
+          "name": "dam_debris",
+          "size": [
+            256,
+            128
+          ],
+          "tile": "",
+          "exportMode": "prop",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: stylized-concept. Production game asset for original Ironoak, Gaul circa50BC. Match ONLY the attached original Ironoak art references: hand-painted storybook cartoon, soft brush texture, warm saturated natural foreground materials, gentle TOP-LEFT light, thin dark-warm outline on interactables. Strict side view, orthographic silhouette, no isometric or perspective ground plane. One asset, isolated on genuine transparent RGBA unless a full texture is explicitly requested. No text, watermarks, labels, UI, characters, presentation frames or ground shadows. Exact requested canvas aspect; standing props touch bottom-centre; keep all non-tiling details within canvas. No unintended gold/bronze ornament on organic roots or plain timber. Canvas 256x128. Compact mound of REEDS AND SILT piled against a thick low root after a drained pool. Wet brown sediment, bent reed stems and small pebbles, readable single sideview dressing prop, bottomcenterbase, transparentoutside. No standingwater, glowingknot, metal, whole damwall, characters or groundshadow.",
+          "source": "docs/art-source/poc-batch-2/dam_debris-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/dam_debris.png",
+          "references": [
+            "docs/art-direction/phase-a/oak-road-style-v2.png"
+          ],
+          "transparent": true,
+          "anchor": "bottom-centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-3791d30b-7c47-44b1-8972-6e9e008cf8ee.png",
+          "nativeSize": [
+            1774,
+            887
+          ],
+          "sourceSha256": "1a2c27e24d2415e67f0ab7b5df57fd3cda23adbc754ba765f9b974f6eee1e24a",
+          "selectedSourceSha256": "1a2c27e24d2415e67f0ab7b5df57fd3cda23adbc754ba765f9b974f6eee1e24a",
+          "outputSha256": "0bd8c8f2c79f95a993cd458ffd42baf259a025a2bfc8cdaacf0a3c8aaba90cc8"
+        }
+      ],
+      "iterations": [
+        {
+          "name": "fx_flame_1",
+          "source": "docs/art-source/poc-batch-2/fx_flame_1-v2-source.png",
+          "references": [
+            "docs/art-source/poc-batch-2/fx_flame_1-source.png"
+          ],
+          "transparent": true,
+          "prompt": "Use case: background-extraction and precise-object-edit. Image1 is our flame EDIT TARGET. DELETE THE ENTIRE WOODEN TORCH, rope and sticks. Deliver ONLY the FIRE at the top as an isolated painted flame sprite. Paint a rounded connected yellow-white flame base where the wooden fuel used to be, then crop the canvas around the FIRE ONLY, portrait3:4. The image must contain NO WOOD, NO ROPE, NO HANDLE, NO TORCH or other solid object: only curling orange/gold flame and clear transparency. Keep the flame's original painterly style and right-leaning two tongues. Fully transparent background, flame base at bottomcenter, no text.",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-b9cfa4dd-6f79-4dc9-bc29-7943c4d29e1b.png",
+          "sourceSha256": "238b4af54a7f83f4d2c515cd97aa7c143568b792601fbdd5ef2acb85ff32e03b"
+        },
+        {
+          "name": "fx_flame_2",
+          "size": [
+            96,
+            128
+          ],
+          "tile": "",
+          "exportMode": "prop",
+          "sourceSurfaceY": 0,
+          "prompt": "Use case: precise-object-edit. Image1 is our own ISOLATED FIRE sprite, the only reference. Create flame-frame 2 of4 by changing only its flame silhouette: rise taller and narrower with one curling tip. Keep the same painted gold-orange palette, yellow-white core, soft brushgrain, rounded connected base, basewidth and bottomcentre placement. Output ONLY FIRE, never wood, a torch, brazier, rope or fuel. Canvas96x128aspect3:4, genuine transparent exterior, no smoke, sparks, text or broad halo.",
+          "source": "docs/art-source/poc-batch-2/fx_flame_2-v2-source.png",
+          "output": "Assets/_Ironoak/Resources/Art/Painted/Props/fx_flame_2.png",
+          "references": [
+            "docs/art-source/poc-batch-2/fx_flame_1-v2-source.png"
+          ],
+          "transparent": true,
+          "anchor": "bottom-centre",
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-9df0f598-9eef-4117-b35e-46ca38da1213.png",
+          "sourceSha256": "919fed29d9df7322eb4b0e11c8e10e46a65697e8a5c54a5031154b76b742e08d"
+        },
+        {
+          "name": "bell_post",
+          "references": [
+            "docs/art-source/poc-batch-2/bell_post-source.png"
+          ],
+          "prompt": "Use case: precise-object-edit. Image1 is our bell-post edit target. Preserve painted oak, subtle carving and ironwork. Make the bell post a technical side-view asset160x416: move its VERTICAL POLE to the horizontal CENTRE of canvas so its FOOT touches BOTTOM CENTRE. Move the cantilever arm and iron hook UP, close to the top, with the HANGING HOOK at approximately70%width and90%height measured from bottom-left (10%down fromtop). Remove the tall decorative leafcrown, base flowers, rocks and ground patch to make room. Keep entire post and hook visible, no bell, rope, scene or shadow. Transparent background. The shape must be a tall narrow pole, short right-reaching arm at the very top and centered foot.",
+          "source": "docs/art-source/poc-batch-2/bell_post-v2-source.png",
+          "transparent": true,
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-8b064dbc-408f-4c52-b21f-213256606124.png",
+          "sourceSha256": "a27195013163bf423c958e6b9557b5960e09caa9b2122f5c9fbdb3eec1ba4de9"
+        },
+        {
+          "name": "bell",
+          "references": [
+            "docs/art-source/poc-batch-2/bell-source.png"
+          ],
+          "prompt": "Use case: precise-object-edit. Image1 is our bronze bell. Preserve its bell body, knotwork, clapper, palette and brushwork. Fix the top attachment ONLY: REMOVE the cropped vertical stick above the round suspension ring. Make the entire circular ring fully visible, with its TOPMOST point exactly at TOP CENTRE. No pole, rope, wood, or extra suspensionhardware. Keep one complete bell with clear alpha around all edges, portrait112x128canvas. No shadow or backdrop.",
+          "source": "docs/art-source/poc-batch-2/bell-v2-source.png",
+          "transparent": true,
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-b4b3cb0e-a6f6-4e38-9529-ca841039502f.png",
+          "sourceSha256": "d2ac32f9ed20e6dd54a3583a7ab10205f247a24776e3f25096d73eca3e99cec9"
+        },
+        {
+          "name": "gate_portcullis_bottom",
+          "references": [
+            "docs/art-source/poc-batch-2/gate_portcullis-source.png"
+          ],
+          "prompt": "Use case: stylized-concept. Reference image1 is our gate MIDDLE SECTION. Create ONLY its matching BOTTOM TERMINAL strip128x96, one dark iron strap across SIX vertical wooden bars with EXACTLY SIX pointed tips extending down. Match the exact SIX bar center positions and gap rhythm of reference across fullwidth. Preserve reference oak/iron colors and style. Every bar ends in a DOWN-pointing spike, all tips baseline bottom, transparent gaps. Upper edge is straight continuing wooden bars, no terminaltopcap. No seventhbar, no sidepost, no border, text, scene or shadow.",
+          "source": "docs/art-source/poc-batch-2/gate_portcullis_bottom-v2-source.png",
+          "transparent": true,
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-71868306-bfa8-4165-8239-afaa7a3e12f0.png",
+          "sourceSha256": "7f5f14b622df34569e9dde68035bee6a6a32bc79f82c53f3084ed8bf0f40929f"
+        },
+        {
+          "name": "debris_rock_1",
+          "references": [
+            "docs/art-source/poc-batch-2/debris_rock_2-source.png"
+          ],
+          "prompt": "Use case: stylized-concept. Reference image1 is our own ONE STONE for palette and painted material. Produce ONE SINGLE ANGULAR chipped grey rock fragment64x64, one solid irregular polygon silhouette with three or four broken facets. Centered on clear transparency, warm top-left highlight, tiny mossfleck optional. No masonry wall, stackedbricks, ornamentalcarving, plants, ruinedbuilding, text, dust or background. Exactly ONE SMALL ROCK CHUNK for break-particle burst.",
+          "source": "docs/art-source/poc-batch-2/debris_rock_1-v2-source.png",
+          "transparent": true,
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-00223717-ef9c-46c7-abe2-316b6eb0ee1f.png",
+          "sourceSha256": "397f0524096ec0d6732ee87eb15ef125b9ccbb2c21f3ae3d48820f4f9e4b9e90"
+        },
+        {
+          "name": "fx_pickup_glow",
+          "references": [],
+          "prompt": "Use case: stylized-concept. Asset type: transparent additive particle-texture PNG256x256. ONLY a soft circular WARM GOLD LIGHT HALO, pale yellow-white center becoming translucent amber and fading to FULLY TRANSPARENT at every edge, with FOUR tiny four-point sparkle glints within the halo. No solid objects of any kind, no wood, rocks, leaves, sap, coin, jewelry, scenery, frame, text or watermark. No opaque disc. Subtle softly brushed light, smooth radial alpha falloff, no background. One glow-effect sprite centered in canvas.",
+          "source": "docs/art-source/poc-batch-2/fx_pickup_glow-v2-source.png",
+          "transparent": true,
+          "date": "2026-11-23",
+          "original": "C:\\Users\\Vajee\\.codex\\generated_images\\01a20180-5d0d-7a81-8ff2-a451b950224a\\exec-a8edfac6-189d-4fbc-96d4-734dd2f8ac4b.png",
+          "sourceSha256": "817e0937e300e5dab0e9553a3314e1e57acee5cee294efe0720b27fd5175eb84"
+        }
+      ],
+      "exportTool": "tools/prepare_poc_batch1.ps1 -BatchName poc-batch-2",
+      "contactSheet": "docs/art-source/poc-batch-2/contact-sheet.png",
+      "validation": "docs/art-source/poc-batch-2/validation.json",
+      "exportNotes": [
+        "Authored images from built-in image_gen; originals retained unchanged.",
+        "Crops and placements are x,y,width,height in source/destination pixels.",
+        "Torch and plate states share normalized crop; flames share scale and bottom-centre attachment.",
+        "Water body alpha 179/255; spikes occupy bottom 90 pixels.",
+        "Opposing-edge bands reconciled in premultiplied RGBA only on declared repeat axes."
       ]
     }
   }

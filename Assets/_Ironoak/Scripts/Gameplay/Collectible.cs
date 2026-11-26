@@ -46,12 +46,29 @@ namespace Ironoak.Gameplay
             if (_sr != null && _sr.sprite == null) _sr.sprite = SpriteLibrary.Get(SpriteFor(type));
         }
 
-        void Start() => _base = transform.position;
+        void Start()
+        {
+            _base = transform.position;
+            PickupGlow.Attach(_sr, GlowColor(type));
+        }
+
+        static Color GlowColor(CollectibleType t)
+        {
+            switch (t)
+            {
+                case CollectibleType.OghamStone: return new Color(0.7f, 0.85f, 1f);
+                case CollectibleType.GoldenTorc: return new Color(1f, 0.85f, 0.45f);
+                case CollectibleType.ShrineShard: return new Color(0.65f, 0.85f, 1f);
+                default: return new Color(0.85f, 0.6f, 1f);
+            }
+        }
 
         void Update()
         {
             _t += Time.deltaTime;
-            transform.position = _base + new Vector3(0f, Mathf.Round(Mathf.Sin(_t * 2.5f) * 2f) / PixelArt.PPU, 0f);
+            float bob = Mathf.Sin(_t * 2.5f) * 2f / PixelArt.PPU;
+            if (IronoakConfig.PixelPerfect) bob = Mathf.Round(bob * PixelArt.PPU) / PixelArt.PPU;
+            transform.position = _base + new Vector3(0f, bob, 0f);
             if ((int)(_t * 3f) % 4 == 0 && Random.value < 0.05f)
                 Fx.Burst(transform.position + (Vector3)Random.insideUnitCircle * 0.4f, new Color(1f, 0.95f, 0.6f), 1, 0.5f, 0.5f, -0.5f);
         }

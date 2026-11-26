@@ -5,7 +5,11 @@ order I'll integrate it. Brenna's 8 body parts are **done**; batch delivery stat
 
 **Batch 1 delivered, 23 November 2026:** [23 exported assets, contact sheet, tiling previews
 and integration notes](../art-source/poc-batch-1/README.md). **Integrated 23 November 2026**
-(Phase B, screenshots in `docs/screenshots-phase-b/`). Batches 2–5 are still needed.
+(Phase B, screenshots in `docs/screenshots-phase-b/`).
+
+**Batch 2 delivered, 23 November 2026:** [37 exported assets, contact sheet, tiling previews
+and integration notes](../art-source/poc-batch-2/README.md). **Integrated 23 November 2026**
+(screenshots in `docs/screenshots-batch-2/`; playtest 33/33 at 60 fps). Batches 3–5 are still needed.
 
 **Batch 1 feedback (optional v2, low priority):**
 - `fg_bushes_bottom.png` covers only about 8% of its canvas, so it barely shows in game. A v2
@@ -279,7 +283,7 @@ Keep the bottom quarter calm (subtitles go there). No text in the images.
 1. **Batch 1 (done):** URP 2D renderer and lights, painted terrain over the collision tilemap
    (whole level), the new parallax with foreground layers, and knot, root, crate, coin and
    heart swaps. Playtest 33/33 at 60 fps.
-2. **Batch 2:** every Level 1 prefab switches to painted art; full-level greybox replaced; playtest stays 33/33.
+2. ~~**Batch 2:**~~ *(done)* every Level 1 prefab switches to painted art; full-level greybox replaced; playtest stays 33/33.
 3. **Batch 3:** legionary and boar rigs plus procedural animation (patrol, stun, squash, gallop, crash).
 4. **Batch 4:** Trial room and village finale dressed; set-dressing pass across the level.
 5. **Batch 5:** FX, the new UI and title screen with the chosen font, and the story intro sequence.

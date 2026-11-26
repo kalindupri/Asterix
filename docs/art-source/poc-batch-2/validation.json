@@ -1,0 +1,587 @@
+{
+  "date": "2026-11-23",
+  "assetCount": 37,
+  "repeatableCount": 10,
+  "allPassed": true,
+  "visualReview": "Contact sheet and all ten 3x3 repeat previews reviewed. Runtime integration not tested.",
+  "checks": [
+    {
+      "name": "bell_post",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/bell_post.png",
+      "size": [
+        160,
+        416
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "oppositeEdgesMatch": {},
+      "passed": true
+    },
+    {
+      "name": "bell",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/bell.png",
+      "size": [
+        112,
+        128
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "oppositeEdgesMatch": {},
+      "passed": true
+    },
+    {
+      "name": "gate_portcullis",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/gate_portcullis.png",
+      "size": [
+        128,
+        256
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "oppositeEdgesMatch": {
+        "y": true
+      },
+      "passed": true
+    },
+    {
+      "name": "gate_portcullis_bottom",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/gate_portcullis_bottom.png",
+      "size": [
+        128,
+        96
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "oppositeEdgesMatch": {},
+      "passed": true
+    },
+    {
+      "name": "bridge_plank",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/bridge_plank.png",
+      "size": [
+        256,
+        64
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "oppositeEdgesMatch": {
+        "x": true
+      },
+      "passed": true
+    },
+    {
+      "name": "rope",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/rope.png",
+      "size": [
+        32,
+        128
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "oppositeEdgesMatch": {
+        "y": true
+      },
+      "passed": true
+    },
+    {
+      "name": "rope_stake",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/rope_stake.png",
+      "size": [
+        96,
+        128
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "oppositeEdgesMatch": {},
+      "passed": true
+    },
+    {
+      "name": "plate_up",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/plate_up.png",
+      "size": [
+        128,
+        48
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "oppositeEdgesMatch": {},
+      "passed": true
+    },
+    {
+      "name": "plate_down",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/plate_down.png",
+      "size": [
+        128,
+        48
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "oppositeEdgesMatch": {},
+      "passed": true
+    },
+    {
+      "name": "wall_cracked",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/wall_cracked.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        255,
+        255
+      ],
+      "oppositeEdgesMatch": {
+        "y": true
+      },
+      "passed": true
+    },
+    {
+      "name": "debris_rock_1",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/debris_rock_1.png",
+      "size": [
+        64,
+        64
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "oppositeEdgesMatch": {},
+      "passed": true
+    },
+    {
+      "name": "debris_rock_2",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/debris_rock_2.png",
+      "size": [
+        64,
+        64
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "oppositeEdgesMatch": {},
+      "passed": true
+    },
+    {
+      "name": "debris_rock_3",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/debris_rock_3.png",
+      "size": [
+        64,
+        64
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "oppositeEdgesMatch": {},
+      "passed": true
+    },
+    {
+      "name": "water_body",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/water_body.png",
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        179,
+        179
+      ],
+      "oppositeEdgesMatch": {
+        "x": true,
+        "y": true
+      },
+      "passed": true
+    },
+    {
+      "name": "water_surface",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/water_surface.png",
+      "size": [
+        256,
+        64
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "oppositeEdgesMatch": {
+        "x": true
+      },
+      "passed": true
+    },
+    {
+      "name": "spikes_stakes",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/spikes_stakes.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "oppositeEdgesMatch": {},
+      "passed": true
+    },
+    {
+      "name": "torch_post_off",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/torch_post_off.png",
+      "size": [
+        128,
+        256
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "oppositeEdgesMatch": {},
+      "passed": true
+    },
+    {
+      "name": "torch_post_on",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/torch_post_on.png",
+      "size": [
+        128,
+        256
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "oppositeEdgesMatch": {},
+      "passed": true
+    },
+    {
+      "name": "fx_flame_1",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/fx_flame_1.png",
+      "size": [
+        96,
+        128
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "oppositeEdgesMatch": {},
+      "passed": true
+    },
+    {
+      "name": "fx_flame_2",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/fx_flame_2.png",
+      "size": [
+        96,
+        128
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "oppositeEdgesMatch": {},
+      "passed": true
+    },
+    {
+      "name": "fx_flame_3",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/fx_flame_3.png",
+      "size": [
+        96,
+        128
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "oppositeEdgesMatch": {},
+      "passed": true
+    },
+    {
+      "name": "fx_flame_4",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/fx_flame_4.png",
+      "size": [
+        96,
+        128
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "oppositeEdgesMatch": {},
+      "passed": true
+    },
+    {
+      "name": "goal_banner",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/goal_banner.png",
+      "size": [
+        192,
+        416
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "oppositeEdgesMatch": {},
+      "passed": true
+    },
+    {
+      "name": "stone_block",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/stone_block.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        255,
+        255
+      ],
+      "oppositeEdgesMatch": {
+        "x": true,
+        "y": true
+      },
+      "passed": true
+    },
+    {
+      "name": "stone_block_top",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/stone_block_top.png",
+      "size": [
+        128,
+        64
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "oppositeEdgesMatch": {
+        "x": true
+      },
+      "passed": true
+    },
+    {
+      "name": "cart_broken",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/cart_broken.png",
+      "size": [
+        384,
+        256
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "oppositeEdgesMatch": {},
+      "passed": true
+    },
+    {
+      "name": "item_heartwood_torc",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/item_heartwood_torc.png",
+      "size": [
+        160,
+        160
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "oppositeEdgesMatch": {},
+      "passed": true
+    },
+    {
+      "name": "item_ogham",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/item_ogham.png",
+      "size": [
+        112,
+        144
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "oppositeEdgesMatch": {},
+      "passed": true
+    },
+    {
+      "name": "item_golden_torc",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/item_golden_torc.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "oppositeEdgesMatch": {},
+      "passed": true
+    },
+    {
+      "name": "item_shard",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/item_shard.png",
+      "size": [
+        96,
+        128
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "oppositeEdgesMatch": {},
+      "passed": true
+    },
+    {
+      "name": "item_druid_mark",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/item_druid_mark.png",
+      "size": [
+        144,
+        144
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "oppositeEdgesMatch": {},
+      "passed": true
+    },
+    {
+      "name": "fx_pickup_glow",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/fx_pickup_glow.png",
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        249
+      ],
+      "oppositeEdgesMatch": {},
+      "passed": true
+    },
+    {
+      "name": "secret_cover_rock",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/secret_cover_rock.png",
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        255,
+        255
+      ],
+      "oppositeEdgesMatch": {
+        "x": true,
+        "y": true
+      },
+      "passed": true
+    },
+    {
+      "name": "secret_cover_canopy",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/secret_cover_canopy.png",
+      "size": [
+        512,
+        256
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "oppositeEdgesMatch": {
+        "x": true
+      },
+      "passed": true
+    },
+    {
+      "name": "nest_platform",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/nest_platform.png",
+      "size": [
+        768,
+        128
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "oppositeEdgesMatch": {},
+      "passed": true
+    },
+    {
+      "name": "fallen_oak",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/fallen_oak.png",
+      "size": [
+        384,
+        320
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "oppositeEdgesMatch": {},
+      "passed": true
+    },
+    {
+      "name": "dam_debris",
+      "output": "Assets/_Ironoak/Resources/Art/Painted/Props/dam_debris.png",
+      "size": [
+        256,
+        128
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "oppositeEdgesMatch": {},
+      "passed": true
+    }
+  ]
+}

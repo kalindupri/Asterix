@@ -13,6 +13,8 @@ namespace Ironoak.Art
     /// Art (Resources/Art/Painted/Environment/&lt;set&gt;/): terrain_earth_fill (512², tiles both
     /// ways), _top (512×192, walkable line 64 px from the top), _side (192×512, face on the left),
     /// _bottom (512×128), _corner_tl/_tr (192²). 128 px = 1 tile.
+    /// Stone cells use the Batch 2 masonry (Props/stone_block, 1 tile, with a mossy stone_block_top),
+    /// and "plank" cells are left unpainted: a painted prop (nest platform, fallen oak) draws them.
     /// </summary>
     public class PaintedTerrain : MonoBehaviour
     {
@@ -24,6 +26,7 @@ namespace Ironoak.Art
         const float SideWidth = 1.5f;
         const float BottomAbove = 0.38f, BottomBelow = 0.62f;
         const float CornerSize = 1.5f;
+        const float StoneTopAbove = 0.1f, StoneTopBelow = 0.4f; // stone_block_top is 0.5 tall
 
         static readonly Color32 StoneTint = new Color32(158, 158, 170, 255);
 
@@ -92,33 +95,94 @@ namespace Ironoak.Art
             return n;
         }
 
+        HashSet<Vector2Int> _solid, _stone;
+        BoundsInt _bounds;
+        string _set;
+
         void Build(Tilemap tm, string set)
         {
-            string dir = Dir(set);
+            _set = set;
+            // Collect solid cells and which are stone.
+            tm.CompressBounds();
+            _solid = new HashSet<Vector2Int>();
+            _stone = new HashSet<Vector2Int>();
+            _bounds = tm.cellBounds;
+            foreach (var p in _bounds.allPositionsWithin)
+            {
+                var tile = tm.GetTile(p);
+                if (tile == null || tile.name.Contains("plank")) continue; // drawn by a prop sprite
+                var c = new Vector2Int(p.x, p.y);
+                _solid.Add(c);
+                if (tile.name.Contains("stone")) _stone.Add(c);
+            }
+            if (_solid.Count == 0) return;
+            Paint(_solid, null, "", 0);
+
+            var tr2 = tm.GetComponent<TilemapRenderer>();
+            if (tr2 != null) tr2.enabled = false;
+        }
+
+        /// <summary>
+        /// Paints the empty cells inside <paramref name="area"/> as if they were solid ground (fill, cliff
+        /// faces and grass edges matching their surroundings), drawn at <paramref name="order"/>.
+        /// Used to hide secret chambers seamlessly. Returns the meshes so the caller can fade them.
+        /// </summary>
+        public List<Mesh> PaintCover(Bounds area, int order)
+        {
+            var cells = new HashSet<Vector2Int>();
+            if (_solid == null) return new List<Mesh>();
+            for (int x = Mathf.FloorToInt(area.min.x); x < Mathf.CeilToInt(area.max.x); x++)
+                for (int y = Mathf.FloorToInt(area.min.y); y < Mathf.CeilToInt(area.max.y); y++)
+                {
+                    var c = new Vector2Int(x, y);
+                    if (area.Contains(new Vector3(x + 0.5f, y + 0.5f, area.center.z)) && !_solid.Contains(c)) cells.Add(c);
+                }
+            if (cells.Count == 0) return new List<Mesh>();
+            var solid = new HashSet<Vector2Int>(_solid);
+            solid.UnionWith(cells);
+            return Paint(solid, cells, "Cover", order);
+        }
+
+        /// <summary>Multiplies the vertex alpha of meshes from <see cref="PaintCover"/> (1 = opaque).</summary>
+        public static System.Action<float> Fader(List<Mesh> meshes)
+        {
+            var originals = new List<Color32[]>();
+            foreach (var m in meshes) originals.Add(m.colors32);
+            return a =>
+            {
+                for (int i = 0; i < meshes.Count; i++)
+                {
+                    var src = originals[i];
+                    var dst = new Color32[src.Length];
+                    for (int k = 0; k < src.Length; k++) { dst[k] = src[k]; dst[k].a = (byte)(src[k].a * Mathf.Clamp01(a)); }
+                    meshes[i].colors32 = dst;
+                }
+            };
+        }
+
+        List<Mesh> Paint(HashSet<Vector2Int> solid, HashSet<Vector2Int> only, string prefix, int order)
+        {
+            string dir = Dir(_set);
             var fillTex = Resources.Load<Texture2D>(dir + "terrain_earth_fill");
             var topTex = Resources.Load<Texture2D>(dir + "terrain_earth_top");
             var sideTex = Resources.Load<Texture2D>(dir + "terrain_earth_side");
             var bottomTex = Resources.Load<Texture2D>(dir + "terrain_earth_bottom");
             var tlTex = Resources.Load<Texture2D>(dir + "terrain_earth_corner_tl");
             var trTex = Resources.Load<Texture2D>(dir + "terrain_earth_corner_tr");
+            var stoneTex = Resources.Load<Texture2D>("Art/Painted/Props/stone_block");
+            var stoneTopTex = Resources.Load<Texture2D>("Art/Painted/Props/stone_block_top");
+            bool masonry = stoneTex != null;
 
-            // Collect solid cells and which are stone.
-            tm.CompressBounds();
-            var solid = new HashSet<Vector2Int>();
-            var stone = new HashSet<Vector2Int>();
-            var b = tm.cellBounds;
-            foreach (var p in b.allPositionsWithin)
-            {
-                var tile = tm.GetTile(p);
-                if (tile == null) continue;
-                var c = new Vector2Int(p.x, p.y);
-                solid.Add(c);
-                if (tile.name.Contains("stone")) stone.Add(c);
-            }
-            if (solid.Count == 0) return;
+            var stone = _stone;
+            var b = _bounds;
             int minY = b.yMin;
             bool S(int x, int y) => solid.Contains(new Vector2Int(x, y));
-            Color32 Tint(int x, int y) => stone.Contains(new Vector2Int(x, y)) ? StoneTint : (Color32)Color.white;
+            bool St(int x, int y) => stone.Contains(new Vector2Int(x, y));
+            Color32 Tint(int x, int y) => St(x, y) && !masonry ? StoneTint : (Color32)Color.white;
+            // With masonry, stone gets its own meshes and no earth edges.
+            bool Earthy(int x, int y) => !masonry || !St(x, y);
+            // Only emit geometry for these cells (null = all).
+            bool E(int x, int y) => only == null || only.Contains(new Vector2Int(x, y));
 
             var fill = new Quads();
             var side = new Quads();
@@ -126,16 +190,26 @@ namespace Ironoak.Art
             var top = new Quads();
             var tl = new Quads();
             var tr = new Quads();
+            var stoneFill = new Quads();
+            var stoneTop = new Quads();
 
             for (int y = b.yMin; y < b.yMax; y++)
             {
                 // Fill: horizontal runs of the same material.
                 for (int x = b.xMin; x < b.xMax; x++)
                 {
-                    if (!S(x, y)) continue;
+                    if (!S(x, y) || !E(x, y)) continue;
+                    if (!Earthy(x, y))
+                    {
+                        int s1 = x;
+                        while (S(s1 + 1, y) && E(s1 + 1, y) && !Earthy(s1 + 1, y)) s1++;
+                        stoneFill.Add(x, y, s1 + 1, y + 1, x, y, s1 + 1, y + 1, Color.white, 0.05f);
+                        x = s1;
+                        continue;
+                    }
                     var tint = Tint(x, y);
                     int x1 = x;
-                    while (S(x1 + 1, y) && Tint(x1 + 1, y).Equals(tint)) x1++;
+                    while (S(x1 + 1, y) && E(x1 + 1, y) && Earthy(x1 + 1, y) && Tint(x1 + 1, y).Equals(tint)) x1++;
                     fill.Add(x, y, x1 + 1, y + 1, x / FillTile, y / FillTile, (x1 + 1) / FillTile, (y + 1) / FillTile, tint, 0.05f);
                     x = x1;
                 }
@@ -143,10 +217,19 @@ namespace Ironoak.Art
                 // Top edges: runs of solid cells with open sky above.
                 for (int x = b.xMin; x < b.xMax; x++)
                 {
-                    if (!S(x, y) || S(x, y + 1)) continue;
+                    if (!S(x, y) || S(x, y + 1) || !E(x, y)) continue;
+                    if (!Earthy(x, y))
+                    {
+                        int s1 = x;
+                        while (S(s1 + 1, y) && E(s1 + 1, y) && !S(s1 + 1, y + 1) && !Earthy(s1 + 1, y)) s1++;
+                        // Moss cap: its crest just above the walkable line, the blocks below.
+                        stoneTop.Add(x, y + 1 - StoneTopBelow, s1 + 1, y + 1 + StoneTopAbove, x, 0f, s1 + 1, 1f, Color.white, 0.02f);
+                        x = s1;
+                        continue;
+                    }
                     var tint = Tint(x, y);
                     int x1 = x;
-                    while (S(x1 + 1, y) && !S(x1 + 1, y + 1) && Tint(x1 + 1, y).Equals(tint)) x1++;
+                    while (S(x1 + 1, y) && E(x1 + 1, y) && !S(x1 + 1, y + 1) && Earthy(x1 + 1, y) && Tint(x1 + 1, y).Equals(tint)) x1++;
                     float s = y + 1;
                     top.Add(x, s - TopBelow, x1 + 1, s + TopAbove, x / FillTile, 0f, (x1 + 1) / FillTile, 1f, tint, 0.02f);
                     // Corners never reach past the middle of a narrow ledge; the texture is cropped, not squashed.
@@ -166,10 +249,10 @@ namespace Ironoak.Art
                 if (y > minY)
                     for (int x = b.xMin; x < b.xMax; x++)
                     {
-                        if (!S(x, y) || S(x, y - 1)) continue;
+                        if (!S(x, y) || S(x, y - 1) || !Earthy(x, y) || !E(x, y)) continue;
                         var tint = Tint(x, y);
                         int x1 = x;
-                        while (S(x1 + 1, y) && !S(x1 + 1, y - 1) && Tint(x1 + 1, y).Equals(tint)) x1++;
+                        while (S(x1 + 1, y) && E(x1 + 1, y) && !S(x1 + 1, y - 1) && Earthy(x1 + 1, y) && Tint(x1 + 1, y).Equals(tint)) x1++;
                         bottom.Add(x, y - BottomBelow, x1 + 1, y + BottomAbove, x / FillTile, 0f, (x1 + 1) / FillTile, 1f, tint, 0.03f);
                         x = x1;
                     }
@@ -191,11 +274,11 @@ namespace Ironoak.Art
 
                     for (int y = b.yMin; y < b.yMax; y++)
                     {
-                        if (!S(x, y) || S(x + face, y)) continue;
+                        if (!S(x, y) || S(x + face, y) || !Earthy(x, y) || !E(x, y)) continue;
                         var tint = Tint(x, y);
                         float inner = Inner(y);
                         int y1 = y;
-                        while (S(x, y1 + 1) && !S(x + face, y1 + 1) && Tint(x, y1 + 1).Equals(tint) && Mathf.Approximately(Inner(y1 + 1), inner)) y1++;
+                        while (S(x, y1 + 1) && E(x, y1 + 1) && !S(x + face, y1 + 1) && Earthy(x, y1 + 1) && Tint(x, y1 + 1).Equals(tint) && Mathf.Approximately(Inner(y1 + 1), inner)) y1++;
                         float v0 = y / FillTile, v1 = (y1 + 1) / FillTile;
                         float w = SideOut + inner, uw = w / SideWidth;
                         float f = Mathf.Min(0.45f, w * 0.4f) / w; // inner fade, normalised
@@ -212,15 +295,21 @@ namespace Ironoak.Art
             }
 
             var baseMat = DefaultSpriteMaterial();
-            Make("Fill", fill, fillTex, baseMat);
-            Make("Sides", side, sideTex, baseMat);
-            Make("Undersides", bottom, bottomTex, baseMat);
-            Make("Tops", top, topTex, baseMat);
-            Make("CornersL", tl, tlTex, baseMat);
-            Make("CornersR", tr, trTex, baseMat);
-
-            var tr2 = tm.GetComponent<TilemapRenderer>();
-            if (tr2 != null) tr2.enabled = false;
+            var meshes = new List<Mesh>();
+            void M(string name, Quads q, Texture2D tex)
+            {
+                var m = Make(prefix + name, q, tex, baseMat, order);
+                if (m != null) meshes.Add(m);
+            }
+            M("Fill", fill, fillTex);
+            M("Sides", side, sideTex);
+            M("Undersides", bottom, bottomTex);
+            M("Tops", top, topTex);
+            M("CornersL", tl, tlTex);
+            M("CornersR", tr, trTex);
+            M("StoneFill", stoneFill, stoneTex);
+            M("StoneTops", stoneTop, stoneTopTex);
+            return meshes;
         }
 
         /// <summary>The render pipeline's default sprite material (lit under URP 2D).</summary>
@@ -232,9 +321,9 @@ namespace Ironoak.Art
             return mat;
         }
 
-        void Make(string name, Quads q, Texture2D tex, Material baseMat)
+        Mesh Make(string name, Quads q, Texture2D tex, Material baseMat, int order)
         {
-            if (q.V.Count == 0 || tex == null) return;
+            if (q.V.Count == 0 || tex == null) return null;
             var mesh = new Mesh { name = "PaintedTerrain_" + name };
             if (q.V.Count > 65000) mesh.indexFormat = UnityEngine.Rendering.IndexFormat.UInt32;
             mesh.SetVertices(q.V);
@@ -249,9 +338,10 @@ namespace Ironoak.Art
             var mr = go.AddComponent<MeshRenderer>();
             var mat = new Material(baseMat) { name = "Terrain_" + name, mainTexture = tex };
             mr.sharedMaterial = mat;
-            mr.sortingOrder = 0; // same slot as the old tiles: roots and gates (-1) hide behind, props (1+) in front
+            mr.sortingOrder = order; // 0: same slot as the old tiles: roots and gates (-1) hide behind, props (1+) in front
             mr.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
             mr.receiveShadows = false;
+            return mesh;
         }
     }
 }

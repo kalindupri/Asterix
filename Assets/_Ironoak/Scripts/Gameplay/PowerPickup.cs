@@ -16,12 +16,18 @@ namespace Ironoak.Gameplay
         float _t;
         bool _taken;
 
-        void Start() => _base = transform.position;
+        void Start()
+        {
+            _base = transform.position;
+            PickupGlow.Attach(GetComponent<SpriteRenderer>(), new Color(0.75f, 1f, 0.55f), 1.25f);
+        }
 
         void Update()
         {
             _t += Time.deltaTime;
-            transform.position = _base + new Vector3(0f, Mathf.Round(Mathf.Sin(_t * 2f) * 3f) / PixelArt.PPU, 0f);
+            float bob = Mathf.Sin(_t * 2f) * 3f / PixelArt.PPU;
+            if (IronoakConfig.PixelPerfect) bob = Mathf.Round(bob * PixelArt.PPU) / PixelArt.PPU;
+            transform.position = _base + new Vector3(0f, bob, 0f);
             if (Random.value < 0.08f)
                 Fx.Burst(transform.position + (Vector3)Random.insideUnitCircle * 0.5f, new Color(0.7f, 1f, 0.5f), 1, 0.6f, 0.6f, -0.6f);
         }

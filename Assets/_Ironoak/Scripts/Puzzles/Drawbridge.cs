@@ -42,6 +42,17 @@ namespace Ironoak.Puzzles
             sr.drawMode = SpriteDrawMode.Tiled;
             sr.size = new Vector2(length, Thickness);
             sr.sortingOrder = 2;
+            if (SpriteLibrary.IsPainted(sr.sprite))
+            {
+                // Painted: the deck is the top 0.35 of a 0.5-tall strip, with the truss hanging below.
+                // Line the deck top up with the collider top and keep the truss under it when lowered.
+                float h = sr.sprite.bounds.size.y;
+                sr.size = new Vector2(length, h);
+                sr.flipY = spanLeft; // spanning left, the plank lies upside down in local space
+                sr.sortingOrder = 17; // in front of the stream it spans (water 15, foam 16)
+                float centre = Thickness * 0.5f + 0.03f - h * 0.5f;
+                plank.transform.localPosition = new Vector3(length * 0.5f, offsetY + (spanLeft ? -centre : centre), 0f);
+            }
 
             // Rounded edges (same outer size) so Brenna rolls onto the flush plank instead of snagging its corner.
             const float radius = 0.08f;

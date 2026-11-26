@@ -15,7 +15,7 @@ namespace Ironoak.EditorTools
         const string PaintedFolder = "/_Ironoak/Resources/Art/Painted/";
 
         // Bump when the rules change: Unity then reimports every texture this processor handles.
-        public override uint GetVersion() => 3;
+        public override uint GetVersion() => 4;
 
         /// <summary>
         /// Painted (hi-res) art at 128 px per world unit, smooth filtering and mipmaps.
@@ -23,6 +23,10 @@ namespace Ironoak.EditorTools
         /// Props stand on their bottom-centre; terrain textures repeat (they are mapped in world
         /// space by PaintedTerrain); wide background layers get a 4K size limit.
         /// </summary>
+        // Batch 2 textures that repeat (from the Codex handoff notes).
+        static readonly string[] RepeatU = { "bridge_plank", "water_surface", "stone_block_top", "secret_cover_canopy", "water_body", "stone_block", "secret_cover_rock" };
+        static readonly string[] RepeatV = { "gate_portcullis", "rope", "wall_cracked", "water_body", "stone_block", "secret_cover_rock" };
+
         static void ImportPainted(TextureImporter ti, string path)
         {
             string file = Path.GetFileNameWithoutExtension(path);
@@ -38,9 +42,11 @@ namespace Ironoak.EditorTools
             ti.mipmapFilter = TextureImporterMipFilter.KaiserFilter;
             ti.alphaIsTransparency = true;
             ti.maxTextureSize = env ? 4096 : 2048;
-            ti.wrapModeU = file.StartsWith("terrain_") && (file.Contains("_fill") || file.Contains("_top") || file.Contains("_bottom")) || file.StartsWith("bg_") || file.StartsWith("fg_")
+            ti.wrapModeU = file.StartsWith("terrain_") && (file.Contains("_fill") || file.Contains("_top") || file.Contains("_bottom")) || file.StartsWith("bg_") || file.StartsWith("fg_") ||
+                           System.Array.IndexOf(RepeatU, file) >= 0
                 ? TextureWrapMode.Repeat : TextureWrapMode.Clamp;
-            ti.wrapModeV = file.StartsWith("terrain_") && (file.Contains("_fill") || file.Contains("_side")) || file == "root_segment"
+            ti.wrapModeV = file.StartsWith("terrain_") && (file.Contains("_fill") || file.Contains("_side")) || file == "root_segment" ||
+                           System.Array.IndexOf(RepeatV, file) >= 0
                 ? TextureWrapMode.Repeat : TextureWrapMode.Clamp;
 
             var settings = new TextureImporterSettings();
@@ -56,6 +62,8 @@ namespace Ironoak.EditorTools
             if (path.Contains("/Painted/Props/"))
             {
                 if (file == "sap_knot") return new Vector2(0.5f, 0.12f);   // the base sinks into the ground a little
+                if (file.StartsWith("fx_flame_")) return new Vector2(0.5f, 0f);  // flames stand in the brazier
+                if (file.StartsWith("secret_cover_") || file == "rope" || file == "bridge_plank") return new Vector2(0.5f, 0.5f);
                 if (file.StartsWith("coin_") || file.Contains("glow") || file.StartsWith("item_") || file.StartsWith("fx_") ||
                     file.StartsWith("debris_") || file == "bell")
                     return file == "bell" ? new Vector2(0.5f, 1f) : new Vector2(0.5f, 0.5f);

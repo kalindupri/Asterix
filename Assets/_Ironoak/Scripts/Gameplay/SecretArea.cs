@@ -16,6 +16,9 @@ namespace Ironoak.Gameplay
         public bool isTrial;
         public SpriteRenderer[] covers = new SpriteRenderer[0];
 
+        /// <summary>Extra fade targets (e.g. painted-terrain cover meshes), called with alpha 1 → 0.</summary>
+        public event System.Action<float> Fading;
+
         bool _found;
         float _fade = 1f;
 
@@ -35,6 +38,7 @@ namespace Ironoak.Gameplay
         {
             if (!_found || _fade <= 0f) return;
             _fade = Mathf.Max(0f, _fade - Time.deltaTime * 2.5f);
+            Fading?.Invoke(_fade);
             foreach (var c in covers)
             {
                 if (c == null) continue;

@@ -57,13 +57,13 @@ namespace Ironoak.EditorTools
             // ---------------- P1-02 Rope bridge over the stream ----------------
             b.Earth(33, 38, 0, 1);
             var stream = b.Place<WaterPool>("WaterPool", 36f, 1f, "P1-02 Stream");
-            stream.width = 6f; stream.depth = 2f; GreyboxBuilder.Commit(stream);
+            stream.width = 6f; stream.depth = 1.7f; GreyboxBuilder.Commit(stream); // surface a little below the banks
             b.Ground(39, 48, 3);
             // Hinged on the near bank, held upright by a guy-rope staked behind the player: in plain view.
             var bridge = b.Place<Drawbridge>("Drawbridge", 33f, 3f, "P1-02 Drawbridge");
             bridge.length = 6; bridge.spanLeft = false; GreyboxBuilder.Commit(bridge);
             var rope = b.Place<Rope>("Rope", 33.2f, 8.8f, "P1-02 Rope");
-            rope.toEnd = new Vector2(-4.7f, -5.6f); GreyboxBuilder.Commit(rope);
+            rope.toEnd = new Vector2(-4.7f, -5.08f); GreyboxBuilder.Commit(rope); // ends at the knot on its stake
             b.Wire(rope, bridge);
             b.Coins(34, 4.2f, 3);
 
@@ -97,8 +97,9 @@ namespace Ironoak.EditorTools
             var canopyKnot = b.Place<SapKnot>("SapKnot", 80.5f, 8f, "Secret 1B Knot");
             canopyKnot.maxHeight = 5; GreyboxBuilder.Commit(canopyKnot);   // top 13, nest floor 16
             b.Place("Coin", 80.5f, 14.5f); b.Place("Coin", 80.5f, 16f);    // breadcrumb upward
-            b.Stone(81, 86, 15, 16);
-            b.Secret("CANOPY NEST", 80, 15, 87, 20, false, Leaves);
+            b.Prop(81, 86, 15, 16);          // woven nest floor (drawn by the nest platform)
+            b.Place("Decor_NestPlatform", 84f, 15.06f, "Canopy Nest Platform");
+            b.Secret("CANOPY NEST", 80, 15, 87, 20, false, Leaves, leaves: true);
             var torc = b.Place<Collectible>("Collectible_GoldenTorc", 84.5f, 16.6f, "Golden Torc 1B");
             torc.displayName = "CANOPY NEST"; GreyboxBuilder.Commit(torc);
 
@@ -115,7 +116,10 @@ namespace Ironoak.EditorTools
             var damKnot = b.Place<SapKnot>("SapKnot", 101.5f, 4f, "P1-05 Dam Knot");
             damKnot.maxHeight = 2; GreyboxBuilder.Commit(damKnot);
             var brook = b.Place<WaterPool>("WaterPool", 102f, 4f, "P1-05 Brook");
-            brook.width = 4f; brook.depth = 0.35f; brook.hazard = false; GreyboxBuilder.Commit(brook);
+            brook.width = 4f; brook.depth = 0.35f; brook.hazard = false;
+            // Silt and reeds piled against the root dam appear as the water drains.
+            brook.revealOnDrain = b.Place("Decor_DamDebris", 102.9f, 4f, "P1-05 Dam Debris").GetComponent<SpriteRenderer>();
+            GreyboxBuilder.Commit(brook);
             b.Earth(104, 109, 0, 1);         // pool bed
             var pool = b.Place<WaterPool>("WaterPool", 107f, 1f, "P1-05 Pool");
             pool.width = 6f; pool.depth = 2.4f; GreyboxBuilder.Commit(pool);
@@ -193,7 +197,9 @@ namespace Ironoak.EditorTools
             b.Earth(170, 172, 0, 8);
             b.Earth(184, 187, 0, 9);
             b.Earth(197, 199, 0, 8);
-            b.Earth(214, 215, 0, 6);         // fallen oak: the herd crashes into it
+            b.Prop(214, 215, 3, 6);          // fallen oak: the herd crashes into it
+            var oak = b.Place("Decor_FallenOak", 214.9f, 3f, "Fallen Oak");
+            oak.transform.localScale = new Vector3(1.25f, 1.25f, 1f);
             b.Coins(170.5f, 9f, 3);
             b.Coins(184.5f, 10f, 4);
             b.Coins(197.5f, 9f, 3);

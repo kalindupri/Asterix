@@ -12,6 +12,8 @@ namespace Ironoak.Puzzles
     public class Rope : SignalSender, IHittable
     {
         public Vector2 toEnd = new Vector2(0f, 3f);
+        [Tooltip("Painted art: how far the knot on the stake sits above the ground.")]
+        public float stakeKnotHeight = 0.72f;
 
         GameObject _visual;
         BoxCollider2D _hitbox;
@@ -33,6 +35,18 @@ namespace Ironoak.Puzzles
             sr.drawMode = SpriteDrawMode.Tiled;
             sr.size = new Vector2(0.25f, length);
             sr.sortingOrder = 6;
+
+            // Painted: the lower end is knotted round a stake driven into the ground (stays when cut).
+            var stake = SpriteLibrary.GetPaintedOrNull("Props", "rope_stake");
+            if (stake != null && SpriteLibrary.IsPainted(sr.sprite))
+            {
+                Vector2 low = toEnd.y < 0f ? toEnd : Vector2.zero;
+                var st = new GameObject("Stake").AddComponent<SpriteRenderer>();
+                st.transform.SetParent(transform, false);
+                st.transform.localPosition = low - new Vector2(0f, stakeKnotHeight);
+                st.sprite = stake;
+                st.sortingOrder = 7;
+            }
 
             _hitbox = _visual.AddComponent<BoxCollider2D>();
             _hitbox.isTrigger = true;

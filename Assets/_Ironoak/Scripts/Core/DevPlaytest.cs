@@ -131,6 +131,18 @@ namespace Ironoak.Core
             Frame(); yield return Shot("puppet_2_run_a");
             yield return Wait(0.13f);
             Frame(); yield return Shot("puppet_3_run_b");
+            for (int i = 0; i < 6; i++)
+            {
+                yield return Wait(0.045f);
+                Frame(); yield return Shot($"puppet_run_{i}");
+            }
+            GameInput.TestHorizontal = 0.35f; // walk
+            yield return Wait(0.5f);
+            for (int i = 0; i < 3; i++)
+            {
+                yield return Wait(0.12f);
+                Frame(); yield return Shot($"puppet_walk_{i}");
+            }
             GameInput.TestHorizontal = 0f;
             yield return Wait(0.6f);
 
@@ -180,6 +192,7 @@ namespace Ironoak.Core
             var gate1 = Find<Gate>("P1-01 Gate");
             Put(17.5f, 3f);
             yield return Wait(0.3f);
+            yield return Shot("03a_bell_and_closed_gate");
             Stone(new Vector2(18f, 4.2f), (Vector2)bell.transform.position + new Vector2(0.22f, 2.2f));
             yield return Wait(1.3f);
             Check("P1-01 bell opens gate", gate1.IsOpen);
@@ -190,6 +203,7 @@ namespace Ironoak.Core
             var bridge = Find<Drawbridge>("P1-02 Drawbridge");
             Put(26f, 3f);
             yield return Wait(0.3f);
+            yield return Shot("03b_rope_and_raised_bridge");
             Stone(new Vector2(26.5f, 4f), (Vector2)rope.transform.position + rope.toEnd * 0.5f);
             yield return Wait(1.4f);
             Check("P1-02 rope drops bridge", bridge.IsDown);

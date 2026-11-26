@@ -18,7 +18,7 @@ namespace Ironoak.EditorTools
     /// </summary>
     public class GreyboxBuilder
     {
-        enum Mat : byte { None, Earth, Stone }
+        enum Mat : byte { None, Earth, Stone, Prop }
 
         public const string TileDir = "Assets/_Ironoak/Art/Tiles";
 
@@ -42,6 +42,8 @@ namespace Ironoak.EditorTools
         public void Earth(int x0, int x1, int yBottom, int yTop) => Fill(x0, x1, yBottom, yTop, Mat.Earth);
         public void Stone(int x0, int x1, int yBottom, int yTop) => Fill(x0, x1, yBottom, yTop, Mat.Stone);
         public void Clear(int x0, int x1, int yBottom, int yTop) => Fill(x0, x1, yBottom, yTop, Mat.None);
+        /// <summary>Solid cells that the painted terrain leaves blank: a painted prop sprite draws them.</summary>
+        public void Prop(int x0, int x1, int yBottom, int yTop) => Fill(x0, x1, yBottom, yTop, Mat.Prop);
         public void Ground(int x0, int x1, int top) => Earth(x0, x1, 0, top);
 
         void Fill(int x0, int x1, int y0, int y1, Mat m)
@@ -69,10 +71,11 @@ namespace Ironoak.EditorTools
             var grass = TileAsset("tile_grass");
             var dirt = TileAsset("tile_dirt");
             var stone = TileAsset("tile_stone");
+            var plank = TileAsset("tile_plank");
             foreach (var kv in _cells)
             {
                 var p = kv.Key;
-                TileBase t = kv.Value == Mat.Stone ? stone : Solid(p.x, p.y + 1) ? dirt : grass;
+                TileBase t = kv.Value == Mat.Stone ? stone : kv.Value == Mat.Prop ? plank : Solid(p.x, p.y + 1) ? dirt : grass;
                 tm.SetTile(new Vector3Int(p.x, p.y, 0), t);
             }
 
@@ -155,7 +158,7 @@ namespace Ironoak.EditorTools
         }
 
         /// <summary>A hidden room: trigger + a cover sprite that hides it until found.</summary>
-        public SecretArea Secret(string name, int x0, int y0, int x1, int y1, bool trial, Color? coverTint = null)
+        public SecretArea Secret(string name, int x0, int y0, int x1, int y1, bool trial, Color? coverTint = null, bool leaves = false)
         {
             float w = x1 - x0 + 1, h = y1 - y0;
             var go = Empty((trial ? "Trial " : "Secret ") + name, x0 + w * 0.5f, y0 + h * 0.5f);
@@ -174,6 +177,17 @@ namespace Ironoak.EditorTools
                 sr.drawMode = SpriteDrawMode.Tiled;
                 sr.size = new Vector2(w, h);
                 sr.color = coverTint.Value;
+                var canopy = leaves ? SpriteLibrary.GetPaintedOrNull("Props", "secret_cover_canopy") : null;
+                if (canopy != null && SpriteLibrary.PreferPainted)
+                {
+                    // The canopy only repeats sideways: scale one row up to the room's height.
+                    float k = h / canopy.bounds.size.y;
+                    sr.sprite = canopy;
+                    sr.color = Color.white;
+                    cover.transform.localScale = new Vector3(k, k, 1f);
+                    sr.size = new Vector2(w / k + 0.4f, canopy.bounds.size.y);
+                }
+                else if (SpriteLibrary.IsPainted(sr.sprite)) sr.color = Color.white;
                 sr.sortingOrder = 20;
                 area.covers = new[] { sr };
             }

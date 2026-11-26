@@ -49,8 +49,13 @@ namespace Ironoak.Puzzles
             Sfx.Play(SfxId.Break);
             CameraRig.Instance?.Shake(0.1f, 0.25f);
             var b = GetComponent<Collider2D>().bounds;
+            Vector2 push = new Vector2(Mathf.Sign(direction.x == 0f ? 1f : direction.x) * 2.5f, 0f);
             for (float y = b.min.y + 0.5f; y < b.max.y; y += 1f)
-                Fx.Burst(new Vector2(b.center.x, y), new Color(0.55f, 0.52f, 0.5f), 10, 4f, 0.7f, 9f);
+            {
+                var p = new Vector2(b.center.x, y);
+                if (Fx.Chunks(p, 4, push)) Fx.Burst(p, new Color(0.62f, 0.56f, 0.5f, 0.8f), 6, 2.5f, 0.6f, 4f); // dust
+                else Fx.Burst(p, new Color(0.55f, 0.52f, 0.5f), 10, 4f, 0.7f, 9f);
+            }
             gameObject.SetActive(false);
         }
     }

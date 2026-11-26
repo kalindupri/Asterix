@@ -1,3 +1,4 @@
+using Ironoak.Art;
 using Ironoak.Core;
 using Ironoak.Sound;
 using UnityEngine;
@@ -26,6 +27,33 @@ namespace Ironoak.Puzzles
             _rb.bodyType = RigidbodyType2D.Kinematic;
             _closed = transform.position;
             Configure();
+            BuildPaintedLook();
+        }
+
+        /// <summary>
+        /// Painted gates: the repeating bars end in a separate spiked bottom row, so the tiled
+        /// root sprite is swapped for two children (they slide with the gate).
+        /// </summary>
+        void BuildPaintedLook()
+        {
+            var sr = GetComponent<SpriteRenderer>();
+            var bottom = SpriteLibrary.GetPaintedOrNull("Props", "gate_portcullis_bottom");
+            if (sr == null || bottom == null || !SpriteLibrary.IsPainted(sr.sprite)) return;
+            float bottomH = bottom.bounds.size.y, overlap = 0.06f;
+
+            var bars = new GameObject("Bars").AddComponent<SpriteRenderer>();
+            bars.transform.SetParent(transform, false);
+            bars.transform.localPosition = new Vector3(0f, bottomH - overlap, 0f);
+            bars.sprite = sr.sprite;
+            bars.drawMode = SpriteDrawMode.Tiled;
+            bars.size = new Vector2(1f, Mathf.Max(0.1f, height - bottomH + overlap));
+            bars.sortingOrder = sr.sortingOrder;
+
+            var foot = new GameObject("Bottom").AddComponent<SpriteRenderer>();
+            foot.transform.SetParent(transform, false);
+            foot.sprite = bottom;
+            foot.sortingOrder = sr.sortingOrder;
+            sr.enabled = false;
         }
 
         /// <summary>Sizes collider and sprite from <see cref="height"/>.</summary>

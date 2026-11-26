@@ -41,6 +41,10 @@ namespace Ironoak.EditorTools
             Save("Collectible_DruidMark", Item(CollectibleType.DruidMark));
             Save("HeartwoodTorc", Torc());
             Save("Decor_BrokenCart", Decor("cart_broken", 1));
+            // Painted-only set pieces (empty sprite in pixel mode)
+            Save("Decor_NestPlatform", PaintedDecor("nest_platform", 1));
+            Save("Decor_FallenOak", PaintedDecor("fallen_oak", 1));
+            Save("Decor_DamDebris", PaintedDecor("dam_debris", 14));
             AssetDatabase.SaveAssets();
             Debug.Log("[Ironoak] Prefabs generated in " + Dir);
         }
@@ -109,16 +113,23 @@ namespace Ironoak.EditorTools
         {
             var go = new GameObject();
             Renderer(go, "bell_post", 3);
+            var post = go.GetComponent<SpriteRenderer>().sprite;
             var pivot = new GameObject("Pivot");
             pivot.transform.SetParent(go.transform, false);
             pivot.transform.localPosition = new Vector3(0.22f, 2.62f, 0f);
+            if (SpriteLibrary.IsPainted(post))
+            {
+                // The painted post's hook is at about (70%, 90%) of the image.
+                var b = post.bounds;
+                pivot.transform.localPosition = new Vector3(b.min.x + b.size.x * 0.70f, b.min.y + b.size.y * 0.90f, 0f);
+            }
             var bell = new GameObject("BellBody");
             bell.transform.SetParent(pivot.transform, false);
-            Renderer(bell, "bell", 4);
+            var bellSr = Renderer(bell, "bell", 4);
             var col = bell.AddComponent<CircleCollider2D>();
             col.isTrigger = true;
             col.radius = 0.45f;
-            col.offset = new Vector2(0f, -0.4f);
+            col.offset = new Vector2(0f, SpriteLibrary.IsPainted(bellSr.sprite) ? -bellSr.sprite.bounds.size.y * 0.55f : -0.4f);
             go.AddComponent<Bell>().swingPivot = pivot.transform;
             return go;
         }
@@ -209,6 +220,15 @@ namespace Ironoak.EditorTools
             col.radius = 0.55f;
             var p = go.AddComponent<PowerPickup>();
             p.power = Power.Rootgrow;
+            return go;
+        }
+
+        static GameObject PaintedDecor(string file, int order)
+        {
+            var go = new GameObject();
+            var sr = go.AddComponent<SpriteRenderer>();
+            sr.sprite = SpriteLibrary.PreferPainted ? SpriteLibrary.GetPaintedOrNull("Props", file) : null;
+            sr.sortingOrder = order;
             return go;
         }
 
